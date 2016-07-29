@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "The SumUp brand styles Sass library.",
   "scripts": {
-    "update-submodules": "git submodule update --init --recursive",
-    "preinstall": "npm run-script update-submodules",
     "lint": "node node_modules/sass-lint/bin/sass-lint.js '*.scss' --verbose --no-exit",
     "lint:watch": "npm run lint; onchange '*.scss' -- npm run lint",
     "test": "node node_modules/sass-lint/bin/sass-lint.js '*.scss'"
@@ -26,6 +24,5 @@
   },
   "devDependencies": {
     "onchange": "^2.5.0"
-  },
-  "sassLintConfig": "frontend-tooling/sass/sass-lint.yml"
+  }
 }
