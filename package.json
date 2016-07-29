@@ -7,7 +7,7 @@
     "preinstall": "npm run-script update-submodules",
     "lint": "node node_modules/sass-lint/bin/sass-lint.js '*.scss' --verbose --no-exit",
     "lint:watch": "npm run lint; onchange '*.scss' -- npm run lint",
-    "test": "npm run lint"
+    "test": "node node_modules/sass-lint/bin/sass-lint.js '*.scss'"
   },
   "repository": {
     "type": "git",
