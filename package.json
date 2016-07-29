@@ -1,0 +1,28 @@
+{
+  "name": "brand-styles",
+  "version": "1.0.0",
+  "description": "The SumUp brand styles Sass library.",
+  "scripts": {
+    "lint": "node node_modules/sass-lint/bin/sass-lint.js '*.scss' --verbose --no-exit",
+    "lint:watch": "npm run lint; onchange '*.scss' -- npm run lint",
+    "test": "node node_modules/sass-lint/bin/sass-lint.js '*.scss'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixjung/brand-styles.git"
+  },
+  "keywords": [
+    "Sass",
+    "Library"
+  ],
+  "bugs": {
+    "url": "https://github.com/felixjung/brand-styles/issues"
+  },
+  "homepage": "https://github.com/felixjung/brand-styles#readme",
+  "dependencies": {
+    "sass-lint": "^1.8.2"
+  },
+  "devDependencies": {
+    "onchange": "^2.5.0"
+  }
+}
