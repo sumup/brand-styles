@@ -1,0 +1,74 @@
+//-------------------------------------
+// Hyperlinks
+//-------------------------------------
+
+a {
+  color: $color-brand;
+  text-decoration: none;
+}
+
+//-------------------------------------
+// SVG
+//-------------------------------------
+
+.icon { fill: white }
+svg { fill: transparent }
+
+//-------------------------------------
+// Lists
+//-------------------------------------
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding-left: 0;
+    position: relative;
+  }
+
+  &.checkmark li {
+    padding-left: 1.5em;
+
+    &:before {
+      position: absolute;
+      content: '\2714';
+      top: .65em;
+      left: 0;
+      margin-top: -0.7em;
+      color: $color-brand;
+      text-shadow: 0 1px 0 rgba(black, .3);
+    }
+  }
+}
+
+//-------------------------------------
+// Images
+//-------------------------------------
+
+img {
+  display: block;
+  width: 100%;
+}
+
+figcaption {
+  font-weight: $font-weight-light;
+  text-transform: none;
+  color: $color-dark;
+  padding-left: 0;
+  position: relative;
+
+  strong { color: $color-brand; }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 1.5em; 
+    height: 1px;
+    background-color: $color-brand;
+    position: absolute;
+    top: .8em;
+    left: 0;
+  }
+}
