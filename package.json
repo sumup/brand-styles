@@ -5,7 +5,9 @@
   "scripts": {
     "update-submodules": "git submodule update --init --recursive",
     "preinstall": "npm run-script update-submodules",
-    "test": "npm run-script update-submodules; node bin/lint.js"
+    "lint": "node node_modules/sass-lint/bin/sass-lint.js '*.scss' --verbose --no-exit",
+    "lint:watch": "npm run lint; onchange '*.scss' -- npm run lint",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,11 @@
     "url": "https://github.com/felixjung/brand-styles/issues"
   },
   "homepage": "https://github.com/felixjung/brand-styles#readme",
-  "devDependencies": {
+  "dependencies": {
     "sass-lint": "^1.8.2"
-  }
+  },
+  "devDependencies": {
+    "onchange": "^2.5.0"
+  },
+  "sassLintConfig": "frontend-tooling/sass/sass-lint.yml"
 }
