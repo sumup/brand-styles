@@ -1,0 +1,38 @@
+.btn {
+  font-size: $font-size-l;
+  line-height: $line-height-l;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: $border-radius;
+  text-align: center;
+  white-space: nowrap;
+  border: none;
+  padding: $spacing-s $spacing-xl;
+
+  &:hover,
+  &:active,
+  &:focus {
+    @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
+    background: darken($color-brand, 5%);
+    color: white;
+  }
+
+  &.btn--brand {
+    background-color: $color-brand;
+    color: white;
+  }
+
+  &.btn--highlight {
+    background-color: $color-highlight;
+    color: white;
+  }
+
+  &.btn--disabled {
+    opacity: 0.8;
+  }
+
+  &.btn--secondary {
+    background-color: $color-light;
+    color: $color-dark;
+  }
+}
