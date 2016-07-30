@@ -17,6 +17,8 @@
     color: white;
   }
 
+  &[disabled] { opacity: .5 }
+
   &.btn--brand {
     background-color: $color-brand;
     color: white;
