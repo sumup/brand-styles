@@ -13,6 +13,10 @@
 
 .legend {
   @extend .label;
+
+  &.legend--regular {
+    font-weight: $font-weight-regular;
+  }
 }
 
 .input {
@@ -37,11 +41,19 @@
     display: block;
   }
 
-  @include media($breakDesktop) {
+  .btn {
+    padding-top: $spacing-xs;
+    padding-bottom: $spacing-xs;
+  }
+
+  @include media($breakTabletLandscape) {
     display: flex;
 
-    &:not(:last-child) {
-      margin-left: $spacing-xs;
+    // Allow inline inputs to automatically fill space
+    & > * { flex-grow: 1; }
+
+    & > *:not(:last-child) {
+      margin-right: $spacing-xs;
     }
   }
 }
