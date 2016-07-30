@@ -1,0 +1,176 @@
+.fieldset {
+  margin-top: $spacing-xl;
+}
+
+.label {
+  font-size: $font-size-m;
+  line-height: $line-height-s;
+  font-weight: $font-weight-regular;
+  font-weight: $font-weight-light;
+  margin-bottom: $spacing-s;
+  text-transform: none; // TEMPORARY
+}
+
+.legend {
+  @extend .label;
+}
+
+.input {
+  height: 42px;
+  font-size: $font-size-l;
+  line-height: $line-height-s;
+  padding: $spacing-s;
+  width: 100%;
+  margin-bottom: $spacing-l;
+  border: 1px solid $color-medium;
+  
+  @include media($breakDesktop) {
+    font-size: $font-size-m !important; // TEMPORARY
+  }  
+}
+
+// Goes on the container (e.g. a <ul>)
+.inputs-inline {
+
+  &.inputs-line--block-mobile {
+    width: 100%;
+    display: block;
+  }
+
+  @include media($breakDesktop) {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-left: $spacing-xs;
+    }
+  }
+}
+
+.checkboxes-custom, .radio-buttons-custom {
+  label {
+    @extend .label;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 15px;
+    margin-right: 15px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 1px solid $color-medium;
+      background-color: white;
+    }
+  }
+
+  /**
+   * Visually hiding default inputs,
+   * but keeping them tabbable
+   */
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    border: 0;
+    padding: 0;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    width: auto;
+    visibility: hidden;
+  }
+
+  input[type="radio"] + label:before {
+    border-radius: 9px;
+  }
+
+  input[type="checkbox"] + label:before {
+    border-radius: $border-radius;
+  }
+
+  input:checked + label:after {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+  }
+
+  input[type="radio"]:checked + label:after {
+    content: '';
+    border-radius: 4px;
+    top: 4px;
+    left: 4px;
+    background: $color-brand;
+  }
+
+  input[type="checkbox"]:checked + label:after {
+    content: '✔';
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 0;
+    border-radius: 2px;
+    top: 11px;
+    left: 4px;
+    color: $color-brand;
+  }
+
+  &.checkboxes-custom--disabled, .radio-buttons-custom--disabled {
+    label {
+      color: $color-light;
+
+      &:before { background: $color-light; }
+    }
+  }
+}
+
+.select-custom {
+  position: relative;
+
+  &:after {
+    @include transform(rotate(-45deg));
+    @include transition;
+    content: "\221F";
+    position: absolute;
+    font-size: $font-size-xs;
+    color: $color-dark;
+    right: $spacing-xxl;
+    top: $spacing-m;
+    width: 0;
+    height: 0;
+    display: inline-block !important;
+  }
+
+  select {
+    @include appearance(none);
+    padding: 1em;
+    line-height: 1;
+    width: 100%;
+    background: none;
+    border: 1px solid $color-medium;
+    border-radius: $border-radius;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    z-index: 30;
+    margin-bottom: $spacing-l;
+    font-size: $font-size-m !important; // TEMPORARY
+
+    &[disabled],
+    &[disabled="disabled"],
+    &[readonly] {
+      @extend %readonly;
+    }
+
+    &:focus,
+    &:hover,
+    &:active { border-color: $color-brand; }
+  }
+}

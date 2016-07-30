@@ -8,6 +8,7 @@
   white-space: nowrap;
   border: none;
   padding: $spacing-s $spacing-xl;
+  position: relative;
 
   &:hover,
   &:active,
@@ -18,6 +19,17 @@
   }
 
   &[disabled] { opacity: .5 }
+
+  &.btn--outline {
+    background-color: transparent;
+    border: 1px solid $color-highlight;
+    color: $color-highlight;
+
+    &:hover {
+      background-color: $color-highlight;
+      color: white;
+    }
+  }
 
   &.btn--brand {
     background-color: $color-brand;
@@ -37,4 +49,35 @@
     background-color: $color-light;
     color: $color-dark;
   }
+
+  &.btn--s {
+    padding: $spacing-xs $spacing-m;
+    font-size: $font-size-m;
+    line-height: $line-height-m;
+
+    &.btn--loading .spinner {
+      right: 9px;
+      top: 10px;
+    }
+  }
+}
+
+/**
+ * Loading spinner
+ * Apply .loading to parent button to enable spinner
+ */
+
+.spinner {
+  @include size(18px);
+  @include transition(all .3s .2s ease-in-out);
+  background: url('/images/spinner-bright.svg') no-repeat center center;
+  display: none;
+  position: absolute;
+}
+
+.btn--loading {
+  @include transition(padding .2s ease-in-out);
+  padding-right: $spacing-xxl !important;
+
+  .spinner { display: inline-block; }
 }
