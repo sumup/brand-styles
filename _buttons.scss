@@ -14,11 +14,8 @@
   &:active,
   &:focus {
     @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
-    background: darken($color-brand, 5%);
     color: white;
   }
-
-  &[disabled] { opacity: .5 }
 
   &.btn--outline {
     background-color: transparent;
@@ -27,7 +24,6 @@
 
     &:hover {
       background-color: $color-highlight;
-      color: white;
     }
   }
 
@@ -39,15 +35,35 @@
   &.btn--highlight {
     background-color: $color-highlight;
     color: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($color-highlight, 5%);
+
+      &[disabled], &.btn--disabled {
+        background-color: $color-highlight;
+      }
+    }
   }
 
-  &.btn--disabled {
-    opacity: 0.8;
+  &[disabled], &.btn--disabled {
+    opacity: 0.5;
   }
 
   &.btn--secondary {
     background-color: $color-light;
     color: $color-dark;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($color-light, 5%);
+
+      &[disabled], &.btn--disabled {
+        background-color: $color-light;
+      }
+    }
   }
 
   &.btn--s {
