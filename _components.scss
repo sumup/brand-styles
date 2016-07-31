@@ -30,3 +30,15 @@
     box-shadow: none;
   }
 }
+
+@mixin card-inlay {
+  background-color: $color-off;
+  border-radius: $border-radius;
+  padding: $spacing-s;
+}
+
+@mixin card-overlay {
+  background: rgba(255,255,255,0.80);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12), 0px 2px 10px 0px rgba(0,0,0,0.03);
+  border-radius: $border-radius;
+}
