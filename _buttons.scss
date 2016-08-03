@@ -90,6 +90,37 @@
   }
 }
 
+/* Text buttons */
+
+.text-btn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: $font-size-m;
+  font-weight: 500;
+  line-height: $line-height-s;
+  padding: 0;
+
+  &#{&}--highlight {
+    color: $color-highlight;
+
+    &[disabled], &.btn--disabled {
+      color: lighten($color-highlight, .2);
+    }
+  }
+
+  &#{&}--brand {
+    color: $color-brand;
+
+    &[disabled], &.btn--disabled {
+      background-color: lighten($color-brand, .2);
+    }
+  }
+
+  &:focus { outline: none }
+}
+
+
 /**
  * Loading spinner
  * Apply .loading to parent button to enable spinner
