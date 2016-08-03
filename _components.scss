@@ -2,20 +2,20 @@
   @include card($spacing-m, $spacing-l, $spacing-s, $spacing-m);
 }
 
-@mixin card($desktop-top, $desktop-sides, $mobile-top, $mobile-sides) {
+@mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
   $box-shadow: #DCEAFA;
-  display: block;
-  position: relative;
-  background: white;
+  background: #FFFFFF;
   border: 1px solid $color-light;
-  padding: $mobile-top $mobile-sides;
-  margin-bottom: $spacing-s;
   border-radius: $border-radius;
-  box-shadow: 0px 1px 0px 0px opacify($color-light, .2);
+  box-shadow: 0 1px 0 0 opacify($color-light, .2);
+  display: block;
+  padding: $mobile-top $mobile-sides;
+  position: relative;
+  margin-bottom: $spacing-s;
 
   &:before {
     content: "";
-    position: absolute; 
+    position: absolute;
     z-index: -1;
     box-shadow: 0 0 12px $box-shadow;
     bottom: 0;
@@ -25,8 +25,8 @@
     border-radius: 86% / 20px;
   }
 
-  @include media($breakDesktop) {
-    padding: $desktop-top $desktop-sides;
+  @include media($breakTabletLandscape) {
+    padding: $tablet-top $tablet-sides;
     box-shadow: none;
   }
 }
