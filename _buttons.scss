@@ -23,7 +23,19 @@
     color: $color-highlight;
 
     &:hover {
+      color: white;
       background-color: $color-highlight;
+    }
+  }
+
+  &.btn--outline-brand {
+    background-color: transparent;
+    border: 1px solid $color-brand;
+    color: $color-brand;
+
+    &:hover {
+      color: white;
+      background-color: $color-brand;
     }
   }
 
@@ -96,4 +108,53 @@
   padding-right: $spacing-xxl !important;
 
   .spinner { display: inline-block; }
+}
+
+.btns--connected {
+  margin-bottom: $spacing-s;
+
+  .btn {
+    border-radius: 0;
+    border-style: solid;
+    border-color: $color-brand;
+    border-width: 0 1px;
+
+    &[disabled] {
+      opacity: 1;
+
+      &:hover {
+        background-color: $color-brand;
+      }
+    }
+
+    &:first-child {
+      border-radius: $border-radius $border-radius 0 0;
+      border-width: 1px;
+    }
+
+    &:last-child {
+      border-radius: 0 0 $border-radius $border-radius;
+      border-width: 1px;
+    }
+  }
+
+  .btn.btn--s {
+    padding: 0.7em 1.4em;
+    margin: 0;
+  }
+
+  @include media($breakTabletLandscape) {
+    .btn {
+      border-width: 1px 1px 1px 0;
+
+      &:first-child {
+        border-width: 1px;
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+      &:last-child {
+        border-width: 1px 1px 1px 0;
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+  }
 }
