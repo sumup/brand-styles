@@ -1,5 +1,5 @@
 .btn {
-  border: 0;
+  border: 1px solid;
   border-radius: $border-radius;
   cursor: pointer;
   font-size: $font-size-l;
@@ -18,29 +18,61 @@
     color: white;
   }
 
-  &.btn--outline {
+  &[disabled], &.btn--disabled {
+    opacity: .4;
+    cursor: default;
+  }
+
+  &--loading {
+    @include transition(padding .2s ease-in-out);
+    padding-right: $spacing-xxl !important;
+
+    .spinner { display: inline-block; }
+  }
+
+  // TODO: remove the highlight modifier as we're
+  //       going to stick with cta as terminology.
+  &#{&}--cta, &#{&}--highlight {
+    background-color: $color-highlight;
+    border-color: $color-highlight;
+    color: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-highlight-darker;
+      border-color: $color-highlight-darker;
+
+      &[disabled], &.btn--disabled {
+        background-color: $color-highlight;
+        border-color: $color-highlight;
+      }
+    }
+  }
+
+  // TODO: remove the outline modifier as we're
+  //       going to stick with secondary as terminology.
+  &#{&}--secondary, &#{&}--outline {
     background-color: transparent;
-    border: 1px solid $color-highlight;
+    border-color: $color-highlight;
     color: $color-highlight;
 
-    &:hover {
-      color: white;
-      background-color: $color-highlight;
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $color-highlight-darker;
+      color: $color-highlight-darker;
+
+      &[disabled], &.btn--disabled {
+        border-color: $color-highlight;
+        color: $color-highlight;
+      }
     }
   }
 
-  &.btn--outline-brand {
-    background-color: transparent;
-    border: 1px solid $color-brand;
-    color: $color-brand;
-
-    &:hover {
-      color: white;
-      background-color: $color-brand;
-    }
-  }
-
-  &.btn--outline-dark {
+  // TODO: remove the outline-dark modifier as we're going
+  //       to strick with secondary as terminology.
+  &#{&}--secondary-dark, &#{&}--outline-dark {
     background-color: transparent;
     border: 1px solid $color-dark;
     color: $color-dark;
@@ -51,46 +83,28 @@
     }
   }
 
-  &.btn--brand {
-    background-color: $color-brand;
-    color: white;
-  }
-
-  &.btn--highlight {
-    background-color: $color-highlight;
-    color: white;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: darken($color-highlight, 5%);
-
-      &[disabled], &.btn--disabled {
-        background-color: $color-highlight;
-      }
-    }
-  }
-
-  &[disabled], &.btn--disabled {
-    opacity: 0.5;
-  }
-
-  &.btn--secondary {
+  // TODO: clarify if this will stay. Currently it's
+  //       only used by the transaction filters on
+  //       mobile.
+  &#{&}--grey {
     background-color: $color-light;
+    border-color: $color-light;
     color: $color-dark;
 
     &:hover,
     &:active,
     &:focus {
       background-color: darken($color-light, 5%);
+      border-color: darken($color-light, 5%);
 
       &[disabled], &.btn--disabled {
         background-color: $color-light;
+        border-color: $color-light;
       }
     }
   }
 
-  &.btn--s {
+  &#{&}--s {
     padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
     line-height: $line-height-s;
@@ -125,7 +139,15 @@
     color: $color-brand;
 
     &[disabled], &.btn--disabled {
-      background-color: lighten($color-brand, .2);
+      color: lighten($color-brand, 20%);
+    }
+  }
+
+  &#{&}--dark {
+    color: $color-dark;
+
+    &[disabled], &.btn--disabled {
+      color: lighten($color-dark, 20%);
     }
   }
 
@@ -146,13 +168,6 @@
   position: absolute;
 }
 
-.btn--loading {
-  @include transition(padding .2s ease-in-out);
-  padding-right: $spacing-xxl !important;
-
-  .spinner { display: inline-block; }
-}
-
 .btns--connected {
   margin-bottom: $spacing-s;
 
@@ -161,6 +176,26 @@
     border-style: solid;
     border-color: $color-brand;
     border-width: 0 1px;
+
+    // TODO: Rename the brand and outline-brand modifiers. Since this
+    //       brand button style is only used here, maybe make the default
+    //       style look like outline-brand and add a --selected modifier
+    //       for the fill state?
+    &--brand {
+      background-color: $color-brand;
+      color: white;
+    }
+
+    &--outline-brand {
+      background-color: transparent;
+      border: 1px solid $color-brand;
+      color: $color-brand;
+
+      &:hover {
+        color: white;
+        background-color: $color-brand;
+      }
+    }
 
     &[disabled] {
       opacity: 1;
