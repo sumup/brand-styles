@@ -63,3 +63,15 @@
   @include display(flex);
   @include justify-content(center);
 }
+
+@mixin sidebar-label {
+  color: $color-dark;
+  font-size: $font-size-m;
+  font-weight: 500;
+  line-height: $line-height-s;
+  margin-bottom: $spacing-xxs;
+  margin-top: $spacing-xs;
+
+  /* TODO: remove when globals are dead. */
+  text-transform: none;
+}
