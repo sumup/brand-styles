@@ -22,3 +22,9 @@
 .card-l {
   @include card-l;
 }
+
+.sidebar-label {
+  @include sidebar-label;
+
+  &#{&}--first { margin-top: 0 }
+}
