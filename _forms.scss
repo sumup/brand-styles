@@ -186,3 +186,31 @@
     &:active { border-color: $color-brand; }
   }
 }
+
+.validation-list {
+  @include type-s;
+  margin-top: $spacing-s;
+  position: relative;
+
+  li {
+    @include transition;
+    position: relative;
+    color: $color-error;
+
+    &.ng-hide-remove {
+      @include animation(fadeInDown .2s ease-in);
+    }
+
+    &.ng-hide-add-active {
+      position: absolute;
+      width: 100%;
+      @include animation(fadeOutUp .2s ease-in);
+    }
+
+    &.warning {
+      color: $color-warning-darker;
+    }
+
+    p { margin: 0 }
+  }
+}
