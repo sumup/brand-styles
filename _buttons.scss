@@ -39,6 +39,17 @@
     }
   }
 
+  &.btn--outline-warning {
+    background-color: transparent;
+    border: 1px solid $color-warning;
+    color: $color-warning;
+
+    &:hover {
+      color: white;
+      background-color: $color-warning;
+    }
+  }
+
   &.btn--brand {
     background-color: $color-brand;
     color: white;
@@ -81,7 +92,7 @@
   &.btn--s {
     padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
-    line-height: $line-height-m;
+    line-height: $line-height-s;
 
     &.btn--loading .spinner {
       right: 9px;
