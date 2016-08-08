@@ -189,11 +189,11 @@
 
 .validation-list {
   @include type-s;
-  margin-top: $spacing-s;
   position: relative;
 
   li {
     @include transition;
+    margin-bottom: $spacing-s;
     position: relative;
     color: $color-error;
 
