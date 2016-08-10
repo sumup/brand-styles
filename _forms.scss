@@ -47,10 +47,10 @@
   }
 
   @include media($breakTabletLandscape) {
-    display: flex;
+    @include display(flex);
 
     // Allow inline inputs to automatically fill space
-    & > * { flex-grow: 1; }
+    & > * { @include flex-grow(1); }
 
     & > *:not(:last-child) {
       margin-right: $spacing-xs;
