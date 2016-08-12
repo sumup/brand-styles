@@ -35,25 +35,45 @@
 
 // Goes on the container (e.g. a <ul>)
 .inputs-inline {
+  @include row;
 
-  &.inputs-line--block-mobile {
-    width: 100%;
-    display: block;
+  & > li {
+    width: 48%;
+    padding: 0;
+    display: inline-block;
+    float: left;
+
+    &:nth-of-type(odd) {
+      margin-right: 4%;
+    }
+
+    &:nth-of-type(even) {
+      float: right;
+    }
   }
 
-  .btn {
-    padding-top: $spacing-xs;
-    padding-bottom: $spacing-xs;
+  &.inputs-inline--first-bigger {
+    li:first-child { width: 70% }
+    li:nth-child(2) { width: 22% }
   }
 
-  @include media($breakTabletLandscape) {
-    @include display(flex);
+  .btn, .button { width: 100% }
 
-    // Allow inline inputs to automatically fill space
-    & > * { @include flex-grow(1); }
+  &.inputs-inline--block-mobile {
+    & > li {
+      width: 100%;
 
-    & > *:not(:last-child) {
-      margin-right: $spacing-xs;
+      &:nth-child(even) {
+        margin-bottom: $spacing-m;
+
+        @include media($breakTabletLandscape) {
+          margin-top: 0 !important;
+        }
+      }
+
+      @include media($breakTabletLandscape) {
+        width: 46%;
+      }
     }
   }
 }
