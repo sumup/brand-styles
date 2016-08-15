@@ -105,6 +105,19 @@
     }
   }
 
+  &#{&}--warning {
+    background-color: darken($color-warning, 5%);
+    border-color: darken($color-warning, 5%);
+    color: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($color-warning, 5%);
+      border-color: darken($color-warning, 5%);
+    }
+  }
+
   &#{&}--s {
     padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
