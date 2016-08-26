@@ -40,13 +40,13 @@
   @include row;
 
   & > li {
-    width: 48%;
+    width: calc(50% - #{$spacing-s});
     padding: 0;
     display: inline-block;
     float: left;
 
     &:nth-of-type(odd) {
-      margin-right: 4%;
+      margin-right: $spacing-m;
     }
 
     &:nth-of-type(even) {
@@ -56,7 +56,7 @@
 
   &.inputs-inline--first-bigger {
     li:first-child { width: 70% }
-    li:nth-child(2) { width: 22% }
+    li:nth-child(2) { width: calc(30% - #{$spacing-m}) }
   }
 
   .btn, .button { width: 100% }
