@@ -31,6 +31,8 @@
   @include media($breakDesktop) {
     font-size: $font-size-m !important; // TEMPORARY
   }
+
+  &#{&}--no-margin { margin-bottom: 0 }
 }
 
 // Goes on the container (e.g. a <ul>)
