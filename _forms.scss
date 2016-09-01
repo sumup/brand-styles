@@ -33,6 +33,10 @@
   }
 
   &#{&}--no-margin { margin-bottom: 0 }
+
+  &:focus, &:hover {
+    border-color: $color-brand !important;
+  }
 }
 
 // Goes on the container (e.g. a <ul>)
