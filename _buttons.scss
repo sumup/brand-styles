@@ -118,6 +118,19 @@
     }
   }
 
+  &#{&}--alert {
+    background-color: $color-error;
+    border-color: $color-error;
+    color: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-error;
+      border-color: $color-error;
+    }
+  }
+
   &#{&}--s {
     padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
