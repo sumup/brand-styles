@@ -1,29 +1,53 @@
-@mixin type-xxl {
-  font-size: $font-size-xxl;
-  line-height: $line-height-xl;
-}
+@include font-face(museo, "https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont", 300);
+@include font-face(museo-rounded, "https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont", 300);
+@include font-face(museo-rounded, "https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont", 500);
 
-@mixin type-xl {
-  font-size: $font-size-xl;
-  line-height: $line-height-l;
-}
+$font-family: museo, Helvetica, Arial, sans-serif;
+$font-family-display: museo-rounded, Helvetica, Arial, sans-serif;
 
-@mixin type-l {
+body {
+  font-family: $font-family;
+  font-weight: $font-weight-light;
   font-size: $font-size-l;
   line-height: $line-height-m;
+  color: $color-dark;
+  -webkit-font-feature-settings: "kern";
+     -moz-font-feature-settings: "kern=1";
+     -moz-font-feature-settings: "kern" 1;
+      -ms-font-feature-settings: "kern";
+       -o-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
 }
 
-@mixin type-m {
-  font-size: $font-size-m;
-  line-height: $line-height-m;
+//-------------------------------------
+// Headlines
+//-------------------------------------
+
+h1, h2, h3, h4 {
+  font-family: $font-family-display;
+  line-height: 1.3em;
+
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-highlight;
+    }
+  }
 }
 
-@mixin type-s {
-  font-size: $font-size-s;
-  line-height: $line-height-s;
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  font-weight: $font-weight-light;
+  color: $color-dark;
 }
 
-@mixin type-xs {
-  font-size: $font-size-xs;
-  line-height: $line-height-s;
+
+h4, .h4 {
+  font-weight: $font-weight-light;
+  color: $color-brand;
 }
