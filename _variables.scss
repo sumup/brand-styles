@@ -32,7 +32,10 @@ $spacing-xl: 30px;
 $spacing-xxl: 36px;
 
 // Shapes
-$border-radius: 3px;
+$border-radius-s: 1px;
+$border-radius-m: 3px;
+$border-radius-l: 5px;
+$border-radius: $border-radius-m;
 
 // Typography
 $font-size-xxl: 32px;
