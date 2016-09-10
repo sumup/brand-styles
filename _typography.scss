@@ -20,10 +20,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-//-------------------------------------
 // Headlines
-//-------------------------------------
-
 h1, h2, h3, h4 {
   font-family: $font-family-display;
   line-height: 1.3em;
@@ -50,4 +47,9 @@ h3, .h3 {
 h4, .h4 {
   font-weight: $font-weight-light;
   color: $color-brand;
+}
+
+// Paragraphs
+p {
+  @include type-m;
 }
