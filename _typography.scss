@@ -44,10 +44,14 @@ h3, .h3 {
   color: $color-dark;
 }
 
-@include media($big-screens) {
-  h1, .h1,
-  h2, .h2 {
+h1, .h1,
+h2, .h2 {
+  @include media($medium-screens) {
     font-size: 40px;
+  }
+
+  @include media($huge-screens) {
+    font-size: 44px;
   }
 }
 
