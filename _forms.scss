@@ -176,10 +176,11 @@
     @include transition;
     content: "\221F";
     position: absolute;
+    z-index: 40;
     font-size: $font-size-xs;
     color: $color-dark;
     right: $spacing-xxl;
-    top: $spacing-m;
+    top: $spacing-s + 3px;
     width: 0;
     height: 0;
     display: inline-block !important;
@@ -198,6 +199,7 @@
     position: relative;
     z-index: 30;
     margin-bottom: $spacing-l;
+    outline: none;
     font-size: $font-size-m !important; // TEMPORARY
 
     &[disabled],
