@@ -54,6 +54,8 @@ $font-weight-light: 100;
 $font-weight-regular: 300;
 
 // Breakpoints
+$max-width: 1000px;
+
 $until-medium-screens: new-breakpoint(max-width 450px 4);
 $medium-screens: new-breakpoint(min-width 451px 8);
 $until-big-screens: new-breakpoint(max-width 800px 8);
