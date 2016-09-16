@@ -195,70 +195,96 @@
   position: absolute;
 }
 
-.btns--connected {
-  margin-bottom: $spacing-s;
+.btns {
+  &#{&}--inline {
+    @include display(inline-flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: 100%;
 
-  .btn {
-    border-radius: 0;
-    border-style: solid;
-    border-color: $color-brand;
-    border-width: 0 1px;
-
-    // TODO: Rename the brand and outline-brand modifiers. Since this
-    //       brand button style is only used here, maybe make the default
-    //       style look like outline-brand and add a --selected modifier
-    //       for the fill state?
-    &--brand {
-      background-color: $color-brand;
-      color: white;
+    &#{&}-text {
+      @include justify-content(flex-start);
     }
 
-    &--outline-brand {
-      background-color: transparent;
-      border: 1px solid $color-brand;
-      color: $color-brand;
+    &>:not(:last-child) {
+      margin-right: $spacing-xs;
+    }
 
-      &:hover {
-        color: white;
-        background-color: $color-brand;
+    @include media($breakTabletPortrait) {
+      @include justify-content(flex-start);
+      width: auto;
+
+      &>:not(:last-child) {
+        margin-right: $spacing-s;
       }
-    }
-
-    &[disabled] {
-      opacity: 1;
-
-      &:hover {
-        background-color: $color-brand;
-      }
-    }
-
-    &:first-child {
-      border-radius: $border-radius $border-radius 0 0;
-      border-width: 1px;
-    }
-
-    &:last-child {
-      border-radius: 0 0 $border-radius $border-radius;
-      border-width: 1px;
     }
   }
 
-  .btn.btn--s {
-    padding: 0.7em 1.4em;
-    margin: 0;
-  }
+  &#{&}--connected {
+    margin-bottom: $spacing-s;
 
-  @include media($breakTabletLandscape) {
     .btn {
-      border-width: 1px 1px 1px 0;
+      border-radius: 0;
+      border-style: solid;
+      border-color: $color-brand;
+      border-width: 0 1px;
+
+      // TODO: Rename the brand and outline-brand modifiers. Since this
+      //       brand button style is only used here, maybe make the default
+      //       style look like outline-brand and add a --selected modifier
+      //       for the fill state?
+      &--brand {
+        background-color: $color-brand;
+        color: white;
+      }
+
+      &--outline-brand {
+        background-color: transparent;
+        border: 1px solid $color-brand;
+        color: $color-brand;
+
+        &:hover {
+          color: white;
+          background-color: $color-brand;
+        }
+      }
+
+      &[disabled] {
+        opacity: 1;
+
+        &:hover {
+          background-color: $color-brand;
+        }
+      }
 
       &:first-child {
+        border-radius: $border-radius $border-radius 0 0;
         border-width: 1px;
-        border-radius: $border-radius 0 0 $border-radius;
       }
+
       &:last-child {
+        border-radius: 0 0 $border-radius $border-radius;
+        border-width: 1px;
+      }
+    }
+
+    .btn.btn--s {
+      padding: 0.7em 1.4em;
+      margin: 0;
+    }
+
+    @include media($breakTabletLandscape) {
+      .btn {
         border-width: 1px 1px 1px 0;
-        border-radius: 0 $border-radius $border-radius 0;
+
+        &:first-child {
+          border-width: 1px;
+          border-radius: $border-radius 0 0 $border-radius;
+        }
+        &:last-child {
+          border-width: 1px 1px 1px 0;
+          border-radius: 0 $border-radius $border-radius 0;
+        }
       }
     }
   }
