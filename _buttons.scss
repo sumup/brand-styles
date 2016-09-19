@@ -17,6 +17,7 @@
   &:focus {
     @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
     color: white;
+    text-decoration: none;
   }
 
   &[disabled], &.btn--disabled {
