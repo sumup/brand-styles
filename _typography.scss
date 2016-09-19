@@ -12,6 +12,8 @@ body {
   font-size: $font-size-l;
   line-height: $line-height-m;
   color: $color-dark;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
   -webkit-font-feature-settings: "kern";
      -moz-font-feature-settings: "kern=1";
      -moz-font-feature-settings: "kern" 1;
@@ -40,12 +42,13 @@ h1, h2, h3, h4 {
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  font-weight: $font-weight-light;
   color: $color-dark;
 }
 
 h1, .h1,
 h2, .h2 {
+  font-weight: $font-weight-light;
+
   @include media($medium-screens) {
     font-size: 40px;
   }
@@ -53,6 +56,11 @@ h2, .h2 {
   @include media($huge-screens) {
     font-size: 44px;
   }
+}
+
+h3, .h3,
+h4, .h4 {
+  font-weight: $font-weight-regular;
 }
 
 h4, .h4 {
