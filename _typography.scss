@@ -48,6 +48,7 @@ h3, .h3 {
 h1, .h1,
 h2, .h2 {
   font-weight: $font-weight-light;
+  font-size: 24px;
 
   @include media($medium-screens) {
     font-size: 40px;
