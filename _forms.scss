@@ -19,13 +19,18 @@
 }
 
 .input {
-  height: 42px;
+  @include appearance(none);
+  @include placeholder { color: $color-medium; };
+  background: transparent;
+  border: 1px solid $color-medium;
+  border-radius: $border-radius;
+  border-color: $color-medium;
   font-size: $font-size-l;
+  height: 42px;
   line-height: $line-height-s;
+  margin-bottom: $spacing-l;
   padding: $spacing-s;
   width: 100%;
-  margin-bottom: $spacing-l;
-  border: 1px solid $color-medium;
 
   @include media($breakDesktop) {
     font-size: $font-size-m !important; // TEMPORARY
