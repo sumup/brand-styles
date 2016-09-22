@@ -24,7 +24,10 @@ body {
 }
 
 // Headlines
-h1, h2, h3, h4 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
   font-family: $font-family-display;
   line-height: 1.3em;
 
@@ -49,6 +52,7 @@ h1, .h1,
 h2, .h2 {
   font-weight: $font-weight-light;
   font-size: 24px;
+  line-height: 1.3;
 
   @include media($medium-screens) {
     font-size: 40px;
