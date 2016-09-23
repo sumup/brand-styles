@@ -45,6 +45,17 @@ svg { fill: transparent }
       text-shadow: 0 1px 0 rgba(black, .3);
     }
   }
+
+  &.dash li {
+    padding-left: 1.2em;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "–";
+      color: $color-brand;
+    }
+  }
 }
 
 //-------------------------------------
