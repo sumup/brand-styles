@@ -1,4 +1,5 @@
 .btn {
+  @include transition(color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1));
   display: inline-block;
   border: 1px solid;
   border-radius: $border-radius;
@@ -16,7 +17,6 @@
   &:hover,
   &:active,
   &:focus {
-    @include transition(color .2s cubic-bezier(.4, .0, .2, 1));
     color: $color-brand-darker;
     text-decoration: none;
   }
