@@ -1,14 +1,66 @@
-@include font-face(museo, "https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont", 300);
-@include font-face(museo-rounded, "https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont", 100);
-@include font-face(museo-rounded, "https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont", 300);
-@include font-face(museo-rounded, "https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont", 500);
+// western latin charset
+@font-face {
+  font-family: 'museo';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 500;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.ttf') format('truetype');
+}
+
+// polish charset
+@font-face {
+  font-family: 'museo_pl';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 500;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
+}
 
 
 $font-family: museo, Helvetica, Arial, sans-serif;
-$font-family-display: museo-rounded, Helvetica, Arial, sans-serif;
+$font-family-display: museoRounded, Helvetica, Arial, sans-serif;
 
 body {
-  font-family: $font-family;
   font-weight: $font-weight-light;
   font-size: $font-size-l;
   line-height: $line-height-m;
@@ -24,12 +76,39 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+// loading correct font files
+//
+// browsers will only the font-face which is actually used in the css
+// so here, we'll define for body, headlines and buttons which font-files to use.
+body:not([data-locale="pl-PL"]) {
+  font-family: $font-family;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn {
+    font-family: $font-family-display;
+  }
+}
+
+body[data-locale="pl-PL"] {
+  font-family: museo_pl, Helvetica, Arial, sans-serif;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn {
+    font-family: museoRounded_pl, Helvetica, Arial, sans-serif;
+  }
+}
+
 // Headlines
 h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4 {
-  font-family: $font-family-display;
   line-height: 1.3em;
 
   a {
