@@ -1,18 +1,14 @@
 //-------------------------------------
-// Text
-//-------------------------------------
-
-p {
-  @include type-m;
-}
-
-//-------------------------------------
 // Hyperlinks
 //-------------------------------------
 
 a {
   color: $color-brand;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 //-------------------------------------
@@ -41,12 +37,23 @@ svg { fill: transparent }
 
     &:before {
       position: absolute;
-      content: '\2714';
+      content: '✔︎';
       top: .65em;
       left: 0;
       margin-top: -0.7em;
       color: $color-brand;
       text-shadow: 0 1px 0 rgba(black, .3);
+    }
+  }
+
+  &.dash li {
+    padding-left: 1.2em;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "–";
+      color: $color-brand;
     }
   }
 }
@@ -58,6 +65,10 @@ svg { fill: transparent }
 img {
   display: block;
   width: 100%;
+}
+
+figure {
+  margin: 0;
 }
 
 figcaption {
@@ -72,7 +83,7 @@ figcaption {
   &:before {
     content: "";
     display: block;
-    width: 1.5em; 
+    width: 1.5em;
     height: 1px;
     background-color: $color-brand;
     position: absolute;

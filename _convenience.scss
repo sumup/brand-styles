@@ -28,3 +28,20 @@
 
   &#{&}--first { margin-top: 0 }
 }
+
+// layout helpers
+@include media($until-medium-screens) {
+  .hide--on-small { display: none }
+}
+
+@include media($until-big-screens) {
+  .hide--on-small-and-medium { display: none }
+}
+
+@include media($medium-to-big-screens) {
+  .hide--on-medium { display: none }
+}
+
+@include media($big-screens) {
+  .hide--on-big { display: none }
+}

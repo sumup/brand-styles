@@ -1,0 +1,29 @@
+@mixin type-xxl {
+  font-size: $font-size-xxl;
+  line-height: $line-height-xl;
+}
+
+@mixin type-xl {
+  font-size: $font-size-xl;
+  line-height: $line-height-l;
+}
+
+@mixin type-l {
+  font-size: $font-size-l;
+  line-height: $line-height-m;
+}
+
+@mixin type-m {
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+}
+
+@mixin type-s {
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+@mixin type-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-s;
+}
