@@ -45,3 +45,5 @@
 @include media($big-screens) {
   .hide--on-big { display: none }
 }
+
+.hidden { display: none }
