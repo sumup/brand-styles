@@ -21,8 +21,10 @@
 .input {
   @include appearance(none);
   @include placeholder { color: $color-medium; };
+  @include transition(border-color .2s, background-color .3s);
   background: transparent;
-  border: 1px solid $color-medium;
+  border: 1px solid;
+  border-color: $color-medium;
   border-radius: $border-radius;
   border-color: $color-medium;
   font-size: $font-size-l;
@@ -39,7 +41,9 @@
   &#{&}--no-margin { margin-bottom: 0 }
 
   &:focus, &:hover {
-    border-color: $color-brand !important;
+    border-color: $color-brand;
+    outline: none; // remove weird glow on some OS'es
+    background-color: rgba($color-brand-lighter, .1);
   }
 }
 
