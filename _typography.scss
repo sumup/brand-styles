@@ -109,7 +109,7 @@ h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4 {
-  line-height: 1.3em;
+  //line-height: 1.3em; Should come as variable
 
   a {
     &:link,
@@ -131,15 +131,14 @@ h3, .h3 {
 h1, .h1,
 h2, .h2 {
   font-weight: $font-weight-light;
-  font-size: 24px;
-  line-height: 1.3;
+  @include type-xml;
 
   @include media($medium-screens) {
-    font-size: 40px;
+    @include type-xxxl;
   }
 
   @include media($huge-screens) {
-    font-size: 44px;
+    @include type-xxxxl;
   }
 }
 
@@ -155,5 +154,5 @@ h4, .h4 {
 
 // Paragraphs
 p {
-  @include type-m;
+  @include type-l;
 }

@@ -1,6 +1,15 @@
 // Convenience typography classes
+.type-xxxxl {
+  @include type-xxxxl;
+}
+.type-xxxl {
+  @include type-xxxl;
+}
 .type-xxl {
   @include type-xxl;
+}
+.type-xml {
+  @include type-xml;
 }
 .type-xl {
   @include type-xl;
@@ -16,6 +25,17 @@
 }
 .type-xs {
   @include type-xs;
+}
+
+// Convenience font-wheigt classes
+.type-light{
+  font-weight: $font-weight-light;
+}
+.type-regular {
+  font-weight: $font-weight-regular;
+}
+.type-medium {
+  font-weight: $font-weight-medium;
 }
 
 // Convenience components
