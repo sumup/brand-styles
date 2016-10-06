@@ -22,7 +22,7 @@ $color-error-darker: #803332;
 $color-warning: #FACC37;
 $color-warning-darker: #B38F1B;
 
-// Paddings
+// Spacings
 $spacing-xxs: 3px;
 $spacing-xs: 6px;
 $spacing-s: 12px;
@@ -38,17 +38,33 @@ $border-radius-l: 5px;
 $border-radius: $border-radius-m;
 
 // Typography
+$font-size-xxxxl: 44px;
+$font-size-xxxl: 40px;
 $font-size-xxl: 32px;
+$font-size-xml: 24px;
 $font-size-xl: 18px;
 $font-size-l: 16px;
 $font-size-m: 14px;
 $font-size-s: 12px;
 $font-size-xs: 10px;
 
+$line-height-xxl: 54px;
 $line-height-xl: 48px;
 $line-height-l: 30px;
 $line-height-m: 24px;
 $line-height-s: 18px;
 
-$font-weight-light: 300;
-$font-weight-regular: 500;
+$font-weight-light: 100;
+$font-weight-regular: 300;
+$font-weight-medium: 500;
+
+// Breakpoints
+$max-width: 1000px;
+
+$until-medium-screens: new-breakpoint(max-width 450px 4);
+$medium-screens: new-breakpoint(min-width 451px 8);
+$until-big-screens: new-breakpoint(max-width 800px 8);
+$big-screens: new-breakpoint(min-width 801px 12);
+$medium-to-big-screens: new-breakpoint(min-width 451px max-width 800px 8);
+$until-huge-screens: new-breakpoint(max-width 1400px 12);
+$huge-screens: new-breakpoint(min-width 1401px 12);
