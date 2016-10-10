@@ -58,7 +58,9 @@
 
 
 $font-family: museo, Helvetica, Arial, sans-serif;
+$font-family-pl: museo_pl, Helvetica, Arial, sans-serif;
 $font-family-display: museoRounded, Helvetica, Arial, sans-serif;
+$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif;
 
 body {
   font-weight: $font-weight-light;
@@ -93,14 +95,14 @@ body:not([data-locale="pl-PL"]) {
 }
 
 body[data-locale="pl-PL"] {
-  font-family: museo_pl, Helvetica, Arial, sans-serif;
+  font-family: $font-family-pl;
 
   h1, .h1,
   h2, .h2,
   h3, .h3,
   h4, .h4,
   .btn {
-    font-family: museoRounded_pl, Helvetica, Arial, sans-serif;
+    font-family: $font-family-display-pl;
   }
 }
 
