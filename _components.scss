@@ -2,15 +2,16 @@
   @include card($spacing-m, $spacing-l, $spacing-s, $spacing-m);
 }
 
-@mixin validation-list-rounded($color) {
+@mixin rounded-left-border($position-left, $color) {
   &:before {
     display: inline-block;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     content: '';
-    position: relative;
-    left: -$spacing-l;
-    height: 10px;
+    position: absolute;
+    left: -$position-left;
+    top:0;
+    height: 100%;
     background-color: $color;
     width: 3px;
   }
