@@ -2,6 +2,21 @@
   @include card($spacing-m, $spacing-l, $spacing-s, $spacing-m);
 }
 
+@mixin rounded-left-border($position-left, $color) {
+  &:before {
+    display: inline-block;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    content: '';
+    position: absolute;
+    left: -$position-left;
+    top:0;
+    height: 100%;
+    background-color: $color;
+    width: 3px;
+  }
+}
+
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
   $box-shadow: #DCEAFA;
   background: #FFFFFF;
