@@ -18,7 +18,8 @@
   }
 }
 
-.input {
+.input,
+.textarea {
   @include appearance(none);
   @include placeholder { color: $color-medium; };
   @include transition(border-color .2s, background-color .3s);
@@ -28,7 +29,6 @@
   border-radius: $border-radius;
   border-color: $color-medium;
   font-size: $font-size-l;
-  height: 42px;
   line-height: $line-height-s;
   margin-bottom: $spacing-l;
   padding: $spacing-s;
@@ -45,6 +45,14 @@
     outline: none; // remove weird glow on some OS'es
     background-color: rgba($color-brand-lighter, .1);
   }
+}
+
+.input {
+  height: 42px;
+}
+
+.textarea {
+  min-height: 120px;
 }
 
 // Goes on the container (e.g. a <ul>)
