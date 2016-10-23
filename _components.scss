@@ -18,13 +18,11 @@
 }
 
 @mixin validation-list($color) {
-  margin-left: -$spacing-m;
-  border-left: 3px solid $color;
-  padding-left: $spacing-m - 3;
+  position: relative;
+  @include rounded-left-border($spacing-m, $color);
 
   @include media($breakTabletLandscape) {
-    margin-left: -$spacing-l;
-    padding-left: $spacing-l - 3;
+    @include rounded-left-border($spacing-l, $color);
   }
 }
 
