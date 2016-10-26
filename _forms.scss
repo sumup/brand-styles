@@ -6,7 +6,7 @@
   font-size: $font-size-m;
   line-height: $line-height-s;
   font-weight: $font-weight-regular;
-  margin-bottom: $spacing-s;
+  margin-bottom: $spacing-xs !important;
   text-transform: none; // TEMPORARY
 }
 
@@ -22,9 +22,8 @@
   @include appearance(none);
   @include placeholder { color: $color-medium; };
   background: transparent;
-  border: 1px solid $color-medium;
+  border: 1px solid $color-medium !important;
   border-radius: $border-radius;
-  border-color: $color-medium;
   font-size: $font-size-l;
   height: 42px;
   line-height: $line-height-s;
@@ -192,11 +191,12 @@
 
   select {
     @include appearance(none);
-    padding: 1em;
-    line-height: 1;
+    padding: 12px;
+    line-height: 18px;
     width: 100%;
     background: none;
-    border: 1px solid $color-medium;
+    border: 1px solid $color-medium !important;
+    height: 42px;
     border-radius: $border-radius;
     white-space: nowrap;
     cursor: pointer;
