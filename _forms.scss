@@ -22,7 +22,7 @@
   @include appearance(none);
   @include placeholder { color: $color-medium; };
   background: transparent;
-  border: 1px solid $color-medium !important;
+  border: 1px solid $color-medium;
   border-radius: $border-radius;
   font-size: $font-size-l;
   height: 42px;
