@@ -227,6 +227,11 @@
     position: relative;
     color: $color-error;
 
+    a, a:hover, a:active, a:visited {
+      color: $color-error;
+      text-decoration: underline;
+    }
+
     &.ng-hide-remove {
       @include animation(fadeInDown .2s ease-in);
     }
