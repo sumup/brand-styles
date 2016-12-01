@@ -17,6 +17,15 @@
   }
 }
 
+@mixin validation-list($color) {
+  position: relative;
+  @include rounded-left-border($spacing-m, $color);
+
+  @include media($breakTabletLandscape) {
+    @include rounded-left-border($spacing-l, $color);
+  }
+}
+
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
   $box-shadow: #DCEAFA;
   background: #FFFFFF;

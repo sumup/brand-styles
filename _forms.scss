@@ -6,7 +6,7 @@
   font-size: $font-size-m;
   line-height: $line-height-s;
   font-weight: $font-weight-regular;
-  margin-bottom: $spacing-s;
+  margin-bottom: $spacing-xs !important;
   text-transform: none; // TEMPORARY
 }
 
@@ -27,8 +27,8 @@
   border: 1px solid;
   border-color: $color-medium;
   border-radius: $border-radius;
-  border-color: $color-medium;
   font-size: $font-size-l;
+  height: 42px;
   line-height: $line-height-s;
   margin-bottom: $spacing-l;
   padding: $spacing-s;
@@ -166,14 +166,14 @@
   }
 
   input[type="checkbox"]:checked + label:after {
-    content: '✔';
-    font-size: 11px;
-    font-weight: normal;
-    line-height: 0;
-    border-radius: 2px;
-    top: 11px;
-    left: 4px;
+    content: '';
+    background: url(data:image/svg+xml;encoding=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2211%22%20viewBox%3D%220%200%2013%2011%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%235C8BCC%22%20d%3D%22M4.363%208.314l-2.63-2.82a.994.994%200%200%200-1.415-.051.999.999%200%200%200-.047%201.415l3.406%203.653a.994.994%200%200%200%201.201.205.996.996%200%200%200%20.426-.327l6.621-8.787A1%201%200%200%200%2010.328.398L4.363%208.314z%22%20%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E);
+    top: 4px;
+    left: 3px;
     color: $color-brand;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
   }
 
   &.checkboxes-custom--disabled, .radio-buttons-custom--disabled {
@@ -205,11 +205,12 @@
 
   select {
     @include appearance(none);
-    padding: 1em;
-    line-height: 1;
+    padding: 12px;
+    line-height: 18px;
     width: 100%;
     background: none;
-    border: 1px solid $color-medium;
+    border: 1px solid $color-medium !important;
+    height: 42px;
     border-radius: $border-radius;
     white-space: nowrap;
     cursor: pointer;
@@ -240,6 +241,11 @@
     margin-bottom: $spacing-s;
     position: relative;
     color: $color-error;
+
+    a, a:hover, a:active, a:visited {
+      color: $color-error;
+      text-decoration: underline;
+    }
 
     &.ng-hide-remove {
       @include animation(fadeInDown .2s ease-in);
