@@ -211,7 +211,7 @@
       margin-right: $spacing-xs;
     }
 
-    @include media($breakTabletPortrait) {
+    @include media($medium-screens) {
       @include justify-content(flex-start);
       width: auto;
 
@@ -274,7 +274,7 @@
       margin: 0;
     }
 
-    @include media($breakTabletLandscape) {
+    @include media($big-screens) {
       .btn {
         border-width: 1px 1px 1px 0;
 

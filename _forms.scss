@@ -34,7 +34,7 @@
   padding: $spacing-s;
   width: 100%;
 
-  @include media($breakDesktop) {
+  @include media($big-screens) {
     font-size: $font-size-m !important; // TEMPORARY
   }
 
@@ -88,12 +88,12 @@
       &:nth-child(even) {
         margin-bottom: $spacing-m;
 
-        @include media($breakTabletLandscape) {
+        @include media($medium-screens) {
           margin-top: 0 !important;
         }
       }
 
-      @include media($breakTabletLandscape) {
+      @include media($medium-screens) {
         width: 46%;
       }
     }

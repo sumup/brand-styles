@@ -29,7 +29,7 @@
 
   @include fancy-shadow($box-shadow);
 
-  @include media($breakTabletLandscape) {
+  @include media($big-screens) {
     padding: $tablet-top $tablet-sides;
     box-shadow: none;
   }
