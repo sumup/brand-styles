@@ -60,14 +60,14 @@
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08), 0px 2px 12px 0px rgba(0,0,0,0.10);
 }
 
-@mixin fancy-shadow($shadow-color: rgba($color-dark, .3), $size: 12px, $spread: 0px) {
+@mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px) {
   position: relative;
 
   &:before {
     content: "";
     position: absolute;
     z-index: -1;
-    box-shadow: 0 0 $size $spread $shadow-color;
+    box-shadow: 0 $size/2 $size $spread $shadow-color;
     bottom: 0;
     height: 20px;
     width: 86%;
