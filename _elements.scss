@@ -87,7 +87,7 @@ figcaption {
     height: 1px;
     background-color: $color-brand;
     position: absolute;
-    top: .8em;
+    top: calc(50% - 1px);
     left: 0;
   }
 }
