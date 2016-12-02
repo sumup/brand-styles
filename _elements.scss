@@ -3,11 +3,12 @@
 //-------------------------------------
 
 a {
+  transition: color .2s;
   color: $color-brand;
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: $color-highlight;
   }
 }
 
