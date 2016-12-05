@@ -74,10 +74,11 @@ figure {
 
 figcaption {
   font-weight: $font-weight-light;
-  text-transform: none;
+
   color: $color-dark;
   padding-left: 2em;
   position: relative;
+  @include type-s;
 
   strong { color: $color-brand; }
 
@@ -88,7 +89,7 @@ figcaption {
     height: 1px;
     background-color: $color-brand;
     position: absolute;
-    top: calc(50% - 1px);
+    top: calc(0.8em - 1px);
     left: 0;
   }
 }
