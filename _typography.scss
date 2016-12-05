@@ -63,7 +63,7 @@ $font-family-display: museoRounded, Helvetica, Arial, sans-serif;
 $font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif;
 
 body {
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-regular;
   font-size: $font-size-l;
   line-height: $line-height-m;
   color: $color-dark;
@@ -89,7 +89,8 @@ body:not([data-locale="pl-PL"]) {
   h2, .h2,
   h3, .h3,
   h4, .h4,
-  .btn {
+  .btn,
+  em {
     font-family: $font-family-display;
   }
 }
@@ -101,7 +102,8 @@ body[data-locale="pl-PL"] {
   h2, .h2,
   h3, .h3,
   h4, .h4,
-  .btn {
+  .btn,
+  em {
     font-family: $font-family-display-pl;
   }
 }
@@ -155,4 +157,11 @@ h4, .h4 {
 // Paragraphs
 p {
   @include type-l;
+}
+
+// Emphasis
+em {
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  // font-family: (font family set in body definitions);
 }
