@@ -24,15 +24,17 @@
   @include type-xs;
 }
 
-// Convenience font-wheigt classes
-.type-light{
+// Convenience font-weight classes
+.type-light {
   font-weight: $font-weight-light;
+  font-family: $font-family-display;
 }
 .type-regular {
   font-weight: $font-weight-regular;
 }
 .type-medium {
   font-weight: $font-weight-medium;
+  font-family: $font-family-display;
 }
 
 // Convenience components
