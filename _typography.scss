@@ -64,7 +64,7 @@ $font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif;
 
 body {
   font-weight: $font-weight-regular;
-  font-size: $font-size-l;
+  font-size: $font-size-m;
   line-height: $line-height-m;
   color: $color-dark;
   -webkit-font-smoothing: antialiased;
@@ -152,11 +152,6 @@ h4, .h4 {
 h4, .h4 {
   font-weight: $font-weight-light;
   color: $color-brand;
-}
-
-// Paragraphs
-p {
-  @include type-l;
 }
 
 // Emphasis
