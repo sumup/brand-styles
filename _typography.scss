@@ -56,12 +56,6 @@
        url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
 }
 
-
-$font-family: museo, Helvetica, Arial, sans-serif;
-$font-family-pl: museo_pl, Helvetica, Arial, sans-serif;
-$font-family-display: museoRounded, Helvetica, Arial, sans-serif;
-$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif;
-
 body {
   font-weight: $font-weight-regular;
   font-size: $font-size-m;
