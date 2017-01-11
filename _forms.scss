@@ -10,11 +10,10 @@ fieldset {
 }
 
 .label {
-  font-size: $font-size-m;
+  font-size: $font-size-s;
   line-height: $line-height-s;
-  font-weight: $font-weight-regular;
-  margin-bottom: $spacing-xs !important;
-  text-transform: none; // TEMPORARY
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-xs;
 }
 
 .legend {
