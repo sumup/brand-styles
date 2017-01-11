@@ -41,10 +41,8 @@ fieldset {
   width: 100%;
 
   @include media($big-screens) {
-    font-size: $font-size-m !important; // TEMPORARY
+    font-size: $font-size-m;
   }
-
-  &#{&}--no-margin { margin-bottom: 0 }
 
   &:focus, &:hover {
     border-color: $color-brand;
@@ -224,7 +222,7 @@ fieldset {
     z-index: 30;
     margin-bottom: $spacing-l;
     outline: none;
-    font-size: $font-size-m !important; // TEMPORARY
+    font-size: $font-size-m;
 
     &[disabled],
     &[disabled="disabled"],
