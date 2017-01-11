@@ -51,6 +51,16 @@ fieldset {
   }
 }
 
+.input.input--no-margin,
+.textarea.textarea--no-margin {
+  margin-bottom: 0;
+}
+
+.input.input--optional,
+.textarea.textarea--optional {
+  border-style: dashed;
+}
+
 .input {
   height: 42px;
 }
