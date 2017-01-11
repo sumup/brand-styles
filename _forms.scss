@@ -1,3 +1,10 @@
+// Overwrite browser vendor styles
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .fieldset {
   margin-top: $spacing-xl;
 }
