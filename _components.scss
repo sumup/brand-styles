@@ -62,7 +62,7 @@
 
 @mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px, $position: bottom) {
   position: relative;
-  z-index: 1;
+  // z-index: 1;
 
   @if $position == top {
     overflow: hidden
