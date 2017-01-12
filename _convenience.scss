@@ -48,7 +48,11 @@
   &#{&}--first { margin-top: 0 }
 }
 
-// layout helpers
+.list {
+  @include list;
+}
+
+// Layout helpers
 @include media($until-medium-screens) {
   .hide--on-small { display: none }
 }
