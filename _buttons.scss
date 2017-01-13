@@ -29,7 +29,10 @@
     @include transition(padding .2s ease-in-out);
     padding-right: $spacing-xxl !important;
 
-    .spinner { display: inline-block; }
+    .spinner {
+      display: inline-block;
+      margin-left: $spacing-xs;
+    }
   }
 
   // TODO: remove the highlight modifier as we're
