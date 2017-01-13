@@ -88,6 +88,17 @@
     }
   }
 
+  &#{&}--secondary-white, &#{&}--outline-white {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+
+    &:hover {
+      color: $color-error;
+      background-color: #FFF;
+    }
+  }
+
   // TODO: clarify if this will stay. Currently it's
   //       only used by the transaction filters on
   //       mobile.
