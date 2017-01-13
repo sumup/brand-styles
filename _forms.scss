@@ -238,7 +238,7 @@ fieldset {
     &[disabled],
     &[disabled="disabled"],
     &[readonly] {
-      @extend %readonly;
+      @include readonly
     }
 
     &:focus,

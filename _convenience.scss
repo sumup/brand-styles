@@ -70,24 +70,3 @@
 }
 
 .hidden { display: none }
-
-%readonly {
-  cursor: no-drop;
-  border: 0 !important;
-  padding-left: 0 !important;
-  // Temp. custom monospace font stack
-  font-family: "Menlo", "Lucida Console", Monaco, monospace;
-  padding-top: 0;
-  border-bottom: 1px dashed #eee !important;
-  color: $color-medium;
-  -webkit-text-fill-color: $color-medium;
-  -webkit-opacity: 1;
-  background: white;
-
-  &:hover,
-  &:focus,
-  &:active {
-    cursor: default;
-    border-color: $color-light;
-  }
-}
