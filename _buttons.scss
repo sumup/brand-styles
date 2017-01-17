@@ -234,10 +234,14 @@
 
     @include media($medium-screens) {
       @include flex-direction(row);
-
       @include justify-content(flex-start);
+      @include flex-wrap(wrap);
       width: auto;
 
+      &> .btn {
+        margin-top: $spacing-s;
+        width: auto;
+      }
 
       &>:not(:last-child) {
         margin-bottom: 0;
