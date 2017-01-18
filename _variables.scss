@@ -63,7 +63,7 @@ $font-family-display: museoRounded, Helvetica, Arial, sans-serif !default;
 $font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default;
 
 // Breakpoints
-$max-width: 1000px !default;
+$max-width: 1000px;
 
 $until-medium-screens: new-breakpoint(max-width 450px 4) !default;
 $medium-screens: new-breakpoint(min-width 451px 8) !default;
