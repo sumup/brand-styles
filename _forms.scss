@@ -266,7 +266,7 @@ fieldset {
     &[readonly] {
       @include disabled;
       &::after {
-        content: '';
+        display: none;
       }
     }
   }
