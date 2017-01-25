@@ -73,3 +73,11 @@
 
 // Don't use this! It's for legacy purposes.
 .icon { fill: #FFF; }
+
+.hidden { display: none; }
+
+.svg-sprite {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
