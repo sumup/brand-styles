@@ -108,6 +108,8 @@ fieldset {
   &.inputs-inline--first-bigger {
     li:first-child { width: 70% }
     li:nth-child(2) { width: calc(30% - #{$spacing-m}) }
+
+    .validation-list li { width: 100%; }
   }
 
   .btn, .button { width: 100% }
