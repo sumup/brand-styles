@@ -13,10 +13,7 @@
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  @include media($breakTabletLandscape) {
-    line-height: $line-height-s;
-  }
+  line-height: $line-height-s;
 
   &:hover,
   &:active,
