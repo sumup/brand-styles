@@ -1,22 +1,25 @@
 .btn {
+  @include transition(color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1));
   display: inline-block;
   border: 1px solid;
   border-radius: $border-radius;
   cursor: pointer;
   font-size: $font-size-l;
   font-weight: 500;
-  line-height: $line-height-s;
-  padding: $spacing-s $spacing-xl;
+  padding: 11px $spacing-xl;
   position: relative;
   white-space: nowrap;
   text-align: center;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: $line-height-s;
 
   &:hover,
   &:active,
   &:focus {
-    @include transition(all .2s cubic-bezier(.4, .0, .2, 1));
-    color: white;
+    color: $color-brand-darker;
+    text-decoration: none;
   }
 
   &[disabled], &.btn--disabled {
@@ -28,7 +31,10 @@
     @include transition(padding .2s ease-in-out);
     padding-right: $spacing-xxl !important;
 
-    .spinner { display: inline-block; }
+    .spinner {
+      display: inline-block;
+      margin-left: $spacing-xs;
+    }
   }
 
   // TODO: remove the highlight modifier as we're
@@ -81,6 +87,17 @@
     &:hover {
       color: white;
       background-color: $color-dark;
+    }
+  }
+
+  &#{&}--secondary-white, &#{&}--outline-white {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+
+    &:hover {
+      color: $color-error;
+      background-color: #FFF;
     }
   }
 
@@ -199,22 +216,35 @@
   &#{&}--inline {
     @include display(inline-flex);
     @include justify-content(space-between);
+    @include flex-direction(column);
     @include align-items(center);
     width: 100%;
+
+    &> .btn {
+      width: 100%;
+    }
+
+    &>:not(:last-child) {
+      margin-bottom: $spacing-xs;
+    }
 
     &#{&}-text {
       @include justify-content(flex-start);
     }
 
-    &>:not(:last-child) {
-      margin-right: $spacing-xs;
-    }
-
-    @include media($breakTabletPortrait) {
+    @include media($medium-screens) {
+      @include flex-direction(row);
       @include justify-content(flex-start);
+      @include flex-wrap(wrap);
       width: auto;
 
+      &> .btn {
+        margin-top: $spacing-s;
+        width: auto;
+      }
+
       &>:not(:last-child) {
+        margin-bottom: 0;
         margin-right: $spacing-s;
       }
     }
@@ -273,7 +303,7 @@
       margin: 0;
     }
 
-    @include media($breakTabletLandscape) {
+    @include media($big-screens) {
       .btn {
         border-width: 1px 1px 1px 0;
 

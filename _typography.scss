@@ -1,29 +1,160 @@
-@mixin type-xxl {
-  font-size: $font-size-xxl;
-  line-height: $line-height-xl;
+// western latin charset
+@font-face {
+  font-family: 'museo';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.ttf') format('truetype');
 }
 
-@mixin type-xl {
-  font-size: $font-size-xl;
-  line-height: $line-height-l;
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.ttf') format('truetype');
 }
 
-@mixin type-l {
-  font-size: $font-size-l;
-  line-height: $line-height-m;
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.ttf') format('truetype');
 }
 
-@mixin type-m {
+@font-face {
+  font-family: 'museoRounded';
+  font-weight: 500;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.ttf') format('truetype');
+}
+
+// polish charset
+@font-face {
+  font-family: 'museo_pl';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museoRounded_pl';
+  font-weight: 500;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
+}
+
+body {
+  font-weight: $font-weight-regular;
   font-size: $font-size-m;
   line-height: $line-height-m;
+  color: $color-dark;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "kern";
+     -moz-font-feature-settings: "kern=1";
+     -moz-font-feature-settings: "kern" 1;
+      -ms-font-feature-settings: "kern";
+       -o-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
 }
 
-@mixin type-s {
-  font-size: $font-size-s;
-  line-height: $line-height-s;
+// loading correct font files
+//
+// browsers will only the font-face which is actually used in the css
+// so here, we'll define for body, headlines and buttons which font-files to use.
+body:not([data-locale="pl-PL"]) {
+  font-family: $font-family;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn,
+  em {
+    font-family: $font-family-display;
+  }
 }
 
-@mixin type-xs {
-  font-size: $font-size-xs;
-  line-height: $line-height-s;
+body[data-locale="pl-PL"] {
+  font-family: $font-family-pl;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn,
+  em {
+    font-family: $font-family-display-pl;
+  }
+}
+
+// Headlines
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-highlight;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  color: $color-dark;
+}
+
+h1, .h1,
+h2, .h2 {
+  font-weight: $font-weight-light;
+  @include type-xl;
+
+  @include media($medium-screens) {
+    @include type-xxxl;
+  }
+
+  @include media($huge-screens) {
+    @include type-xxxxl;
+  }
+}
+
+h3, .h3,
+h4, .h4 {
+  font-weight: $font-weight-regular;
+}
+
+h4, .h4 {
+  font-weight: $font-weight-light;
+  color: $color-brand;
+}
+
+// Emphasis
+em {
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  // font-family: (font family set in body definitions);
 }

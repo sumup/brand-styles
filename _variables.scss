@@ -1,70 +1,75 @@
 // Colors
-$color-highlight: #52CCA7;
-$color-highlight-lighter: #95E6CD;
-$color-highlight-darker: #41A386;
-$color-brand: #5C8BCC;
-$color-brand-lighter: #8EB6ED;
-$color-brand-darker: #416494;
+$color-highlight: #52CCA7 !default;
+$color-highlight-lighter: #95E6CD !default;
+$color-highlight-darker: #41A386 !default;
+$color-brand: #5C8BCC !default;
+$color-brand-lighter: #8EB6ED !default;
+$color-brand-darker: #416494 !default;
 
 // Greys
-$color-dark: #323E4D;
-$color-medium: #CED2D9;
-$color-light: #F0F2F5;
-$color-off: #FAFBFC;
-$color-white: #FFF;
+$color-dark: #323E4D !default;
+$color-medium: #CED2D9 !default;
+$color-light: #F0F2F5 !default;
+$color-off: #FAFBFC !default;
+$color-white: #FFF !default;
 
 // Success, error, warning
-$color-success: #52CCA7;
-$color-success-darker: #338069;
-$color-success-lighter: #95E6CD;
-$color-error: #CC5252;
-$color-error-darker: #803332;
-$color-warning: #FACC37;
-$color-warning-darker: #B38F1B;
+$color-success: #52CCA7 !default;
+$color-success-darker: #338069 !default;
+$color-success-lighter: #95E6CD !default;
+$color-error: #CC5252 !default;
+$color-error-darker: #803332 !default;
+$color-warning: #FACC37 !default;
+$color-warning-darker: #B38F1B !default;
 
 // Spacings
-$spacing-xxs: 3px;
-$spacing-xs: 6px;
-$spacing-s: 12px;
-$spacing-m: 18px;
-$spacing-l: 24px;
-$spacing-xl: 30px;
-$spacing-xxl: 36px;
+$spacing-xxs: 3px !default;
+$spacing-xs: 6px !default;
+$spacing-s: 12px !default;
+$spacing-m: 18px !default;
+$spacing-l: 24px !default;
+$spacing-xl: 30px !default;
+$spacing-xxl: 36px !default;
 
 // Shapes
-$border-radius-s: 1px;
-$border-radius-m: 3px;
-$border-radius-l: 5px;
-$border-radius: $border-radius-m;
+$border-radius-s: 1px !default;
+$border-radius-m: 3px !default;
+$border-radius-l: 5px !default;
+$border-radius: $border-radius-m !default;
 
 // Typography
-$font-size-xxxxl: 44px;
-$font-size-xxxl: 40px;
-$font-size-xxl: 32px;
-$font-size-xml: 24px;
-$font-size-xl: 18px;
-$font-size-l: 16px;
-$font-size-m: 14px;
-$font-size-s: 12px;
-$font-size-xs: 10px;
+$font-size-xxxxxl: 44px !default;
+$font-size-xxxxl: 40px !default;
+$font-size-xxxl: 32px !default;
+$font-size-xxl: 24px !default;
+$font-size-xl: 18px !default;
+$font-size-l: 16px !default;
+$font-size-m: 14px !default;
+$font-size-s: 12px !default;
+$font-size-xs: 10px !default;
 
-$line-height-xxl: 54px;
-$line-height-xl: 48px;
-$line-height-l: 30px;
-$line-height-m: 24px;
-$line-height-s: 18px;
+$line-height-xxl: 54px !default;
+$line-height-xl: 48px !default;
+$line-height-l: 30px !default;
+$line-height-m: 24px !default;
+$line-height-s: 18px !default;
 
-$font-weight-light: 100;
-$font-weight-regular: 300;
-$font-weight-medium: 500;
+$font-weight-light: 100 !default;
+$font-weight-regular: 300 !default;
+$font-weight-medium: 500 !default;
+
+$font-family: museo, Helvetica, Arial, sans-serif !default;
+$font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+$font-family-display: museoRounded, Helvetica, Arial, sans-serif !default;
+$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default;
 
 // Breakpoints
 $max-width: 1000px;
 
-$until-medium-screens: new-breakpoint(max-width 450px 4);
-$medium-screens: new-breakpoint(min-width 451px 8);
-$until-big-screens: new-breakpoint(max-width 800px 8);
-$big-screens: new-breakpoint(min-width 801px 12);
-$medium-to-big-screens: new-breakpoint(min-width 451px max-width 800px 8);
-$until-huge-screens: new-breakpoint(max-width 1400px 12);
-$huge-screens: new-breakpoint(min-width 1401px 12);
+$until-medium-screens: new-breakpoint(max-width 450px 4) !default;
+$medium-screens: new-breakpoint(min-width 451px 8) !default;
+$until-big-screens: new-breakpoint(max-width 800px 8) !default;
+$big-screens: new-breakpoint(min-width 801px 12) !default;
+$medium-to-big-screens: new-breakpoint(min-width 451px max-width 800px 8) !default;
+$until-huge-screens: new-breakpoint(max-width 1400px 12) !default;
+$huge-screens: new-breakpoint(min-width 1401px 12) !default;

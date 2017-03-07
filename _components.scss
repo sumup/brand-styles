@@ -26,6 +26,42 @@
   }
 }
 
+@mixin list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-left: 0;
+    position: relative;
+  }
+
+  &.checkmark li {
+    padding-left: 1.5em;
+
+    &:before {
+      position: absolute;
+      content: '\2714';
+      top: .65em;
+      left: 0;
+      margin-top: -0.7em;
+      color: $color-brand;
+      text-shadow: 0 1px 0 rgba(black, .3);
+    }
+  }
+
+  &.dash li {
+    padding-left: 1.2em;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "–";
+      color: $color-brand;
+    }
+  }
+}
+
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
   $box-shadow: #DCEAFA;
   background: #FFFFFF;
@@ -34,22 +70,11 @@
   box-shadow: 0 1px 0 0 opacify($color-light, .2);
   display: block;
   padding: $mobile-top $mobile-sides;
-  position: relative;
   margin-bottom: $spacing-s;
 
-  &:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    box-shadow: 0 0 12px $box-shadow;
-    bottom: 0;
-    height: 20px;
-    width: 86%;
-    left: 7%;
-    border-radius: 86% / 20px;
-  }
+  @include fancy-shadow($box-shadow);
 
-  @include media($breakTabletLandscape) {
+  @include media($big-screens) {
     padding: $tablet-top $tablet-sides;
     box-shadow: none;
   }
@@ -69,6 +94,32 @@
 
 @mixin drop-shadow() {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08), 0px 2px 12px 0px rgba(0,0,0,0.10);
+}
+
+@mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px, $position: bottom) {
+  position: relative;
+  // z-index: 1;
+
+  @if $position == top {
+    overflow: hidden
+  }
+
+  &:before {
+    @if $position == bottom {
+      bottom: 0;
+      z-index: -1;
+    } @else {
+      top: -20px;
+      z-index: 1;
+    }
+    content: "";
+    position: absolute;
+    box-shadow: 0 0 $size $spread $shadow-color;
+    height: 20px;
+    width: 86%;
+    left: 7%;
+    border-radius: 86% / 20px;
+  }
 }
 
 @mixin button-shadow() {

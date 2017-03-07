@@ -1,9 +1,8 @@
 //-------------------------------------
-// Text
+// Normlize overrides
 //-------------------------------------
-
-p {
-  @include type-m;
+button, input, optgroup, select, textarea {
+  font-family: museoRounded;
 }
 
 //-------------------------------------
@@ -11,22 +10,20 @@ p {
 //-------------------------------------
 
 a {
+  transition: color .2s;
   color: $color-brand;
   text-decoration: none;
+
+  &:hover {
+    color: $color-brand-darker;
+  }
 }
-
-//-------------------------------------
-// SVG
-//-------------------------------------
-
-.icon { fill: white }
-svg { fill: transparent }
 
 //-------------------------------------
 // Lists
 //-------------------------------------
 
-.list {
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -34,20 +31,6 @@ svg { fill: transparent }
   li {
     padding-left: 0;
     position: relative;
-  }
-
-  &.checkmark li {
-    padding-left: 1.5em;
-
-    &:before {
-      position: absolute;
-      content: '\2714';
-      top: .65em;
-      left: 0;
-      margin-top: -0.7em;
-      color: $color-brand;
-      text-shadow: 0 1px 0 rgba(black, .3);
-    }
   }
 }
 
@@ -60,23 +43,28 @@ img {
   width: 100%;
 }
 
+figure {
+  margin: 0;
+}
+
 figcaption {
   font-weight: $font-weight-light;
-  text-transform: none;
+
   color: $color-dark;
-  padding-left: 0;
+  padding-left: 2em;
   position: relative;
+  @include type-s;
 
   strong { color: $color-brand; }
 
   &:before {
     content: "";
     display: block;
-    width: 1.5em; 
+    width: 1.5em;
     height: 1px;
     background-color: $color-brand;
     position: absolute;
-    top: .8em;
+    top: calc(0.8em - 1px);
     left: 0;
   }
 }

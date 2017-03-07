@@ -1,4 +1,10 @@
 // Convenience typography classes
+.type-xxxxl {
+  @include type-xxxxl;
+}
+.type-xxxl {
+  @include type-xxxl;
+}
 .type-xxl {
   @include type-xxl;
 }
@@ -18,6 +24,19 @@
   @include type-xs;
 }
 
+// Convenience font-weight classes
+.type-light {
+  font-weight: $font-weight-light;
+  font-family: $font-family-display;
+}
+.type-regular {
+  font-weight: $font-weight-regular;
+}
+.type-medium {
+  font-weight: $font-weight-medium;
+  font-family: $font-family-display;
+}
+
 // Convenience components
 .card-l {
   @include card-l;
@@ -27,4 +46,38 @@
   @include sidebar-label;
 
   &#{&}--first { margin-top: 0 }
+}
+
+.list {
+  @include list;
+}
+
+// Layout helpers
+@include media($until-medium-screens) {
+  .hide--on-small { display: none }
+}
+
+@include media($until-big-screens) {
+  .hide--on-small-and-medium { display: none }
+}
+
+@include media($medium-to-big-screens) {
+  .hide--on-medium { display: none }
+}
+
+@include media($big-screens) {
+  .hide--on-big { display: none }
+}
+
+.hidden { display: none }
+
+// Don't use this! It's for legacy purposes.
+.icon { fill: #FFF; }
+
+.hidden { display: none; }
+
+.svg-sprite {
+  visibility: hidden;
+  height: 0;
+  width: 0;
 }
