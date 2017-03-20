@@ -283,6 +283,7 @@ fieldset {
     margin-bottom: $spacing-s;
     position: relative;
     color: $color-error;
+    font-weight: $font-weight-medium;
 
     a, a:hover, a:active, a:visited {
       color: $color-error;
