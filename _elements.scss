@@ -140,9 +140,19 @@ figcaption {
 .hero__headline {
   font-size: $font-size-xxxxxl;
   line-height: $line-height-xxl;
+  margin: 0;
+
+  & + .hero__paragraph {
+    margin-bottom: $spacing-s;
+  }
 }
+
+
 .hero__paragraph {
-  @include type-xl;
+  font-size: $font-size-xxl;
+  line-height: $line-height-l;
+  font-weight: $font-weight-light;
+  margin: 0;
 }
 
 .hero__btn {
