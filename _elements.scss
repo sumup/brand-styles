@@ -250,3 +250,34 @@ $pad: 14px;
 .image-caption-set__caption-paragraph {
   margin: 0;
 }
+
+//-------------------------------------
+// Text columns
+//-------------------------------------
+
+$column-gap: $spacing-l;
+
+@mixin text-columns($gap) {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+
+  -webkit-column-gap: $gap;
+  -moz-column-gap: $gap;
+  column-gap: $gap;
+}
+
+.text-columns {
+  @include text-columns($column-gap);
+  p { margin-top: 0; }
+}
+
+.text-columns__headline {
+  font-size: $font-size-xxl;
+  line-height: $line-height-l;
+}
+
+.text-columns--headline-container {
+  margin: 0 0 $spacing-xl;
+  width: calc(50% - #{$column-gap});
+}
