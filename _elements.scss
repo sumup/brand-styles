@@ -61,9 +61,11 @@ ul {
   border-radius: $border-radius-l;
   border: 1px solid $color-light;
 }
+
 .submenu__item {
   margin: 6px 0;
 }
+
 .submenu__link {
   font-size: $font-size-m;
   line-height: $line-height-s;
@@ -80,6 +82,19 @@ ul {
   &:hover {
     background-color: $color-off;
     color: $color-dark;
+  }
+}
+
+.checklist {
+  li {
+    position: relative;
+
+    &:before {
+      @include checkmark-pseudoelement;
+      margin-right: $spacing-s;
+      width: 12px;
+      height: 12px;
+    }
   }
 }
 
