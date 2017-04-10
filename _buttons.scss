@@ -19,8 +19,13 @@
   &:hover,
   &:active,
   &:focus {
-    color: $color-brand-darker;
     text-decoration: none;
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-brand-darker;
   }
 
   &[disabled], &.btn--disabled {
