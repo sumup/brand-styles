@@ -35,6 +35,12 @@
   line-height: $line-height-m;
 }
 
+// font-size: 14px, line-height: 24px
+@mixin type-m {
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+}
+
 @mixin type-s {
   font-size: $font-size-s;
   line-height: $line-height-s;
