@@ -137,6 +137,7 @@ figcaption {
 //-------------------------------------
 .hero {
   background-color: $color-medium;
+  position: relative;
   padding: 200px 0 0 300px !important;
   height: 600px;
 
@@ -149,35 +150,48 @@ figcaption {
     padding: 200px !important;
     text-align: center;
   }
-}
-.hero__content {
-  max-width: 485px;
 
-  &.hero__content--centered {
-    margin: 0 auto;
+  // TODO: Add tablet and mobile
+  &__background-image--desktop {
+    @include position(absolute, 0 0 0 0);
+    @include size(100% 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__content {
+    max-width: 485px;
+
+    &.hero__content--centered {
+      margin: 0 auto;
+    }
+  }
+
+  &__headline {
+    position: relative;
+    font-size: $font-size-xxxxxl;
+    line-height: $line-height-xxl;
+    margin: 0;
+
+    & + .hero__paragraph {
+      margin-bottom: $spacing-s;
+    }
+  }
+
+  &__paragraph {
+    font-size: $font-size-xxl;
+    line-height: $line-height-l;
+    font-weight: $font-weight-light;
+    margin: 0;
+  }
+
+  &__btn {
+    margin-top: $spacing-l;
   }
 }
-.hero__headline {
-  font-size: $font-size-xxxxxl;
-  line-height: $line-height-xxl;
-  margin: 0;
-
-  & + .hero__paragraph {
-    margin-bottom: $spacing-s;
-  }
-}
 
 
-.hero__paragraph {
-  font-size: $font-size-xxl;
-  line-height: $line-height-l;
-  font-weight: $font-weight-light;
-  margin: 0;
-}
-
-.hero__btn {
-  margin-top: $spacing-l;
-}
 
 //-------------------------------------
 // Grid
