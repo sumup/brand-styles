@@ -175,6 +175,7 @@ figcaption {
     margin: 0;
 
     & + .hero__paragraph {
+      position: relative;
       margin-bottom: $spacing-s;
     }
   }
@@ -342,6 +343,7 @@ $column-gap: $spacing-l;
 // Card scheme list
 //-------------------------------------
 .su-card-scheme-list {
+  text-align: center;
 
   &__item {
     box-sizing: content-box;
