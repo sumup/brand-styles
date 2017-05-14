@@ -338,3 +338,20 @@ $column-gap: $spacing-l;
     color: $color-dark;
   }
 }
+//-------------------------------------
+// Card scheme list
+//-------------------------------------
+.su-card-scheme-list {
+
+  &__item {
+    box-sizing: content-box;
+    width: 40px;
+    height: 28px;
+    display: inline-block;
+    padding: 0 $spacing-xs;
+  }
+
+  &__icon {
+    fill: #FFF;
+  }
+}
