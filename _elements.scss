@@ -310,3 +310,31 @@ $column-gap: $spacing-l;
   margin: 0 0 $spacing-xl;
   width: calc(50% - #{$column-gap});
 }
+
+//-------------------------------------
+// Benefits
+//-------------------------------------
+.su-benefits {
+  text-align: center;
+  display: block;
+
+  @include media($medium-screens) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__benefit {
+    padding: $spacing-m;
+    width: 33%;
+  }
+
+  &__headline {
+    @include type-xl;
+    color: $color-brand;
+    font-weight: $font-weight-regular;
+  }
+
+  &__subline {
+    color: $color-dark;
+  }
+}
