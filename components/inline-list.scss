@@ -1,0 +1,20 @@
+.inline-list {
+  @include type-l;
+  text-transform: uppercase;
+}
+
+.inline-list__item {
+  margin-right: $spacing-m;
+  display: inline-block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a { color: $color-dark; }
+
+  &.inline-list__item--bold {
+    font-weight: $font-weight-medium;
+  }
+}
+

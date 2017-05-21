@@ -1,0 +1,12 @@
+.checklist {
+  li {
+    position: relative;
+
+    &:before {
+      @include checkmark-pseudoelement;
+      margin-right: $spacing-s;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

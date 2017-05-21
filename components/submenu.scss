@@ -1,0 +1,30 @@
+.submenu {
+  @include card-overlay;
+  width: 200px;
+  border-radius: $border-radius-l;
+  border: 1px solid $color-light;
+}
+
+.submenu__item {
+  margin: 6px 0;
+}
+
+.submenu__link {
+  font-size: $font-size-m;
+  line-height: $line-height-s;
+  padding: $spacing-s $spacing-m;
+  display: inline-block;
+  width: 100%;
+  color: $color-dark;
+  text-transform: uppercase;
+
+  &.submenu__link--active {
+    font-weight: $font-weight-regular;
+  }
+
+  &:hover {
+    background-color: $color-off;
+    color: $color-dark;
+  }
+}
+

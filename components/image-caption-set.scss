@@ -1,0 +1,22 @@
+.image-caption-set {
+  @extend .grid;
+}
+
+.image-caption-set__image-container, .image-caption-set__caption-container {
+  @extend .col-1-2;
+}
+
+.image-caption-set__image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+.image-caption-set__caption-headline {
+  font-size: $font-size-xxl;
+  line-height: $line-height-l;
+  margin-top: 0;
+  margin-bottom: $spacing-l;
+}
+.image-caption-set__caption-paragraph {
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+.su-card-scheme-list {
+  text-align: center;
+
+  &__item {
+    box-sizing: content-box;
+    width: 40px;
+    height: 28px;
+    display: inline-block;
+    padding: 0 $spacing-xs;
+  }
+
+  &__icon {
+    fill: #FFF;
+  }
+}
+
