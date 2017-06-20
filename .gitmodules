@@ -1,3 +1,0 @@
-[submodule "frontend-tooling"]
-	path = frontend-tooling
-	url = git@github.com:felixjung/frontend-tooling.git
