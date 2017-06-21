@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sumup/brand-styles#readme",
   "dependencies": {
+    "bourbon-neat": "^2.0.0",
     "sass-lint": "^1.8.2"
   },
   "devDependencies": {
