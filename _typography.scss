@@ -126,11 +126,11 @@ h2, .h2 {
   font-weight: $font-weight-light;
   @include type-xl;
 
-  @include media($medium-screens) {
+  @include media(small) {
     @include type-xxxl;
   }
 
-  @include media($huge-screens) {
+  @include media(large) {
     @include type-xxxxl;
   }
 }

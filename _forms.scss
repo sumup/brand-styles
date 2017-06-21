@@ -50,7 +50,7 @@ fieldset {
   padding: $spacing-s;
   width: 100%;
 
-  @include media($big-screens) {
+  @include media(medium) {
     font-size: $font-size-m;
   }
 
@@ -88,7 +88,18 @@ fieldset {
 
 // Goes on the container (e.g. a <ul>)
 .inputs-inline {
-  @include row;
+  zoom: 1;
+  display: block;
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 
   & > li {
     width: calc(50% - #{$spacing-s});
@@ -121,12 +132,12 @@ fieldset {
       &:nth-child(even) {
         margin-bottom: $spacing-m;
 
-        @include media($medium-screens) {
+        @include media(small) {
           margin-top: 0 !important;
         }
       }
 
-      @include media($medium-screens) {
+      @include media(small) {
         width: 46%;
       }
     }

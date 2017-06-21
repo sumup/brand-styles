@@ -21,7 +21,7 @@
   position: relative;
   @include rounded-left-border($spacing-m, $color);
 
-  @include media($breakTabletLandscape) {
+  @media ($breakTabletLandscape) {
     @include rounded-left-border($spacing-l, $color);
   }
 }
@@ -74,7 +74,7 @@
 
   @include fancy-shadow($box-shadow);
 
-  @include media($big-screens) {
+  @include media(medium) {
     padding: $tablet-top $tablet-sides;
     box-shadow: none;
   }

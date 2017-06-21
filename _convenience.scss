@@ -53,19 +53,19 @@
 }
 
 // Layout helpers
-@include media($until-medium-screens) {
+@include media(max-width small) {
   .hide--on-small { display: none }
 }
 
-@include media($until-big-screens) {
+@include media(max-width medium) {
   .hide--on-small-and-medium { display: none }
 }
 
-@include media($medium-to-big-screens) {
+@include media(small medium) {
   .hide--on-medium { display: none }
 }
 
-@include media($big-screens) {
+@include media(medium) {
   .hide--on-big { display: none }
 }
 

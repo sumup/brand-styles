@@ -19,3 +19,43 @@
   }
 }
 
+@function breakpoints($value) {
+  $type: type-of($value);
+
+  // It's a string, must be a key!
+  @if $type == string {
+    @if map-has-key($breakpoints, $value) {
+      @return map-get($breakpoints, $value);
+    } @else {
+      @warn "There is no predefined breakpoint with the name " + $value;
+      @return 0;
+    }
+  }
+
+  // No string, return value.
+  @return $value;
+}
+
+
+// TODO: Add 1px steps.
+// TODO: Add warnings and fail-safes.
+
+@mixin media($first: 0, $second: 0) {
+  $type1: type-of($first);
+  $type2: type-of($second);
+
+  // Only first argument given.
+  @if $second == 0 {
+    @media (min-width: breakpoints($first)) { @content; }
+  }
+
+  // Two values, first one a query.
+  @if $first == min-width {
+    @media (min-width: breakpoints($second)) { @content; }
+  } @else if $first == max-width {
+    @media (max-width: breakpoints($second)) { @content; }
+  }
+
+  // Two values, both breakpoints.
+  @media (min-width: breakpoints($first)) and (max-width: breakpoints($second)) { @content; }
+}

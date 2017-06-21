@@ -233,7 +233,7 @@
       @include justify-content(flex-start);
     }
 
-    @include media($medium-screens) {
+    @include media(small) {
       @include flex-direction(row);
       @include justify-content(flex-start);
       @include flex-wrap(wrap);
@@ -304,7 +304,7 @@
       margin: 0;
     }
 
-    @include media($big-screens) {
+    @include media(medium) {
       .btn {
         border-width: 1px 1px 1px 0;
 
