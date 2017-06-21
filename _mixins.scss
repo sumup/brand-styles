@@ -19,43 +19,56 @@
   }
 }
 
+// Convert width to px.
+@function convert-to-px($number) {
+  $unit: unit($number);
+
+  @if $unit == px {
+    @return $number;
+  } @else if $unit == em {
+    @return $number / 1em * 16;
+  } @else if $unit == rem {
+    @return $number / 1rem * 16;
+  } @else if unitless($number) {
+    @return $number * 1px;
+  }
+  @warn "Invalid unit " + $value + " given to convert-to-px function.";
+  @return 0px;
+}
+
+// Get the breakpoint width.
 @function breakpoints($value) {
   $type: type-of($value);
 
-  // It's a string, must be a key!
   @if $type == string {
+    // It's a string, must be a key!
     @if map-has-key($breakpoints, $value) {
-      @return map-get($breakpoints, $value);
+      @return convert-to-px(map-get($breakpoints, $value));
     } @else {
       @warn "There is no predefined breakpoint with the name " + $value;
-      @return 0;
+      @return 0px;
     }
+  } @else if $type == number {
+    // It's a number, return the value.
+    @return convert-to-px($value);
   }
-
-  // No string, return value.
-  @return $value;
+  @warn "Invalid type " + $value + " given to breakpoint mixin.";
+  @return 0;
 }
 
-
-// TODO: Add 1px steps.
-// TODO: Add warnings and fail-safes.
-
+// Media query mixin
 @mixin media($first: 0, $second: 0) {
-  $type1: type-of($first);
-  $type2: type-of($second);
-
-  // Only first argument given.
   @if $second == 0 {
-    @media (min-width: breakpoints($first)) { @content; }
-  }
-
-  // Two values, first one a query.
-  @if $first == min-width {
-    @media (min-width: breakpoints($second)) { @content; }
+    // One argument given.
+    @media (min-width: breakpoints($first) + 1) { @content; }
+  } @else if $first == min-width {
+    // Two arguments given, min-width.
+    @media (min-width: breakpoints($second) + 1) { @content; }
   } @else if $first == max-width {
+    // Two arguments given, max-width.
     @media (max-width: breakpoints($second)) { @content; }
+  } @else {
+    // Two arguments given, two breakpoints.
+    @media (min-width: breakpoints($first) + 1) and (max-width: breakpoints($second)) { @content; }
   }
-
-  // Two values, both breakpoints.
-  @media (min-width: breakpoints($first)) and (max-width: breakpoints($second)) { @content; }
 }

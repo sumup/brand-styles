@@ -53,15 +53,15 @@
 }
 
 // Layout helpers
-@include media(max-width small) {
+@include media(max-width, small) {
   .hide--on-small { display: none }
 }
 
-@include media(max-width medium) {
+@include media(max-width, medium) {
   .hide--on-small-and-medium { display: none }
 }
 
-@include media(small medium) {
+@include media(small, medium) {
   .hide--on-medium { display: none }
 }
 
