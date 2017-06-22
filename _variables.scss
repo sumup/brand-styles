@@ -2,9 +2,9 @@
 $color-highlight: #52CCA7 !default;
 $color-highlight-lighter: #95E6CD !default;
 $color-highlight-darker: #41A386 !default;
-$color-brand: #5C8BCC !default;
-$color-brand-lighter: #8EB6ED !default;
-$color-brand-darker: #416494 !default;
+$color-brand: #3388ff !default;
+$color-brand-lighter: #33AAFF !default;
+$color-brand-darker: #2D69BD !default;
 
 // Greys
 $color-dark: #323E4D !default;
@@ -58,28 +58,23 @@ $font-weight-light: 100 !default;
 $font-weight-regular: 300 !default;
 $font-weight-medium: 500 !default;
 
-$font-family: museoRounded, Helvetica, Arial, sans-serif !default;
+$font-family: museo, Helvetica, Arial, sans-serif !default;
 $font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default;
-$font-family-display: museoRounded, Helvetica, Arial, sans-serif !default;
-$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default;
+$font-family-display: museo, Helvetica, Arial, sans-serif !default;
+$font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+
+// Grid
+$neat-grid: (
+  columns: 12,
+  gutter: 15px,
+  direction: ltr,
+);
 
 // Breakpoints
-$max-width: 1000px;
+$max-width: 1030px;
 
 $breakpoints: (
   small: 450px,
   medium: 800px,
   large: 1400px
 );
-
-$breakpoint-small: 450px !default;
-$breakpoint-medium: 800px !default;
-$breakpoint-large: 1400px !default;
-
-$until-medium-screens: max-width 450px !default;
-$medium-screens: min-width 451px !default;
-$until-big-screens: max-width 800px !default;
-$big-screens: min-width 801px !default;
-// $medium-to-big-screens: min-width 451px and max-width 800px !default;
-$until-huge-screens: max-width 1400px !default;
-$huge-screens: min-width 1401px !default;

@@ -1,42 +1,3 @@
-// Convenience typography classes
-.type-xxxxl {
-  @include type-xxxxl;
-}
-.type-xxxl {
-  @include type-xxxl;
-}
-.type-xxl {
-  @include type-xxl;
-}
-.type-xl {
-  @include type-xl;
-}
-.type-l {
-  @include type-l;
-}
-.type-m {
-  @include type-m;
-}
-.type-s {
-  @include type-s;
-}
-.type-xs {
-  @include type-xs;
-}
-
-// Convenience font-weight classes
-.type-light {
-  font-weight: $font-weight-light;
-  font-family: $font-family-display;
-}
-.type-regular {
-  font-weight: $font-weight-regular;
-}
-.type-medium {
-  font-weight: $font-weight-medium;
-  font-family: $font-family-display;
-}
-
 // Convenience components
 .card-l {
   @include card-l;
@@ -73,11 +34,3 @@
 
 // Don't use this! It's for legacy purposes.
 .icon { fill: #FFF; }
-
-.hidden { display: none; }
-
-.svg-sprite {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-}

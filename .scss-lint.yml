@@ -39,8 +39,8 @@ linters:
 
   SingleLinePerProperty:
     enabled: true
-    allow_single_line_rule_sets: false
+    allow_single_line_rule_sets: true
 
   StringQuotes:
     enabled: true
-    style: double_quotes
+    style: single_quotes

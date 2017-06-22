@@ -19,6 +19,228 @@
   }
 }
 
+@mixin disabled() {
+  padding: 0;
+  border: 0;
+  height: auto;
+
+  &:focus, &:hover {
+    background-color: #FFF;
+    cursor: default;
+  }
+}
+
+@mixin rounded-left-border($position-left, $color) {
+  &:before {
+    display: inline-block;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    content: '';
+    position: absolute;
+    left: -$position-left;
+    top:0;
+    height: 100%;
+    background-color: $color;
+    width: 3px;
+  }
+}
+
+@mixin validation-list($color) {
+  position: relative;
+  @include rounded-left-border($spacing-m, $color);
+
+  @media ($breakTabletLandscape) {
+    @include rounded-left-border($spacing-l, $color);
+  }
+}
+
+@mixin list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-left: 0;
+    position: relative;
+  }
+
+  &.checkmark li {
+    padding-left: 1.5em;
+
+    &:before {
+      position: absolute;
+      content: '\2714';
+      top: .65em;
+      left: 0;
+      margin-top: -0.7em;
+      color: $color-brand;
+      text-shadow: 0 1px 0 rgba(black, .3);
+    }
+  }
+
+  &.dash li {
+    padding-left: 1.2em;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "–";
+      color: $color-brand;
+    }
+  }
+}
+
+
+// Cards
+
+@mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
+  $box-shadow: #DCEAFA;
+  background: #FFFFFF;
+  border: 1px solid $color-light;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 0 0 opacify($color-light, .2);
+  display: block;
+  padding: $mobile-top $mobile-sides;
+  margin-bottom: $spacing-s;
+
+  @include fancy-shadow($box-shadow);
+
+  @include media(medium) {
+    padding: $tablet-top $tablet-sides;
+    box-shadow: none;
+  }
+}
+
+@mixin card-l {
+  @include card($spacing-m, $spacing-l, $spacing-s, $spacing-m);
+}
+
+@mixin card-inlay {
+  background-color: $color-off;
+  border-radius: $border-radius;
+  padding: $spacing-s;
+}
+
+@mixin card-overlay {
+  @include drop-shadow;
+  background: rgba(255,255,255,0.80);
+  border-radius: $border-radius;
+}
+
+
+// Shadows
+
+@mixin drop-shadow() {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08), 0px 2px 12px 0px rgba(0,0,0,0.10);
+}
+
+@mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px, $position: bottom) {
+  position: relative;
+  // z-index: 1;
+
+  @if $position == top {
+    overflow: hidden;
+  }
+
+  &::before {
+    @if $position == bottom {
+      bottom: 0;
+      z-index: -1;
+    } @else {
+      top: -20px;
+      z-index: 1;
+    }
+    content: '';
+    position: absolute;
+    box-shadow: 0 0 $size $spread $shadow-color;
+    height: 20px;
+    width: 86%;
+    left: 7%;
+    border-radius: 86% / 20px;
+  }
+}
+
+@mixin button-shadow() {
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12), 0px 2px 10px 0px rgba(0,0,0,0.3);
+}
+
+@mixin button-shadow-raised() {
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12), 0px 7px 10px 0px rgba(0,0,0,0.20);
+}
+
+@mixin flex-center() {
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(center);
+}
+
+@mixin sidebar-label {
+  color: $color-dark;
+  font-size: $font-size-m;
+  font-weight: 500;
+  line-height: $line-height-s;
+  margin-bottom: $spacing-xxs;
+  margin-top: $spacing-xs;
+}
+
+
+// Typography
+
+@mixin type-xxxxl {
+  font-size: $font-size-xxxxxl;
+  line-height: $line-height-xxl;
+  font-family: $font-family-display;
+}
+
+@mixin type-xxxl {
+  font-size: $font-size-xxxxl;
+  line-height: $line-height-xl;
+  font-family: $font-family-display;
+}
+
+@mixin type-xxl {
+  font-size: $font-size-xxxl;
+  line-height: $line-height-xl;
+  font-family: $font-family-display;
+}
+
+@mixin type-xl {
+  font-size: $font-size-xxl;
+  line-height: $line-height-l;
+  font-family: $font-family-display;
+}
+
+@mixin type-l {
+  font-size: $font-size-xl;
+  line-height: $line-height-m;
+  font-family: $font-family-display;
+}
+
+@mixin type-m {
+  font-size: $font-size-l;
+  line-height: $line-height-m;
+}
+
+@mixin type-s {
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+@mixin type-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-s;
+}
+
+
+@mixin checkmark-pseudoelement {
+  display: inline-block;
+  content: '';
+  background: url(data:image/svg+xml;encoding=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2211%22%20viewBox%3D%220%200%2013%2011%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%235C8BCC%22%20d%3D%22M4.363%208.314l-2.63-2.82a.994.994%200%200%200-1.415-.051.999.999%200%200%200-.047%201.415l3.406%203.653a.994.994%200%200%200%201.201.205.996.996%200%200%200%20.426-.327l6.621-8.787A1%201%200%200%200%2010.328.398L4.363%208.314z%22%20%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E);
+  color: $color-brand;
+  background-repeat: no-repeat;
+}
+
+
 // Convert width to px.
 @function convert-to-px($number) {
   $unit: unit($number);
@@ -32,7 +254,7 @@
   } @else if unitless($number) {
     @return $number * 1px;
   }
-  @warn "Invalid unit " + $value + " given to convert-to-px function.";
+  @warn 'Invalid unit ' + $value + ' given to convert-to-px function.';
   @return 0px;
 }
 
@@ -45,14 +267,14 @@
     @if map-has-key($breakpoints, $value) {
       @return convert-to-px(map-get($breakpoints, $value));
     } @else {
-      @warn "There is no predefined breakpoint with the name " + $value;
+      @warn 'There is no predefined breakpoint with the name ' + $value;
       @return 0px;
     }
   } @else if $type == number {
     // It's a number, return the value.
     @return convert-to-px($value);
   }
-  @warn "Invalid type " + $value + " given to breakpoint mixin.";
+  @warn 'Invalid type ' + $value + ' given to breakpoint mixin.';
   @return 0;
 }
 

@@ -1,26 +1,33 @@
 // western latin charset
 @font-face {
-  font-family: 'museoRounded';
+  font-family: 'museo';
   font-weight: 100;
-  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-100-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_100-webfont.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'museoRounded';
+  font-family: 'museo';
   font-weight: 300;
-  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-300-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_300-webfont.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'museoRounded';
+  font-family: 'museo';
   font-weight: 500;
-  src: url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_500-webfont.ttf') format('truetype');
 }
 
 // polish charset
+@font-face {
+  font-family: 'museo_pl';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSans_100-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSans_100-webfont.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'museo_pl';
   font-weight: 300;
@@ -29,24 +36,10 @@
 }
 
 @font-face {
-  font-family: 'museoRounded_pl';
-  font-weight: 100;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'museoRounded_pl';
-  font-weight: 300;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'museoRounded_pl';
+  font-family: 'museo_pl';
   font-weight: 500;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/polish/MuseoSans_500-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSans_500-webfont.ttf') format('truetype');
 }
 
 body {

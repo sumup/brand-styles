@@ -1,4 +1,6 @@
 .container {
-  max-width: 800px;
+  @include grid-container;
+
+  max-width: $max-width;
   margin: 0 auto;
 }
