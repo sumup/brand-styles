@@ -1,4 +1,6 @@
-// western latin charset
+//-------------------------------------
+// Western latin charset
+//-------------------------------------
 @font-face {
   font-family: 'museo';
   font-weight: 100;
@@ -20,7 +22,10 @@
        url('https://static.sumup.com/fonts/western-latin/MuseoSans_500-webfont.ttf') format('truetype');
 }
 
-// polish charset
+//-------------------------------------
+// Polish charset
+//-------------------------------------
+
 @font-face {
   font-family: 'museo_pl';
   font-weight: 100;
@@ -58,10 +63,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-// loading correct font files
-//
-// browsers will only the font-face which is actually used in the css
-// so here, we'll define for body, headlines and buttons which font-files to use.
+//-------------------------------------
+// Loading correct font files
+//-------------------------------------
+
+// Browsers will only load the font-face which is actually used in the CSS
+// So here, we'll define for body, headlines and buttons which font-files to use.
 body:not([data-locale="pl-PL"]) {
   font-family: $font-family;
 
@@ -88,7 +95,10 @@ body[data-locale="pl-PL"] {
   }
 }
 
+//-------------------------------------
 // Headlines
+//-------------------------------------
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -138,7 +148,10 @@ h4, .h4 {
   color: $color-brand;
 }
 
+//-------------------------------------
 // Emphasis
+//-------------------------------------
+
 em {
   font-style: normal;
   font-weight: $font-weight-medium;

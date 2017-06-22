@@ -1,19 +1,19 @@
+//-------------------------------------
 // Convenience components
+//-------------------------------------
+
 .card-l {
   @include card-l;
-}
-
-.sidebar-label {
-  @include sidebar-label;
-
-  &#{&}--first { margin-top: 0 }
 }
 
 .list {
   @include list;
 }
 
+//-------------------------------------
 // Layout helpers
+//-------------------------------------
+
 @include media(max-width, small) {
   .hide--on-small { display: none }
 }
@@ -31,6 +31,3 @@
 }
 
 .hidden { display: none }
-
-// Don't use this! It's for legacy purposes.
-.icon { fill: #FFF; }
