@@ -26,9 +26,8 @@ fieldset {
 
 .input,
 .textarea {
-  @include appearance(none);
-  @include placeholder { color: $color-medium; };
-  @include transition(border-color .2s, background-color .3s);
+  appearance: none;
+  transition: border-color .2s, background-color .3s;
   background: transparent;
   border: 1px solid;
   border-color: $color-medium;
@@ -39,6 +38,8 @@ fieldset {
   margin-bottom: $spacing-l;
   padding: $spacing-s;
   width: 100%;
+
+  &::placeholder { color: $color-medium; }
 
   @include media(medium) {
     font-size: $font-size-m;
@@ -81,7 +82,7 @@ fieldset {
   zoom: 1;
   display: block;
 
-  &::before,
+  &::after,
   &::after {
     content: " ";
     display: table;
@@ -146,7 +147,7 @@ fieldset {
     margin-right: 15px;
     font-weight: 300;
 
-    &:before {
+    &::after {
       content: "";
       display: inline-block;
       width: 16px;
@@ -178,22 +179,22 @@ fieldset {
     visibility: hidden;
   }
 
-  input[type="radio"] + label:before {
+  input[type="radio"] + label::after {
     border-radius: 9px;
   }
 
-  input[type="checkbox"] + label:before {
+  input[type="checkbox"] + label::after {
     border-radius: $border-radius;
   }
 
-  input:checked + label:after {
+  input:checked + label::after {
     display: inline-block;
     width: 8px;
     height: 8px;
     position: absolute;
   }
 
-  input[type="radio"]:checked + label:after {
+  input[type="radio"]:checked + label::after {
     content: '';
     border-radius: 4px;
     top: 5px;
@@ -201,7 +202,7 @@ fieldset {
     background: $color-brand;
   }
 
-  input[type="checkbox"]:checked + label:after {
+  input[type="checkbox"]:checked + label::after {
     @include checkmark-pseudoelement;
     top: 4px;
     left: 3px;
@@ -213,7 +214,7 @@ fieldset {
     label {
       color: $color-light;
 
-      &:before { background: $color-light; }
+      &::after { background: $color-light; }
     }
   }
 }
@@ -222,8 +223,8 @@ fieldset {
   position: relative;
 
   &::after {
-    @include transform(rotate(-45deg));
-    @include transition;
+    transform: rotate(-45deg);
+    transition: none;
     content: "\221F";
     position: absolute;
     z-index: 40;
@@ -241,7 +242,7 @@ fieldset {
   }
 
   select {
-    @include appearance(none);
+    appearance: none;
     padding: 12px;
     line-height: 18px;
     width: 100%;
@@ -277,7 +278,7 @@ fieldset {
   position: relative;
 
   li {
-    @include transition;
+    transition: none;
     margin-bottom: $spacing-s;
     position: relative;
     color: $color-error;
@@ -289,13 +290,13 @@ fieldset {
     }
 
     &.ng-hide-remove {
-      @include animation(fadeInDown .2s ease-in);
+      animation: fadeInDown .2s ease-in;
     }
 
     &.ng-hide-add-active {
       position: absolute;
       width: 100%;
-      @include animation(fadeOutUp .2s ease-in);
+      animation: fadeOutUp .2s ease-in;
     }
 
     &.warning {
