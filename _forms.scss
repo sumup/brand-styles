@@ -1,3 +1,5 @@
+@import "./_mixins";
+
 // Overwrite browser vendor styles
 fieldset {
   border: none;
@@ -28,7 +30,7 @@ fieldset {
   }
 
   &#{&}--disabled {
-    opacity: 0.4;
+    @include disabled;
   }
 }
 
@@ -54,7 +56,7 @@ fieldset {
 
   &:focus, &:hover {
     border-color: $color-brand;
-    outline: none; // remove weird glow on some OS'es
+    outline: none;
     background-color: rgba($color-brand-lighter, .1);
   }
 }
@@ -63,7 +65,7 @@ fieldset {
 .input[disabled],
 .input[disabled="disabled"],
 .input[readonly] {
-  @include disabled-input;
+  @include disabled;
 }
 
 .input.input--no-margin,
@@ -263,7 +265,7 @@ fieldset {
     &[disabled],
     &[disabled="disabled"],
     &[readonly] {
-      @include disabled-input;
+      @include disabled;
       &::after {
         display: none;
       }
