@@ -1,83 +1,33 @@
-// Convenience typography classes
-.type-xxxxl {
-  @include type-xxxxl;
-}
-.type-xxxl {
-  @include type-xxxl;
-}
-.type-xxl {
-  @include type-xxl;
-}
-.type-xl {
-  @include type-xl;
-}
-.type-l {
-  @include type-l;
-}
-.type-m {
-  @include type-m;
-}
-.type-s {
-  @include type-s;
-}
-.type-xs {
-  @include type-xs;
-}
-
-// Convenience font-weight classes
-.type-light {
-  font-weight: $font-weight-light;
-  font-family: $font-family-display;
-}
-.type-regular {
-  font-weight: $font-weight-regular;
-}
-.type-medium {
-  font-weight: $font-weight-medium;
-  font-family: $font-family-display;
-}
-
+//-------------------------------------
 // Convenience components
+//-------------------------------------
+
 .card-l {
   @include card-l;
-}
-
-.sidebar-label {
-  @include sidebar-label;
-
-  &#{&}--first { margin-top: 0 }
 }
 
 .list {
   @include list;
 }
 
+//-------------------------------------
 // Layout helpers
-@include media($until-medium-screens) {
+//-------------------------------------
+
+@include media(max-width, small) {
   .hide--on-small { display: none }
 }
 
-@include media($until-big-screens) {
+@include media(max-width, medium) {
   .hide--on-small-and-medium { display: none }
 }
 
-@include media($medium-to-big-screens) {
+@include media(small, medium) {
   .hide--on-medium { display: none }
 }
 
-@include media($big-screens) {
+@include media(medium) {
   .hide--on-big { display: none }
 }
 
 .hidden { display: none }
-
-// Don't use this! It's for legacy purposes.
-.icon { fill: #FFF; }
-
-.hidden { display: none; }
-
-.svg-sprite {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-}
