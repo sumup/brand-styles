@@ -236,6 +236,7 @@ fieldset {
     width: 0;
     height: 0;
     display: inline-block;
+    pointer-events: none;
   }
 
   &--disabled::after {
