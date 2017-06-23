@@ -1,0 +1,91 @@
+@mixin type-xxxxl {
+  font-size: 36px;
+  line-height: $line-height-xxl;
+
+  @include media(small) {
+    font-size: 40px;
+  }
+
+  @include media(medium) {
+    font-size: 42px;
+  }
+}
+
+@mixin type-xxxl {
+  font-size: 28px;
+  line-height: $line-height-xl;
+
+  @include media(small) {
+    font-size: 34px;
+  }
+
+  @include media(medium) {
+    font-size: 36px;
+  }
+}
+
+@mixin type-xxl {
+  font-size: 24px;
+  line-height: $line-height-xl;
+
+  @include media(small) {
+    font-size: 26px;
+  }
+
+  @include media(medium) {
+    font-size: 28px;
+  }
+}
+
+@mixin type-xl {
+  font-size: 20px;
+  line-height: $line-height-l;
+
+  @include media(small) {
+    font-size: 22px;
+  }
+
+  @include media(medium) {
+    font-size: 24px;
+  }
+}
+
+@mixin type-l {
+  font-size: 18px;
+  line-height: $line-height-m;
+
+  @include media(small) {
+    font-size: 20px;
+  }
+
+  @include media(medium) {
+    font-size: 22px;
+  }
+}
+
+@mixin type-m {
+  font-size: 16px;
+  line-height: $line-height-m;
+
+  @include media(medium) {
+    font-size: 18px;
+  }
+}
+
+@mixin type-s {
+  font-size: 13px;
+  line-height: $line-height-s;
+
+  @include media(medium) {
+    font-size: 14px;
+  }
+}
+
+@mixin type-xs {
+  font-size: 12px;
+  line-height: $line-height-s;
+
+  @include media(medium) {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,44 @@
+@mixin list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-left: 0;
+    position: relative;
+  }
+
+  &.checkmark li {
+    padding-left: 1.5em;
+
+    &::before {
+      position: absolute;
+      content: '\2714';
+      top: .65em;
+      left: 0;
+      margin-top: -0.7em;
+      color: $color-brand;
+      text-shadow: 0 1px 0 rgba(black, .3);
+    }
+  }
+
+  &.dash li {
+    padding-left: 1.2em;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: "–";
+      color: $color-brand;
+    }
+  }
+}
+
+@mixin validation-list($color) {
+  position: relative;
+  @include rounded-left-border($spacing-m, $color);
+
+  @media ($breakTabletLandscape) {
+    @include rounded-left-border($spacing-l, $color);
+  }
+}

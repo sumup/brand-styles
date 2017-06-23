@@ -8,6 +8,100 @@ button, input, optgroup, select, textarea {
 }
 
 //-------------------------------------
+// Loading correct font files
+//-------------------------------------
+
+// Browsers will only load the font-face which is actually used in the CSS
+// So here, we'll define for body, headlines and buttons which font-files to use.
+body:not([data-locale="pl-PL"]) {
+  font-family: $font-family;
+}
+
+body[data-locale="pl-PL"] {
+  font-family: $font-family-pl;
+}
+
+body {
+  @include type-m;
+  font-weight: $font-weight-regular;
+  color: $color-dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern';
+  text-rendering: optimizeLegibility;
+}
+
+//-------------------------------------
+// Headlines
+//-------------------------------------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-m;
+
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-highlight;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  color: $color-dark;
+}
+
+h1, .h1 {
+  @include type-xxxxl;
+}
+
+h2, .h2 {
+  @include type-xxxl;
+}
+
+h3, .h3 {
+  @include type-xxl;
+}
+
+h4, .h4 {
+  @include type-xl;
+}
+
+h5, .h5 {
+  @include type-l;
+}
+
+h6, .h6 {
+  @include type-s;
+  color: $color-brand;
+}
+
+//-------------------------------------
+// Emphasis
+//-------------------------------------
+
+strong,
+em {
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  // font-family: (font family set in body definitions);
+}
+
+//-------------------------------------
 // Hyperlinks
 //-------------------------------------
 
@@ -50,7 +144,7 @@ figure {
 }
 
 figcaption {
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-regular;
 
   color: $color-dark;
   padding-left: 2em;
