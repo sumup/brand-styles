@@ -131,14 +131,14 @@ h3, .h3 {
 h1, .h1,
 h2, .h2 {
   font-weight: $font-weight-light;
-  @include type-xl;
+  @include type-xxl;
 
   @include media($medium-screens) {
-    @include type-xxxl;
+    @include type-xxxxl;
   }
 
   @include media($huge-screens) {
-    @include type-xxxxl;
+    @include type-xxxxxl;
   }
 }
 

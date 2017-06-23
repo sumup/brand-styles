@@ -1,13 +1,5 @@
-@mixin disabled() {
-  padding: 0;
-  border: 0;
-  height: auto;
+@import "./_mixins";
 
-  &:focus, &:hover {
-    background-color: #FFF;
-    cursor: default;
-  }
-}
 // Overwrite browser vendor styles
 fieldset {
   border: none;
@@ -24,13 +16,21 @@ fieldset {
   line-height: $line-height-s;
   font-weight: $font-weight-medium;
   margin-bottom: $spacing-xs;
+
+  &#{&}--disabled {
+    opacity: .4;
+  }
 }
 
 .legend {
   @extend .label;
 
-  &.legend--regular {
+  &#{&}--regular {
     font-weight: $font-weight-regular;
+  }
+
+  &#{&}--disabled {
+    @include disabled;
   }
 }
 
@@ -56,7 +56,7 @@ fieldset {
 
   &:focus, &:hover {
     border-color: $color-brand;
-    outline: none; // remove weird glow on some OS'es
+    outline: none;
     background-color: rgba($color-brand-lighter, .1);
   }
 }
@@ -212,10 +212,9 @@ fieldset {
   }
 
   &.checkboxes-custom--disabled, .radio-buttons-custom--disabled {
+    opacity: 0.4;
     label {
-      color: $color-light;
-
-      &:before { background: $color-light; }
+      cursor: default;
     }
   }
 }

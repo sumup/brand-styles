@@ -19,3 +19,17 @@
   }
 }
 
+@mixin disabled() {
+  opacity: .4;
+}
+
+@mixin disabled-input() {
+  @include disabled;
+
+  &:focus, &:hover {
+    background-color: transparent;
+    border-color: $color-medium;
+    cursor: default;
+  }
+}
+
