@@ -1,35 +1,32 @@
-// TODO: Enhance with mixins and variables.
-// TODO: Improve hover animations.
 .btn {
   @include button-shadow;
   display: inline-block;
   background: $gradient-blue;
-  border-radius: $border-radius-l;
+  border-radius: $border-radius;
   border: 0;
   color: $color-white;
   cursor: pointer;
   font-family: $font-family;
   font-size: $font-size-l;
-  font-weight: 500;
-  letter-spacing: $letter-spacing-s;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-m;
   line-height: $line-height-s;
   overflow: hidden;
-  padding: $spacing-m $spacing-xl;
+  padding: $spacing-m $spacing-xxl;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1), transform .2s cubic-bezier(.4, .0, .2, 1), box-shadow .2s cubic-bezier(.4, .0, .2, 1);
+  transition: all .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   vertical-align: middle;
   white-space: nowrap;
 
   &:hover,
   &:active,
   &:focus {
+    @include button-shadow-raised;
     color: $color-white;
-    text-decoration: none;
-    transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transform: translateY(-0.25rem);
+    transform: translateY(-4px);
   }
 
   &[disabled], &.btn--disabled {
@@ -48,6 +45,12 @@
     }
   }
 
+  &#{&}--secondary {
+    background: $gradient-white;
+    color: $color-dark;
+  }
+
+  // TODO: Obsolete? 👇
   &#{&}--cta {
     background-color: $color-highlight;
     border-color: $color-highlight;
@@ -58,19 +61,6 @@
     &:focus {
       background-color: $color-highlight-darker;
       border-color: $color-highlight-darker;
-    }
-  }
-
-  &#{&}--secondary {
-    background-color: transparent;
-    border-color: $color-highlight;
-    color: $color-highlight;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $color-highlight-darker;
-      color: $color-highlight-darker;
     }
   }
 

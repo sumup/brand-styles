@@ -2,6 +2,10 @@
 // Convenience components
 //-------------------------------------
 
+.container {
+  @include container;
+}
+
 .card-l {
   @include card-l;
 }

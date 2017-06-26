@@ -1,4 +1,4 @@
-.container {
+@mixin container {
   @include grid-container;
 
   max-width: $max-width;
