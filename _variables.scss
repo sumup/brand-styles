@@ -81,19 +81,9 @@ $breakpoints: (
   large: 1400px
 );
 
-// Grids
-
-// Default/mobile grid
+// Grid
 $neat-grid: (
-  columns: 6,
-  gutter: 20px,
-  direction: ltr,
-);
-
-// Desktop grid
-$desktop-grid: (
   columns: 12,
-  gutter: 30px,
+  gutter: 24px,
   direction: ltr,
-  media: 601px,
 );
