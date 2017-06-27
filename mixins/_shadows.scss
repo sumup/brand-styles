@@ -6,11 +6,11 @@
   box-shadow: 0 15px 35px rgba(97, 118, 149, 0.3);
 }
 
-// TODO: Where are the below used?
 @mixin drop-shadow() {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08), 0px 2px 12px 0px rgba(0,0,0,0.10);
+  box-shadow: 0 20px 50px 0 rgba(97, 118, 149, 0.50);
 }
 
+// TODO: Where is the below used?
 @mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px, $position: bottom) {
   position: relative;
   // z-index: 1;
