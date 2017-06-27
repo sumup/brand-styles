@@ -21,6 +21,22 @@ body[data-locale="pl-PL"] {
   font-family: $font-family-pl;
 }
 
+//-------------------------------------
+// Box-sizing reset
+//-------------------------------------
+
+// Best practice from http://callmenick.com/post/the-new-box-sizing-reset
+// TLDR: It’s easier to override and a slight performance boost.
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
   @include type-m;
   font-weight: $font-weight-regular;
