@@ -27,11 +27,12 @@
     @include button-shadow-raised;
     color: $color-white;
     transform: translateY(-4px);
+    text-decoration: none;
+    outline: none;
   }
 
   &[disabled], &.btn--disabled {
     opacity: .4;
-    cursor: default;
     pointer-events: none;
   }
 

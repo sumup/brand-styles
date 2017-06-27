@@ -1,6 +1,6 @@
 @mixin type-xxxxl {
   font-size: 36px;
-  line-height: $line-height-xxl;
+  line-height: 1em;
 
   @include media(small) {
     font-size: 40px;
@@ -13,10 +13,11 @@
 
 @mixin type-xxxl {
   font-size: 28px;
-  line-height: $line-height-xl;
+  line-height: 1em;
 
   @include media(small) {
     font-size: 34px;
+    line-height: 36px;
   }
 
   @include media(medium) {
@@ -26,7 +27,7 @@
 
 @mixin type-xxl {
   font-size: 24px;
-  line-height: $line-height-xl;
+  line-height: $line-height-l;
 
   @include media(small) {
     font-size: 26px;
@@ -39,7 +40,7 @@
 
 @mixin type-xl {
   font-size: 20px;
-  line-height: $line-height-l;
+  line-height: $line-height-m;
 
   @include media(small) {
     font-size: 22px;
@@ -65,7 +66,7 @@
 
 @mixin type-m {
   font-size: 16px;
-  line-height: $line-height-m;
+  line-height: $line-height-l;
 
   @include media(medium) {
     font-size: 18px;
@@ -74,7 +75,7 @@
 
 @mixin type-s {
   font-size: 13px;
-  line-height: $line-height-s;
+  line-height: $line-height-m;
 
   @include media(medium) {
     font-size: 14px;
