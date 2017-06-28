@@ -1,13 +1,15 @@
+$color-shadow: #617695;
+
 @mixin button-shadow() {
-  box-shadow: 0 10px 30px rgba(97, 118, 149, 0.3);
+  box-shadow: 0 10px 30px rgba($color-shadow, 0.3);
 }
 
 @mixin button-shadow-raised() {
-  box-shadow: 0 15px 35px rgba(97, 118, 149, 0.3);
+  box-shadow: 0 15px 35px rgba($color-shadow, 0.3);
 }
 
 @mixin drop-shadow() {
-  box-shadow: 0 20px 50px 0 rgba(97, 118, 149, 0.50);
+  box-shadow: 0 20px 50px 0 rgba($color-shadow, .2);
 }
 
 // TODO: Where is the below used?
