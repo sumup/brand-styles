@@ -8,20 +8,21 @@ $color-highlight-lighter: $color-brand-lighter !default;
 $color-highlight-darker: $color-brand-darker !default;
 
 // Greys
+$color-darker: #1d384c !default; // TODO: Better name?
 $color-dark: #3e5065 !default;
-$color-medium: #ced2d9 !default;
-$color-light: #f0f2f5 !default;
+$color-medium: #a7aeba !default;
+$color-light: #dadee3 !default;
 $color-off: #fafbfc !default;
 $color-white: #fff !default;
 
 // Success, error, warning
-$color-success: #52CCA7 !default;
-$color-success-darker: #338069 !default;
-$color-success-lighter: #95E6CD !default;
-$color-error: #CC5252 !default;
-$color-error-darker: #803332 !default;
-$color-warning: #FACC37 !default;
-$color-warning-darker: #B38F1B !default;
+$color-success: #31c4aa !default;
+$color-success-darker: #338069 !default; // TODO: Deprecated?
+$color-success-lighter: #3cebcc !default;
+$color-error: #FF5e4c !default;
+$color-error-darker: #d04913 !default;
+$color-warning: #faae37 !default;
+$color-warning-darker: #d08613 !default;
 
 // Gradients
 $gradient-blue: linear-gradient(to bottom, $color-brand, #3362ff);
@@ -66,8 +67,8 @@ $font-weight-regular: 300 !default;
 $font-weight-medium: 500 !default;
 $font-weight-bold: 700 !default;
 
-$font-family: museo, Helvetica, Arial, sans-serif !default;
-$font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+$font-family: museo, "Museo Sans", Helvetica, Arial, sans-serif !default;
+$font-family-pl: museo_pl, "Museo Sans Cyrl", Helvetica, Arial, sans-serif !default;
 // TODO: Deprecated, replace references.
 $font-family-display: museo, Helvetica, Arial, sans-serif !default;
 $font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
