@@ -10,9 +10,9 @@
   font-size: $font-size-l;
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-m;
-  line-height: $line-height-s;
+  line-height: $line-height-m;
   overflow: hidden;
-  padding: 16px 32px;
+  padding: $spacing-s $spacing-l;
   position: relative;
   text-align: center;
   text-decoration: none;
