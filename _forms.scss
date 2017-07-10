@@ -36,9 +36,8 @@ fieldset {
 
 .input,
 .textarea {
-  @include appearance(none);
-  @include placeholder { color: $color-medium; };
-  @include transition(border-color .2s, background-color .3s);
+  appearance: none;
+  transition: border-color .2s, background-color .3s;
   background: transparent;
   border: 1px solid;
   border-color: $color-medium;
@@ -58,6 +57,10 @@ fieldset {
     border-color: $color-brand;
     outline: none;
     background-color: rgba($color-brand-lighter, .1);
+  }
+
+  &::placeholder {
+    color: $color-medium;
   }
 }
 
@@ -223,8 +226,8 @@ fieldset {
   position: relative;
 
   &::after {
-    @include transform(rotate(-45deg));
-    @include transition;
+    transform: rotate(-45deg);
+    transition: all 0.15s ease-out 0s;
     content: "\221F";
     position: absolute;
     z-index: 40;
@@ -243,7 +246,7 @@ fieldset {
   }
 
   select {
-    @include appearance(none);
+    appearance: none;
     padding: 12px;
     line-height: 18px;
     width: 100%;
@@ -279,7 +282,7 @@ fieldset {
   position: relative;
 
   li {
-    @include transition;
+    transition: all 0.15s ease-out 0s;
     margin-bottom: $spacing-s;
     position: relative;
     color: $color-error;
@@ -291,13 +294,13 @@ fieldset {
     }
 
     &.ng-hide-remove {
-      @include animation(fadeInDown .2s ease-in);
+      animation: fadeInDown .2s ease-in;
     }
 
     &.ng-hide-add-active {
       position: absolute;
       width: 100%;
-      @include animation(fadeOutUp .2s ease-in);
+      animation: fadeOutUp .2s ease-in;
     }
 
     &.warning {
