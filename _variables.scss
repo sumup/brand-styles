@@ -27,6 +27,9 @@ $color-warning-darker: #d08613 !default;
 // Gradients
 $gradient-blue: linear-gradient(to bottom, $color-brand, #3362ff);
 $gradient-white: linear-gradient(to bottom, $color-white, #f6f6f6);
+// $gradient-white: linear-gradient(to bottom, $color-white, #dee2e5);
+$gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
+$gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
 
 // Spacings
 $spacing-xxs: 3px !default;
