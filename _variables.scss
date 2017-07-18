@@ -87,8 +87,9 @@ $breakpoints: (
 );
 
 // Grid
+$gutter: 24px;
 $neat-grid: (
   columns: 12,
-  gutter: 24px,
+  gutter: $gutter,
   direction: ltr,
 );

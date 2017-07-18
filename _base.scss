@@ -170,7 +170,7 @@ figcaption {
   strong { color: $color-brand; }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 1.5em;
     height: 1px;
@@ -179,4 +179,10 @@ figcaption {
     top: calc(0.8em - 1px);
     left: 0;
   }
+}
+
+svg,
+svg path,
+svg g {
+  fill: inherit;
 }
