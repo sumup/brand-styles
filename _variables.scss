@@ -48,6 +48,8 @@ $border-radius-l: 18px !default;
 $border-radius: $border-radius-m !default;
 
 // Typography
+$font-size-base: 16px !default;
+
 $font-size-xxxxxl: 44px !default;
 $font-size-xxxxl: 40px !default;
 $font-size-xxxl: 32px !default;
@@ -81,9 +83,10 @@ $font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
 $max-width: 1060px !default;
 
 $breakpoints: (
-  small: 600px,
-  medium: 800px,
-  large: 1400px
+  tiny: 22em,      // 352px
+  small: 37.5em,   // 600px
+  medium: 56.25em, // 900px
+  large: 93.75em   // 1500px
 );
 
 // Grid
