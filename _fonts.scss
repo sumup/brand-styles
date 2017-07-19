@@ -22,6 +22,13 @@
        url('https://static.sumup.com/fonts/western-latin/MuseoSans_700-webfont.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'museo';
+  font-weight: 900;
+  src: url('https://static.sumup.com/fonts/western-latin/MuseoSans_900-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/western-latin/MuseoSans_900-webfont.ttf') format('truetype');
+}
+
 //-------------------------------------
 // Polish charset
 //-------------------------------------
@@ -45,4 +52,11 @@
   font-weight: 700;
   src: url('https://static.sumup.com/fonts/polish/MuseoSans_700-webfont.woff') format('woff'),
        url('https://static.sumup.com/fonts/polish/MuseoSans_700-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museo_pl';
+  font-weight: 900;
+  src: url('https://static.sumup.com/fonts/polish/MuseoSans_900-webfont.woff') format('woff'),
+       url('https://static.sumup.com/fonts/polish/MuseoSans_900-webfont.ttf') format('truetype');
 }
