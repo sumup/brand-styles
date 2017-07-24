@@ -3,7 +3,8 @@ $hamburger-padding-y: 5px;
 $hamburger-width: 18px;
 $hamburger-height: 2px;
 $hamburger-spacing: 4px;
-$hamburger-color: $color-dark;
+$hamburger-color-dark: $color-dark;
+$hamburger-color-light: $color-white;
 $hamburger-border-radius: 1px;
 
 .hamburger {
@@ -30,12 +31,10 @@ $hamburger-border-radius: 1px;
   &::before {
     display: block;
     height: $hamburger-height;
-    background-color: $hamburger-color;
+    background-color: $hamburger-color-dark;
     border-radius: $hamburger-border-radius;
     position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
+    transition: transform .15s ease, background-color .15s ease;
   }
 
   &::before,
@@ -85,5 +84,21 @@ $hamburger-border-radius: 1px;
         transform: rotate(-90deg);
       }
     }
+  }
+}
+
+.hamburger--dark .hamburger-inner {
+  &,
+  &::before,
+  &::after {
+    background-color: $hamburger-color-dark;
+  }
+}
+
+.hamburger--light .hamburger-inner {
+  &,
+  &::before,
+  &::after {
+    background-color: $hamburger-color-light;
   }
 }
