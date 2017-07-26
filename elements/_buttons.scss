@@ -36,6 +36,44 @@
     pointer-events: none;
   }
 
+  &#{&}--secondary {
+    background: $gradient-white;
+    color: $color-dark;
+  }
+
+  &#{&}--outline {
+    position: relative;
+    background: transparent;
+    color: $color-brand;
+    box-shadow: none;
+
+    &::before {
+      @include position(absolute, 0 0 0 0);
+      content: '';
+      display: block;
+      border: 2px solid $color-brand;
+      transition: border-width .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      transform: none;
+
+      &::before {
+        border-width: 3px;
+      }
+    }
+  }
+
+  &#{&}--outline#{&}--secondary {
+    color: $color-white;
+
+    &::before {
+      border-color: $color-white;
+    }
+  }
+
   &--loading {
     transition: padding .2s ease-in-out;
     padding-right: $spacing-xxl !important;
@@ -44,11 +82,6 @@
       display: inline-block;
       margin-left: $spacing-xs;
     }
-  }
-
-  &#{&}--secondary {
-    background: $gradient-white;
-    color: $color-dark;
   }
 
   // TODO: Obsolete? 👇
