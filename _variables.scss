@@ -2,6 +2,8 @@
 $color-brand: #38f !default;
 $color-brand-lighter: #3af !default;
 $color-brand-darker: #2d69bd !default;
+$color-secondary: #3362ff !default;
+
 // TODO: Deprecated, remove references.
 $color-highlight: $color-brand !default;
 $color-highlight-lighter: $color-brand-lighter !default;
@@ -25,9 +27,8 @@ $color-warning: #faae37 !default;
 $color-warning-darker: #d08613 !default;
 
 // Gradients
-$gradient-blue: linear-gradient(to bottom, $color-brand, #3362ff);
+$gradient-blue: linear-gradient(to bottom, $color-brand, $color-secondary);
 $gradient-white: linear-gradient(to bottom, $color-white, #f6f6f6);
-// $gradient-white: linear-gradient(to bottom, $color-white, #dee2e5);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
 
@@ -83,10 +84,11 @@ $font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
 $max-width: 1060px !default;
 
 $breakpoints: (
-  tiny: 22em,      // 352px
-  small: 37.5em,   // 600px
-  medium: 56.25em, // 900px
-  large: 93.75em   // 1500px
+  tiny: 21.25em,   // 340px
+  small: 37.5em,   // 450px
+  medium: 56.25em, // 800px
+  large: 75em,     // 1200px
+  mega: 93.75em    // 1500px
 );
 
 // TODO:👇 Deprecated (in use on dashboard)
