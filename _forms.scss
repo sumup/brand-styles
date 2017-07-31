@@ -112,6 +112,13 @@ fieldset {
     .validation-list li { width: 100%; }
   }
 
+  &.inputs-inline--second-bigger {
+    li:first-child { width: 30% }
+    li:nth-child(2) { width: calc(70% - #{$spacing-m}) }
+
+    .validation-list li { width: 100%; }
+  }
+
   .btn, .button { width: 100% }
 
   &.inputs-inline--block-mobile {
