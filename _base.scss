@@ -42,6 +42,7 @@ body {
   @include type-m;
   font-weight: $font-weight-regular;
   color: $color-dark;
+  background-color: $color-off;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'kern';
@@ -123,7 +124,7 @@ em {
 //-------------------------------------
 
 a {
-  transition: color .2s;
+  transition: all .2s;
   color: $color-brand;
   text-decoration: none;
 
