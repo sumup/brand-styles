@@ -32,6 +32,12 @@ $gradient-white: linear-gradient(to bottom, $color-white, #f6f6f6);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
 
+$gradient-promobadge-yellow: linear-gradient(to bottom right, #fad961 0%, #f7aa1c 100%);
+$gradient-promobadge-white: linear-gradient(-150deg, $color-white 0%, #f3f3f3 36%, #cecece 97%);
+$gradient-promobadge-blue: linear-gradient(-150deg, #70b9ff 0%, #3388ff 44%, #3362ff 97%);
+$gradient-promobadge-orange: linear-gradient(-150deg, #ffd482 0%, #ff7648 45%, #ff4000 86%);
+
+
 // Spacings
 $spacing-xxs: 3px !default;
 $spacing-xs: 6px !default;
@@ -47,6 +53,7 @@ $border-radius-s: 3px !default;
 $border-radius-m: 6px !default;
 $border-radius-l: 18px !default;
 $border-radius: $border-radius-m !default;
+$border-radius-circle: 50%;
 
 // Typography
 $font-size-base: 16px !default;
