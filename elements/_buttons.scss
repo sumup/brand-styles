@@ -3,6 +3,7 @@
   display: inline-block;
   background: $gradient-blue;
   border-radius: $border-radius;
+  min-width: 120px;
   border: 0;
   color: $color-white;
   cursor: pointer;
@@ -31,6 +32,10 @@
     outline: none;
   }
 
+  &:active {
+    background: linear-gradient(to bottom, $color-brand-lighter, $color-secondary);
+  }
+
   &[disabled], &.btn--disabled {
     opacity: .4;
     pointer-events: none;
@@ -39,6 +44,10 @@
   &#{&}--secondary {
     background: $gradient-white;
     color: $color-dark;
+
+    &:active {
+      background: linear-gradient(to bottom, $color-off, #f6f6f6);
+    }
   }
 
   &#{&}--outline {
@@ -46,32 +55,20 @@
     background: transparent;
     color: $color-brand;
     box-shadow: none;
-
-    &::before {
-      @include position(absolute, 0 0 0 0);
-      content: '';
-      display: block;
-      border: 2px solid $color-brand;
-      transition: border-width .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    }
+    border: 2px solid $color-brand;
+    transition: background .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &:hover,
     &:active,
     &:focus {
       transform: none;
-
-      &::before {
-        border-width: 3px;
-      }
+      background: rgba($color-white, 0.15);
     }
   }
 
   &#{&}--outline#{&}--secondary {
     color: $color-white;
-
-    &::before {
-      border-color: $color-white;
-    }
+    border-color: $color-white;
   }
 
   &--loading {
