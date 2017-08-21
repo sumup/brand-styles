@@ -1,4 +1,4 @@
-// western latin charset
+// Western latin charset (Museo Sans and Museo Sans Rounded)
 @font-face {
   font-family: 'museo';
   font-weight: 300;
@@ -27,33 +27,57 @@
        url('https://static.sumup.com/fonts/western-latin/MuseoSansRounded-500-webfont.ttf') format('truetype');
 }
 
-// polish charset
+// Cyrillic charset (Roboto)
 @font-face {
-  font-family: 'museo_pl';
-  font-weight: 300;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSans_300-webfont.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'museoRounded_pl';
+  font-family: 'Roboto';
+  font-style: normal;
   font-weight: 100;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-100-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff') format('woff'), /* Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'museoRounded_pl';
+  font-family: 'Roboto';
+  font-style: normal;
   font-weight: 300;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-300-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.woff') format('woff'), /* Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'museoRounded_pl';
+  font-family: 'Roboto';
+  font-style: normal;
   font-weight: 500;
-  src: url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.woff') format('woff'),
-       url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.woff') format('woff'), /* Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Black'), local('Roboto-Black'),
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.woff') format('woff'), /* Modern Browsers */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://static.sumup.com/fonts/cyrillic/Roboto_900-webfont.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
 body {
@@ -76,7 +100,7 @@ body {
 //
 // browsers will only the font-face which is actually used in the css
 // so here, we'll define for body, headlines and buttons which font-files to use.
-body:not([data-locale="pl-PL"]) {
+body:not([data-locale="bg-BG"]):not([data-locale="el-GR"]) {
   font-family: $font-family;
 
   h1, .h1,
@@ -89,8 +113,8 @@ body:not([data-locale="pl-PL"]) {
   }
 }
 
-body[data-locale="pl-PL"] {
-  font-family: $font-family-pl;
+body[data-locale="bg-BG"][data-locale="el-GR"] {
+  font-family: $font-family-cy;
 
   h1, .h1,
   h2, .h2,
@@ -98,7 +122,7 @@ body[data-locale="pl-PL"] {
   h4, .h4,
   .btn,
   em {
-    font-family: $font-family-display-pl;
+    font-family: $font-family-display-cy;
   }
 }
 

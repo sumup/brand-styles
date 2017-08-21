@@ -59,9 +59,11 @@ $font-weight-regular: 300 !default;
 $font-weight-medium: 500 !default;
 
 $font-family: museo, Helvetica, Arial, sans-serif !default;
-$font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+$font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default; // Deprecated
+$font-family-cy: 'Roboto', Helvetica, Arial, sans-serif !default;
 $font-family-display: museoRounded, Helvetica, Arial, sans-serif !default;
-$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default;
+$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default; // Deprecated
+$font-family-display-cy: 'Roboto', Helvetica, Arial, sans-serif !default;
 
 // Breakpoints
 $max-width: 1000px;
