@@ -41,7 +41,7 @@ html {
 body {
   @include type-m;
   font-weight: $font-weight-regular;
-  color: $color-dark;
+  color: $color-darker;
   background-color: $color-off;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,7 +80,7 @@ h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4 {
-  color: $color-dark;
+  color: $color-darker;
 }
 
 h1, .h1 {
