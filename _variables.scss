@@ -1,8 +1,7 @@
 // Colors
 $color-brand: #38f !default;
 $color-brand-lighter: #3af !default;
-$color-brand-darker: #2d69bd !default;
-$color-secondary: #3362ff !default;
+$color-brand-darker: #3362ff !default;
 
 // TODO: Deprecated, remove references.
 $color-highlight: $color-brand !default;
@@ -10,16 +9,16 @@ $color-highlight-lighter: $color-brand-lighter !default;
 $color-highlight-darker: $color-brand-darker !default;
 
 // Greys
-$color-darker: #1d384c !default; // TODO: Better name?
+$color-darker: #1d384c !default;
 $color-dark: #3e5065 !default;
 $color-medium: #a7aeba !default;
-$color-light: #dadee3 !default;
-$color-off: #fafbfc !default;
+$color-light: #eff1f3 !default;
+$color-lighter: #fafbfc !default;
+$color-off: $color-lighter !default;
 $color-white: #fff !default;
 
 // Success, error, warning
 $color-success: #31c4aa !default;
-$color-success-darker: #338069 !default; // TODO: Deprecated?
 $color-success-lighter: #3cebcc !default;
 $color-error: #ff5e4c !default;
 $color-error-darker: #d04913 !default;
@@ -27,8 +26,8 @@ $color-warning: #faae37 !default;
 $color-warning-darker: #d08613 !default;
 
 // Gradients
-$gradient-blue: linear-gradient(to bottom, $color-brand, $color-secondary);
-$gradient-white: linear-gradient(to bottom, $color-white, #f6f6f6);
+$gradient-blue: linear-gradient(to bottom, $color-brand-lighter, $color-brand-darker);
+$gradient-white: linear-gradient(to bottom, $color-white, $color-light);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
 

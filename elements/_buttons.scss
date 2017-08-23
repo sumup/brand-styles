@@ -33,7 +33,7 @@
   }
 
   &:active {
-    background: linear-gradient(to bottom, $color-brand-lighter, $color-secondary);
+    background: $gradient-blue;
   }
 
   &[disabled], &.btn--disabled {
