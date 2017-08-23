@@ -26,7 +26,7 @@ $color-warning: #faae37 !default;
 $color-warning-darker: #d08613 !default;
 
 // Gradients
-$gradient-blue: linear-gradient(to bottom, $color-brand-lighter, $color-brand-darker);
+$gradient-blue: linear-gradient(to bottom, $color-brand, $color-brand-darker);
 $gradient-white: linear-gradient(to bottom, $color-white, $color-light);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
