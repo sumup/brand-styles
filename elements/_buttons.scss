@@ -21,6 +21,7 @@
   transition: all .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   vertical-align: middle;
   white-space: nowrap;
+  will-change: transform;
 
   &:hover,
   &:active,
@@ -39,6 +40,10 @@
   &[disabled], &.btn--disabled {
     opacity: .4;
     pointer-events: none;
+  }
+
+  & + & {
+    margin-left: $spacing-m;
   }
 
   &#{&}--secondary {
