@@ -60,20 +60,36 @@
     background: transparent;
     color: $color-brand;
     box-shadow: none;
-    border: 2px solid $color-brand;
     transition: background .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &:hover,
     &:active,
     &:focus {
       transform: none;
-      background: rgba($color-white, 0.15);
+      background: rgba($color-brand, 0.15);
+    }
+
+    &::before {
+      @include position(absolute, 0 0 0 0);
+      content: '';
+      display: block;
+      border: 2px solid $color-brand;
+      border-radius: $border-radius;
     }
   }
 
   &#{&}--outline#{&}--secondary {
     color: $color-white;
-    border-color: $color-white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: rgba($color-white, 0.15);
+    }
+
+    &::before {
+      border-color: $color-white;
+    }
   }
 
   &--loading {
