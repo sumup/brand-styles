@@ -31,6 +31,7 @@
   &[disabled], &.btn--disabled {
     opacity: .4;
     cursor: default;
+    pointer-events: none;
   }
 
   &--loading {
@@ -176,6 +177,12 @@
   font-weight: 500;
   line-height: $line-height-s;
   padding: 0;
+
+  &[disabled],
+  &#{&}--disabled {
+    cursor: default;
+    pointer-events: none;
+  }
 
   &#{&}--highlight {
     color: $color-highlight;
