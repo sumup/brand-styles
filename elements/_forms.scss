@@ -1,6 +1,6 @@
 // Overwrite browser vendor styles
 fieldset {
-  border: none;
+  border: 0;
   margin: 0;
   padding: 0;
 }
@@ -9,15 +9,16 @@ fieldset {
   margin-top: $spacing-xl;
 }
 
-.label {
+.label,
+%label {
   font-size: $font-size-s;
-  line-height: $line-height-s;
   font-weight: $font-weight-regular;
+  line-height: $line-height-s;
   margin-bottom: $spacing-xs;
 }
 
 .legend {
-  @extend .label;
+  @extend %label;
 
   &.legend--regular {
     font-weight: $font-weight-regular;
@@ -27,7 +28,6 @@ fieldset {
 .input,
 .textarea {
   appearance: none;
-  transition: border-color .2s, background-color .3s;
   background: transparent;
   border: 1px solid;
   border-color: $color-medium;
@@ -37,6 +37,7 @@ fieldset {
   line-height: $line-height-s;
   margin-bottom: $spacing-l;
   padding: $spacing-s;
+  transition: border-color 0.2s, background-color 0.3s;
   width: 100%;
 
   &::placeholder { color: $color-medium; }
@@ -45,16 +46,17 @@ fieldset {
     font-size: $font-size-m;
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
+    background-color: rgba($color-brand-lighter, 0.1);
     border-color: $color-brand;
     outline: none; // remove weird glow on some OS'es
-    background-color: rgba($color-brand-lighter, .1);
   }
 }
 
 .input.input--disabled,
 .input[disabled],
-.input[disabled="disabled"],
+.input[disabled='disabled'],
 .input[readonly] {
   @include disabled;
 }
@@ -79,12 +81,12 @@ fieldset {
 
 // Goes on the container (e.g. a <ul>)
 .inputs-inline {
-  zoom: 1;
   display: block;
+  zoom: 1;
 
   &::after,
   &::after {
-    content: " ";
+    content: '';
     display: table;
   }
 
@@ -92,11 +94,11 @@ fieldset {
     clear: both;
   }
 
-  & > li {
-    width: calc(50% - #{$spacing-s});
-    padding: 0;
+  > li {
     display: inline-block;
     float: left;
+    padding: 0;
+    width: calc(50% - #{$spacing-s});
 
     &:nth-of-type(odd) {
       margin-right: $spacing-m;
@@ -108,16 +110,17 @@ fieldset {
   }
 
   &.inputs-inline--first-bigger {
-    li:first-child { width: 70% }
-    li:nth-child(2) { width: calc(30% - #{$spacing-m}) }
+    li:first-child { width: 70%; }
+    li:nth-child(2) { width: calc(30% - #{$spacing-m}); }
 
     .validation-list li { width: 100%; }
   }
 
-  .btn, .button { width: 100% }
+  .btn,
+  .button { width: 100%; }
 
   &.inputs-inline--block-mobile {
-    & > li {
+    > li {
       width: 100%;
 
       &:nth-child(even) {
@@ -135,29 +138,31 @@ fieldset {
   }
 }
 
-.checkboxes-custom, .radio-buttons-custom {
+.checkboxes-custom,
+.radio-buttons-custom {
   label {
-    @extend .label;
-    font-size: $font-size-m;
-    display: inline-block;
+    @extend %label;
+
     cursor: pointer;
-    position: relative;
+    display: inline-block;
+    font-size: $font-size-m;
+    font-weight: 300;
+    margin-right: 15px;
     padding-left: 25px;
     padding-right: 15px;
-    margin-right: 15px;
-    font-weight: 300;
+    position: relative;
 
     &::after {
-      content: "";
+      background-color: $color-white;
+      border: 1px solid $color-medium;
+      content: '';
       display: inline-block;
-      width: 16px;
       height: 16px;
+      left: 0;
       margin-right: 10px;
       position: absolute;
-      left: 0;
       top: 0;
-      border: 1px solid $color-medium;
-      background-color: white;
+      width: 16px;
     }
   }
 
@@ -166,51 +171,53 @@ fieldset {
    * but keeping them tabbable
    */
 
-  input[type="radio"],
-  input[type="checkbox"] {
+  input[type='radio'],
+  input[type='checkbox'] {
     border: 0;
-    padding: 0;
     clip: auto;
     height: auto;
     margin: 0;
     overflow: visible;
+    padding: 0;
     position: absolute;
-    width: auto;
     visibility: hidden;
+    width: auto;
   }
 
-  input[type="radio"] + label::after {
+  input[type='radio'] + label::after {
     border-radius: 9px;
   }
 
-  input[type="checkbox"] + label::after {
+  input[type='checkbox'] + label::after {
     border-radius: $border-radius;
   }
 
   input:checked + label::after {
     display: inline-block;
-    width: 8px;
     height: 8px;
     position: absolute;
+    width: 8px;
   }
 
-  input[type="radio"]:checked + label::after {
-    content: '';
-    border-radius: 4px;
-    top: 5px;
-    left: 5px;
+  input[type='radio']:checked + label::after {
     background: $color-brand;
+    border-radius: 4px;
+    content: '';
+    left: 5px;
+    top: 5px;
   }
 
-  input[type="checkbox"]:checked + label::after {
+  input[type='checkbox']:checked + label::after {
     @include checkmark-pseudoelement;
-    top: 4px;
-    left: 3px;
-    width: 12px;
+
     height: 12px;
+    left: 3px;
+    top: 4px;
+    width: 12px;
   }
 
-  &.checkboxes-custom--disabled, .radio-buttons-custom--disabled {
+  &.checkboxes-custom--disabled,
+  .radio-buttons-custom--disabled {
     label {
       color: $color-light;
 
@@ -223,49 +230,50 @@ fieldset {
   position: relative;
 
   &::after {
-    transform: rotate(-45deg);
-    transition: none;
-    content: "\221F";
-    position: absolute;
-    z-index: 40;
-    font-size: $font-size-xs;
     color: $color-dark;
+    content: '\221F';
+    display: inline-block;
+    font-size: $font-size-xs;
+    height: 0;
+    position: absolute;
     right: $spacing-xxl;
     top: $spacing-s + 3px;
+    transform: rotate(-45deg);
+    transition: none;
     width: 0;
-    height: 0;
-    display: inline-block;
+    z-index: 40;
   }
 
   &--disabled::after {
-    content: "";
+    content: '';
   }
 
   select {
     appearance: none;
-    padding: 12px;
-    line-height: 18px;
-    width: 100%;
     background: none;
     border: 1px solid $color-medium;
-    height: 42px;
     border-radius: $border-radius;
-    white-space: nowrap;
     cursor: pointer;
-    position: relative;
-    z-index: 30;
+    font-size: $font-size-m;
+    height: 42px;
+    line-height: 18px;
     margin-bottom: $spacing-l;
     outline: none;
-    font-size: $font-size-m;
+    padding: 12px;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 30;
 
     &:focus,
     &:hover,
     &:active { border-color: $color-brand; }
 
     &[disabled],
-    &[disabled="disabled"],
+    &[disabled='disabled'],
     &[readonly] {
       @include disabled;
+
       &::after {
         display: none;
       }
@@ -275,34 +283,38 @@ fieldset {
 
 .validation-list {
   @include type-s;
+
   position: relative;
 
   li {
-    transition: none;
-    margin-bottom: $spacing-s;
-    position: relative;
     color: $color-error;
     font-weight: $font-weight-regular;
+    margin-bottom: $spacing-s;
+    position: relative;
+    transition: none;
 
-    a, a:hover, a:active, a:visited {
+    a,
+    a:hover,
+    a:active,
+    a:visited {
       color: $color-error;
       text-decoration: underline;
     }
 
     &.ng-hide-remove {
-      animation: fadeInDown .2s ease-in;
+      animation: fadeInDown 0.2s ease-in;
     }
 
     &.ng-hide-add-active {
+      animation: fadeOutUp 0.2s ease-in;
       position: absolute;
       width: 100%;
-      animation: fadeOutUp .2s ease-in;
     }
 
     &.warning {
       color: $color-warning-darker;
     }
 
-    p { margin: 0 }
+    p { margin: 0; }
   }
 }

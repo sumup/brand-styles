@@ -1,55 +1,56 @@
 @mixin readonly {
-  cursor: no-drop;
+  background: $color-white;
   border: 0 !important;
-  padding-left: 0 !important;
-  // Temp. custom monospace font stack
-  font-family: "Menlo", "Lucida Console", Monaco, monospace;
-  padding-top: 0;
   border-bottom: 1px dashed #eee !important;
   color: $color-medium;
-  -webkit-text-fill-color: $color-medium;
+  cursor: no-drop;
+  // Temp. custom monospace font stack
+  font-family: 'Menlo', 'Lucida Console', Monaco, monospace;
   -webkit-opacity: 1;
-  background: white;
+  padding-left: 0 !important;
+  padding-top: 0;
+  -webkit-text-fill-color: $color-medium;
 
   &:hover,
   &:focus,
   &:active {
-    cursor: default;
     border-color: $color-light;
+    cursor: default;
   }
 }
 
 @mixin disabled() {
-  padding: 0;
   border: 0;
   height: auto;
+  padding: 0;
 
-  &:focus, &:hover {
-    background-color: #FFF;
+  &:focus,
+  &:hover {
+    background-color: #fff;
     cursor: default;
   }
 }
 
 @mixin rounded-left-border($position-left, $color) {
   &::before {
-    display: inline-block;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    content: '';
-    position: absolute;
-    left: -$position-left;
-    top: 0;
-    height: 100%;
     background-color: $color;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    left: -$position-left;
+    position: absolute;
+    top: 0;
     width: 3px;
   }
 }
 
 // Checkmark
 @mixin checkmark-pseudoelement {
-  display: inline-block;
-  content: '';
   background: url(data:image/svg+xml;encoding=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2211%22%20viewBox%3D%220%200%2013%2011%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%235C8BCC%22%20d%3D%22M4.363%208.314l-2.63-2.82a.994.994%200%200%200-1.415-.051.999.999%200%200%200-.047%201.415l3.406%203.653a.994.994%200%200%200%201.201.205.996.996%200%200%200%20.426-.327l6.621-8.787A1%201%200%200%200%2010.328.398L4.363%208.314z%22%20%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E);
-  color: $color-brand;
   background-repeat: no-repeat;
+  color: $color-brand;
+  content: '';
+  display: inline-block;
 }

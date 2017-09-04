@@ -1,6 +1,6 @@
 @mixin container {
   @include grid-container;
 
-  max-width: $max-width;
   margin: 0 auto;
+  max-width: $max-width;
 }

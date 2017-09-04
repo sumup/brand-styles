@@ -8,38 +8,38 @@ $hamburger-color-light: $color-white;
 $hamburger-border-radius: 1px;
 
 .hamburger {
-  padding: $hamburger-padding-y $hamburger-padding-x;
-  display: inline-block;
-  cursor: pointer;
   box-sizing: content-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: $hamburger-padding-y $hamburger-padding-x;
   width: $hamburger-width;
 }
 
 .hamburger-box {
-  height: $hamburger-height * 3 + $hamburger-spacing * 2;
   display: inline-block;
+  height: $hamburger-height * 3 + $hamburger-spacing * 2;
   position: relative;
 }
 
 .hamburger-inner {
-  top: 50%;
   margin-top: $hamburger-height / -2;
+  top: 50%;
   width: $hamburger-width * 0.77;
 
   &,
   &::after,
   &::before {
-    display: block;
-    height: $hamburger-height;
     background-color: $hamburger-color-dark;
     border-radius: $hamburger-border-radius;
+    display: block;
+    height: $hamburger-height;
     position: absolute;
-    transition: transform .15s ease, background-color .15s ease;
+    transition: transform 0.15s ease, background-color 0.15s ease;
   }
 
   &::before,
   &::after {
-    content: "";
+    content: '';
   }
 
   &::before {
@@ -63,6 +63,7 @@ $hamburger-border-radius: 1px;
       transition: width 0.2s ease-out 0.14s, top 0.1s 0.34s ease-in, opacity 0.1s ease-in, bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
+
   &.is-active {
     .hamburger-inner {
       transform: rotate(225deg);
@@ -70,13 +71,13 @@ $hamburger-border-radius: 1px;
       &,
       &::before,
       &::after {
-        width: $hamburger-width;
         transition: width 0.2s ease-out, top 0.1s ease-out, opacity 0.1s 0.14s ease-out, bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+        width: $hamburger-width;
       }
 
       &::before {
-        top: 0;
         opacity: 0;
+        top: 0;
       }
 
       &::after {

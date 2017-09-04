@@ -2,7 +2,11 @@
 // Normalize overrides
 //-------------------------------------
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: museoRounded;
   font-weight: $font-weight-regular;
 }
@@ -11,13 +15,13 @@ button, input, optgroup, select, textarea {
 // Loading correct font files
 //-------------------------------------
 
-// Browsers will only load the font-face which is actually used in the CSS
-// So here, we'll define for body, headlines and buttons which font-files to use.
-body:not([data-locale="pl-PL"]) {
+// Browsers will only load the font-face which is actually used in the CSS.
+// So here we'll define for body, headlines and buttons which font-files to use.
+body:not([data-locale='pl-PL']) {
   font-family: $font-family;
 }
 
-body[data-locale="pl-PL"] {
+body[data-locale='pl-PL'] {
   font-family: $font-family-pl;
 }
 
@@ -40,25 +44,31 @@ html {
 
 body {
   @include type-m;
-  font-weight: $font-weight-regular;
-  color: $color-darker;
+
   background-color: $color-off;
+  color: $color-darker;
+  font-feature-settings: 'kern';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'kern';
-  text-rendering: optimizeLegibility;
+  font-weight: $font-weight-regular;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 //-------------------------------------
 // Headlines
 //-------------------------------------
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-m;
 
@@ -77,35 +87,46 @@ h5, .h5 {
   }
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
   color: $color-darker;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   @include type-xxxxl;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   @include type-xxxl;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   @include type-xxl;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   @include type-xl;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   @include type-l;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   @include type-s;
+
   color: $color-brand;
 }
 
@@ -125,9 +146,9 @@ em {
 //-------------------------------------
 
 a {
-  transition: all .2s;
   color: $color-brand;
   text-decoration: none;
+  transition: all 0.2s;
 
   &:hover {
     color: $color-brand-darker;
@@ -163,23 +184,23 @@ figure {
 }
 
 figcaption {
-  font-weight: $font-weight-regular;
+  @include type-s;
 
   color: $color-dark;
+  font-weight: $font-weight-regular;
   padding-left: 2em;
   position: relative;
-  @include type-s;
 
   strong { color: $color-brand; }
 
   &::before {
+    background-color: $color-brand;
     content: '';
     display: block;
-    width: 1.5em;
     height: 1px;
-    background-color: $color-brand;
+    left: 0;
     position: absolute;
     top: calc(0.8em - 1px);
-    left: 0;
+    width: 1.5em;
   }
 }

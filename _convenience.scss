@@ -35,19 +35,19 @@
 //-------------------------------------
 
 @include media(max-width, small) {
-  .hide--on-small { display: none }
+  .hide--on-small { display: none; }
 }
 
 @include media(max-width, medium) {
-  .hide--on-small-and-medium { display: none }
+  .hide--on-small-and-medium { display: none; }
 }
 
 @include media(small, medium) {
-  .hide--on-medium { display: none }
+  .hide--on-medium { display: none; }
 }
 
 @include media(medium) {
-  .hide--on-big { display: none }
+  .hide--on-big { display: none; }
 }
 
-.hidden { display: none }
+.hidden { display: none; }

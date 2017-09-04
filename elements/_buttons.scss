@@ -1,24 +1,25 @@
 .btn {
   @include button-shadow;
-  display: inline-block;
+
   background: $gradient-blue;
-  border-radius: $border-radius;
-  min-width: 120px;
   border: 0;
+  border-radius: $border-radius;
   color: $color-white;
   cursor: pointer;
+  display: inline-block;
   font-family: $font-family;
   font-size: $font-size-l;
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-m;
   line-height: $line-height-m;
+  min-width: 120px;
   overflow: hidden;
   padding: $spacing-s $spacing-l;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: all .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   vertical-align: middle;
   white-space: nowrap;
   will-change: transform;
@@ -27,18 +28,20 @@
   &:active,
   &:focus {
     @include button-shadow-raised;
+
     color: $color-white;
-    transform: translateY(-4px);
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
+    transform: translateY(-4px);
   }
 
   &:active {
     background: $gradient-blue;
   }
 
-  &[disabled], &.btn--disabled {
-    opacity: .4;
+  &[disabled],
+  &.btn--disabled {
+    opacity: 0.4;
     pointer-events: none;
   }
 
@@ -56,25 +59,26 @@
   }
 
   &#{&}--outline {
-    position: relative;
     background: transparent;
-    color: $color-brand;
     box-shadow: none;
-    transition: background .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    color: $color-brand;
+    position: relative;
+    transition: background 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &:hover,
     &:active,
     &:focus {
-      transform: none;
       background: rgba($color-brand, 0.15);
+      transform: none;
     }
 
     &::before {
       @include position(absolute, 0 0 0 0);
-      content: '';
-      display: block;
+
       border: 2px solid $color-brand;
       border-radius: $border-radius;
+      content: '';
+      display: block;
     }
   }
 
@@ -93,8 +97,8 @@
   }
 
   &--loading {
-    transition: padding .2s ease-in-out;
     padding-right: $spacing-xxl !important;
+    transition: padding 0.2s ease-in-out;
 
     .spinner {
       display: inline-block;
@@ -106,7 +110,7 @@
   &#{&}--cta {
     background-color: $color-highlight;
     border-color: $color-highlight;
-    color: white;
+    color: $color-white;
 
     &:hover,
     &:active,
@@ -122,19 +126,19 @@
     color: $color-dark;
 
     &:hover {
-      color: white;
       background-color: $color-dark;
+      color: $color-white;
     }
   }
 
   &#{&}--secondary-white {
     background-color: transparent;
-    border: 1px solid #FFF;
-    color: #FFF;
+    border: 1px solid #fff;
+    color: #fff;
 
     &:hover {
+      background-color: #fff;
       color: $color-error;
-      background-color: #FFF;
     }
   }
 
@@ -157,7 +161,7 @@
   &#{&}--warning {
     background-color: darken($color-warning, 5%);
     border-color: darken($color-warning, 5%);
-    color: white;
+    color: $color-white;
 
     &:hover,
     &:active,
@@ -170,7 +174,7 @@
   &#{&}--alert {
     background-color: $color-error;
     border-color: $color-error;
-    color: white;
+    color: $color-white;
 
     &:hover,
     &:active,
@@ -181,8 +185,8 @@
   }
 
   &#{&}--s {
-    padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
+    padding: $spacing-xs $spacing-m;
 
     &.btn--loading .spinner {
       right: 9px;
@@ -205,57 +209,59 @@
   &#{&}--highlight {
     color: $color-highlight;
 
-    &[disabled], &.btn--disabled {
-      color: lighten($color-highlight, .2);
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-highlight, 0.2);
     }
   }
 
   &#{&}--brand {
     color: $color-brand;
 
-    &[disabled], &.btn--disabled {
-      color: lighten($color-brand, 20%);
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-brand, 0.2);
     }
   }
 
   &#{&}--dark {
     color: $color-dark;
 
-    &[disabled], &.btn--disabled {
-      color: lighten($color-dark, 20%);
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-dark, 0.2);
     }
   }
 
-  &:focus { outline: none }
+  &:focus { outline: none; }
 }
-
 
 /**
  * Loading spinner
  * Apply .loading to parent button to enable spinner
  */
-
 .spinner {
   @include size(18px);
-  transition: all .3s .2s ease-in-out;
+
   background: url('/images/spinner-bright.svg') no-repeat center center;
   display: none;
   position: absolute;
+  transition: all 0.3s 0.2s ease-in-out;
 }
 
 .btns {
   &#{&}--inline {
-    display: inline-flex;
-    justify-content: space-between;
-    flex-direction: column;
     align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
 
-    &> .btn {
+    > .btn {
       width: 100%;
     }
 
-    &>:not(:last-child) {
+    > *:not(:last-child) {
       margin-bottom: $spacing-xs;
     }
 
@@ -264,17 +270,16 @@
     }
 
     @include media(small) {
-      flex-direction: row;
+      flex-flow: row wrap;
       justify-content: flex-start;
-      flex-wrap: wrap;
       width: auto;
 
-      &> .btn {
+      > .btn {
         margin-top: $spacing-s;
         width: auto;
       }
 
-      &>:not(:last-child) {
+      > *:not(:last-child) {
         margin-bottom: 0;
         margin-right: $spacing-s;
       }
@@ -285,9 +290,9 @@
     margin-bottom: $spacing-s;
 
     .btn {
+      border-color: $color-brand;
       border-radius: 0;
       border-style: solid;
-      border-color: $color-brand;
       border-width: 0 1px;
 
       // TODO: Rename the brand and outline-brand modifiers. Since this
@@ -296,7 +301,7 @@
       //       for the fill state?
       &--brand {
         background-color: $color-brand;
-        color: white;
+        color: $color-white;
       }
 
       &--outline-brand {
@@ -305,8 +310,8 @@
         color: $color-brand;
 
         &:hover {
-          color: white;
           background-color: $color-brand;
+          color: $color-white;
         }
       }
 
@@ -330,8 +335,8 @@
     }
 
     .btn.btn--s {
-      padding: 0.7em 1.4em;
       margin: 0;
+      padding: 0.7em 1.4em;
     }
 
     @include media(medium) {
@@ -339,12 +344,13 @@
         border-width: 1px 1px 1px 0;
 
         &:first-child {
-          border-width: 1px;
           border-radius: $border-radius 0 0 $border-radius;
+          border-width: 1px;
         }
+
         &:last-child {
-          border-width: 1px 1px 1px 0;
           border-radius: 0 $border-radius $border-radius 0;
+          border-width: 1px 1px 1px 0;
         }
       }
     }

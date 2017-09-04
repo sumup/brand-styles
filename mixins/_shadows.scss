@@ -9,11 +9,11 @@ $color-shadow: #617695;
 }
 
 @mixin drop-shadow() {
-  box-shadow: 0 20px 50px 0 rgba($color-shadow, .2);
+  box-shadow: 0 20px 50px 0 rgba($color-shadow, 0.2);
 }
 
 // TODO: Where is the below used?
-@mixin fancy-shadow($shadow-color: rgba($color-dark, .15), $size: 12px, $spread: 0px, $position: bottom) {
+@mixin fancy-shadow($shadow-color: rgba($color-dark, 0.15), $size: 12px, $spread: 0, $position: bottom) {
   position: relative;
   // z-index: 1;
 
@@ -25,16 +25,19 @@ $color-shadow: #617695;
     @if $position == bottom {
       bottom: 0;
       z-index: -1;
-    } @else {
+    }
+
+    @else {
       top: -20px;
       z-index: 1;
     }
-    content: '';
-    position: absolute;
-    box-shadow: 0 0 $size $spread $shadow-color;
-    height: 20px;
-    width: 86%;
-    left: 7%;
+
     border-radius: 86% / 20px;
+    box-shadow: 0 0 $size $spread $shadow-color;
+    content: '';
+    height: 20px;
+    left: 7%;
+    position: absolute;
+    width: 86%;
   }
 }
