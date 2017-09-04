@@ -2,11 +2,6 @@
   "name": "brand-styles",
   "version": "2.0.0",
   "description": "The SumUp brand styles Sass library.",
-  "scripts": {
-    "lint": "node node_modules/sass-lint/bin/sass-lint.js '*.scss' --verbose --no-exit",
-    "lint:watch": "npm run lint; onchange '*.scss' -- npm run lint",
-    "test": "node node_modules/sass-lint/bin/sass-lint.js '*.scss'"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sumup/brand-styles.git"
@@ -19,13 +14,30 @@
     "url": "https://github.com/sumup/brand-styles/issues"
   },
   "homepage": "https://github.com/sumup/brand-styles#readme",
+  "license": "UNLICENSED",
+  "scripts": {
+    "fix": "npm run lint --fix --cache",
+    "lint": "stylelint \"./**/*.scss\" --syntax scss --config stylelint.config.js",
+    "lint:watch": "onchange '*.scss' -- npm run lint --cache",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "npm run fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "bourbon": "^4.3.4",
     "bourbon-neat": "^2.0.0",
-    "normalize.css": "^7.0.0",
-    "sass-lint": "^1.10.2"
+    "normalize.css": "^7.0.0"
   },
   "devDependencies": {
-    "onchange": "^2.5.0"
+    "lint-staged": "^3.6.0",
+    "onchange": "^2.5.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.1.0"
   }
 }
