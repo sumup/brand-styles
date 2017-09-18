@@ -273,6 +273,10 @@
       flex-flow: row wrap;
       width: auto;
 
+      > .btn {
+        margin-top: $spacing-s;
+      }
+
       > *:not(:last-child) {
         margin-bottom: 0;
         margin-right: $spacing-s;
