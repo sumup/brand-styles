@@ -193,6 +193,34 @@
 
 /* Text buttons */
 
+.btn--text {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  color: $color-dark;
+  cursor: pointer;
+  font-size: $font-size-l;
+  font-weight: 500;
+  line-height: $line-height-s;
+  padding: 0;
+
+  &:active,
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    color: $color-brand;
+    outline: none;
+    text-decoration: none;
+    transform: none;
+  }
+
+  &[disabled],
+  &.btn--disabled {
+    color: lighten($color-dark, 0.2);
+  }
+}
+
+// NOTE: Deprecated
 .text-btn {
   background: none;
   border: 0;
@@ -229,7 +257,9 @@
     }
   }
 
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 }
 
 /**
