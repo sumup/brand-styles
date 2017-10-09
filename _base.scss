@@ -84,6 +84,12 @@ h5,
 
   &--inline {
     display: inline-block;
+  } 
+
+  @include media(max-width, small) {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 }
 
