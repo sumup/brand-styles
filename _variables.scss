@@ -31,10 +31,29 @@ $gradient-white: linear-gradient(to bottom, $color-white, $color-light);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);
 
-$gradient-pricingbadge-yellow: linear-gradient(to bottom right, #fad961 0%, #f7aa1c 100%);
-$gradient-pricingbadge-white: linear-gradient(-150deg, $color-white 0%, #f3f3f3 36%, #cecece 97%);
-$gradient-pricingbadge-blue: linear-gradient(-150deg, #70b9ff 0%, #38f 44%, #3362ff 97%);
-$gradient-pricingbadge-orange: linear-gradient(-150deg, #ffd482 0%, #ff7648 45%, #ff4000 86%);
+$gradient-pricingbadge-yellow: linear-gradient(
+  to bottom right,
+  #fad961 0%,
+  #f7aa1c 100%
+);
+$gradient-pricingbadge-white: linear-gradient(
+  -150deg,
+  $color-white 0%,
+  #f3f3f3 36%,
+  #cecece 97%
+);
+$gradient-pricingbadge-blue: linear-gradient(
+  -150deg,
+  #70b9ff 0%,
+  #38f 44%,
+  #3362ff 97%
+);
+$gradient-pricingbadge-orange: linear-gradient(
+  -150deg,
+  #ffd482 0%,
+  #ff7648 45%,
+  #ff4000 86%
+);
 
 // Spacings
 $spacing-xxs: 3px !default;
@@ -80,7 +99,8 @@ $font-weight-medium: 700 !default;
 $font-weight-bold: 900 !default;
 
 $font-family: museo, 'Museo Sans', Helvetica, Arial, sans-serif !default;
-$font-family-pl: museo_pl, 'Museo Sans Cyrl', Helvetica, Arial, sans-serif !default;
+$font-family-pl: museo_pl, 'Museo Sans Cyrl', Helvetica, Arial,
+  sans-serif !default;
 // TODO: Deprecated, replace references.
 $font-family-display: museo, Helvetica, Arial, sans-serif !default;
 $font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
@@ -89,17 +109,13 @@ $font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
 $max-width: 1060px !default;
 
 $breakpoints: (
-  tiny: 21.25em,   // 340px
-  small: 37.5em,   // 600px
-  medium: 56.25em, // 900px
-  large: 75em,     // 1200px
-  mega: 93.75em    // 1500px
+  tiny: 21.25em,
+  small: 37.5em,
+  medium: 56.25em,
+  large: 75em,
+  mega: 93.75em
 );
 
 // Grid
-$gutter: 24px;
-$neat-grid: (
-  columns: 12,
-  gutter: $gutter,
-  direction: ltr,
-);
+$gutter: 36px;
+$neat-grid: (columns: 12, gutter: $gutter, direction: ltr);
