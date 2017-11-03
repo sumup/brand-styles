@@ -71,6 +71,12 @@ fieldset {
   @include disabled;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .input.input--no-margin,
 .textarea.textarea--no-margin {
   margin-bottom: 0;
