@@ -92,6 +92,34 @@
     }
   }
 
+  &--text {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: $color-dark;
+    cursor: pointer;
+    font-size: $font-size-l;
+    font-weight: 500;
+    line-height: $line-height-s;
+    padding: 0;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background: none;
+      box-shadow: none;
+      color: $color-brand;
+      outline: none;
+      text-decoration: none;
+      transform: none;
+    }
+
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-dark, 0.2);
+    }
+  }
+
   &--loading {
     padding-right: $spacing-xxl !important;
     transition: padding 0.2s ease-in-out;
@@ -188,35 +216,6 @@
       right: 9px;
       top: 10px;
     }
-  }
-}
-
-/* Text buttons */
-
-.btn--text {
-  background: none;
-  border: 0;
-  box-shadow: none;
-  color: $color-dark;
-  cursor: pointer;
-  font-size: $font-size-l;
-  font-weight: 500;
-  line-height: $line-height-s;
-  padding: 0;
-
-  &:active,
-  &:hover,
-  &:focus {
-    box-shadow: none;
-    color: $color-brand;
-    outline: none;
-    text-decoration: none;
-    transform: none;
-  }
-
-  &[disabled],
-  &.btn--disabled {
-    color: lighten($color-dark, 0.2);
   }
 }
 
