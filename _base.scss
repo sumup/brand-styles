@@ -84,12 +84,16 @@ h5,
 
   &--inline {
     display: inline-block;
-  } 
+  }
 
   @include media(max-width, small) {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+
+    [data-locale='pt-BR'] & {
+      hyphens: none;
+    }
   }
 }
 
@@ -197,7 +201,9 @@ figcaption {
   padding-left: 2em;
   position: relative;
 
-  strong { color: $color-brand; }
+  strong {
+    color: $color-brand;
+  }
 
   &::before {
     background-color: $color-brand;
