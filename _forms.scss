@@ -243,7 +243,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: all 0.15s ease-out 0s;
     content: "\221F";
     position: absolute;
-    z-index: 40;
+    z-index: 31;
     font-size: $font-size-xs;
     color: $color-dark;
     right: $spacing-xxl;
