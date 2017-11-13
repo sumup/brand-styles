@@ -56,6 +56,28 @@
        url('https://static.sumup.com/fonts/polish/MuseoSansRounded-500-webfont.ttf') format('truetype');
 }
 
+// cyrillic charset
+@font-face {
+  font-family: 'roboto';
+  font-weight: 100;
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff') format('woff'),
+  url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: 300;
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.woff') format('woff'),
+  url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: 500;
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.woff') format('woff'),
+  url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.ttf') format('truetype');
+}
+
 body {
   font-weight: $font-weight-regular;
   font-size: $font-size-l;
@@ -76,7 +98,7 @@ body {
 //
 // browsers will only the font-face which is actually used in the css
 // so here, we'll define for body, headlines and buttons which font-files to use.
-body:not([data-locale="pl-PL"]) {
+body {
   font-family: $font-family;
 
   h1, .h1,
@@ -84,7 +106,7 @@ body:not([data-locale="pl-PL"]) {
   h3, .h3,
   h4, .h4,
   .btn,
-  em {
+  em, button, input, optgroup, select, textarea {
     font-family: $font-family-display;
   }
 }
@@ -97,8 +119,21 @@ body[data-locale="pl-PL"] {
   h3, .h3,
   h4, .h4,
   .btn,
-  em {
+  em, button, input, optgroup, select, textarea {
     font-family: $font-family-display-pl;
+  }
+}
+
+body[data-locale="bg-BG"], body[data-locale="el-GR"] {
+  font-family: $font-family-cyr;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn,
+  em, button, input, optgroup, select, textarea {
+    font-family: $font-family-display-cyr;
   }
 }
 
