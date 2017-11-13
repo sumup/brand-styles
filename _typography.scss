@@ -111,32 +111,6 @@ body {
   }
 }
 
-body[data-locale="bg-BG"] {
-  font-family: $font-family-bg;
-
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
-  .btn,
-  em, button, input, optgroup, select, textarea {
-    font-family: $font-family-display-bg;
-  }
-}
-
-body[data-locale="el-GR"] {
-  font-family: $font-family-gr;
-
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
-  .btn,
-  em, button, input, optgroup, select, textarea {
-    font-family: $font-family-display-gr;
-  }
-}
-
 body[data-locale="pl-PL"] {
   font-family: $font-family-pl;
 
@@ -147,6 +121,19 @@ body[data-locale="pl-PL"] {
   .btn,
   em, button, input, optgroup, select, textarea {
     font-family: $font-family-display-pl;
+  }
+}
+
+body[data-locale="bg-BG"], body[data-locale="el-GR"] {
+  font-family: $font-family-cyr;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .btn,
+  em, button, input, optgroup, select, textarea {
+    font-family: $font-family-display-cyr;
   }
 }
 
