@@ -25,6 +25,10 @@ fieldset {
   }
 }
 
+.input {
+  height: 42px;
+}
+
 .input,
 .textarea {
   appearance: none;
@@ -32,7 +36,6 @@ fieldset {
   border: 0;
   border-radius: $border-radius;
   font-size: $font-size-l;
-  height: 42px;
   line-height: $line-height-s;
   margin-bottom: $spacing-l;
   padding: $spacing-s;
@@ -255,9 +258,9 @@ fieldset {
 
   select {
     appearance: none;
-    background: none;
-    border: 1px solid $color-medium;
+    background: $color-light;
     border-radius: $border-radius;
+    border: 0;
     cursor: pointer;
     font-size: $font-size-m;
     height: 42px;
