@@ -68,7 +68,7 @@ $spacing-xxxl: 60px !default;
 // Shapes
 $border-radius-s: 3px !default;
 $border-radius-m: 6px !default;
-$border-radius-l: 18px !default;
+$border-radius-l: 12px !default;
 $border-radius: $border-radius-m !default;
 $border-radius-circle: 50%;
 
@@ -118,4 +118,8 @@ $breakpoints: (
 
 // Grid
 $gutter: 36px;
-$neat-grid: (columns: 12, gutter: $gutter, direction: ltr);
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter,
+  direction: ltr
+);
