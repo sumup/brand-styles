@@ -14,29 +14,36 @@
   line-height: $line-height-m;
   min-width: 120px;
   overflow: hidden;
-  padding: $spacing-s $spacing-l;
+  padding: $spacing-s $spacing-xl;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.1s ease-in;
   vertical-align: middle;
   white-space: nowrap;
   will-change: transform;
 
   &:hover,
-  &:active,
   &:focus {
     @include button-shadow-raised;
 
     color: $color-white;
     outline: none;
     text-decoration: none;
-    transform: translateY(-4px);
+    transform: translateY(3px);
   }
 
   &:active {
-    background: $gradient-blue;
+    @include button-shadow-pressed;
+
+    background: linear-gradient(
+      to bottom,
+      $color-brand-lighter,
+      $color-brand-darker
+    );
+    transform: translateY(6px);
+    transition: all 0.05s ease-in;
   }
 
   &[disabled],
@@ -59,19 +66,20 @@
     box-shadow: none;
     color: $color-brand;
     position: relative;
-    transition: background 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &:hover,
-    &:active,
     &:focus {
-      background: rgba($color-brand, 0.15);
-      transform: none;
+      background: rgba($color-brand, 0.1);
+    }
+
+    &:active {
+      transform: translateY(5px);
     }
 
     &::before {
       @include position(absolute, 0 0 0 0);
 
-      border: 2px solid $color-brand;
+      border: 3px solid $color-brand;
       border-radius: $border-radius;
       content: '';
       display: block;
