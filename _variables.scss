@@ -98,12 +98,15 @@ $font-weight-regular: 500 !default;
 $font-weight-medium: 700 !default;
 $font-weight-bold: 900 !default;
 
-$font-family: museo, 'Museo Sans', Helvetica, Arial, sans-serif !default;
-$font-family-pl: museo_pl, 'Museo Sans Cyrl', Helvetica, Arial,
+$font-family: museo, 'Museo Sans', 'Roboto', Helvetica, Arial,
   sans-serif !default;
+$font-family-pl: museo_pl, 'Museo Sans Cyrl', 'Roboto', Helvetica, Arial,
+  sans-serif !default;
+$font-family-cy: roboto, 'Roboto', Helvetica, Arial, sans-serif !default;
 // TODO: Deprecated, replace references.
-$font-family-display: museo, Helvetica, Arial, sans-serif !default;
-$font-family-display-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+$font-family-display: museo, 'Roboto', Helvetica, Arial, sans-serif !default;
+$font-family-display-pl: museo_pl, 'Roboto', Helvetica, Arial,
+  sans-serif !default;
 
 // Breakpoints
 $max-width: 1060px !default;

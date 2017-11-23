@@ -7,7 +7,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: museoRounded;
+  font-family: museo;
   font-weight: $font-weight-regular;
 }
 
@@ -17,12 +17,16 @@ textarea {
 
 // Browsers will only load the font-face which is actually used in the CSS.
 // So here we'll define for body, headlines and buttons which font-files to use.
-body:not([data-locale='pl-PL']) {
+body:not([data-locale='pl-PL']):not([data-locale='bg-BG']) {
   font-family: $font-family;
 }
 
 body[data-locale='pl-PL'] {
   font-family: $font-family-pl;
+}
+
+body[data-locale='bg-BG'] {
+  font-family: $font-family-cy;
 }
 
 //-------------------------------------
