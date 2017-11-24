@@ -33,9 +33,10 @@
 @font-face {
   font-family: 'roboto';
   font-weight: 500;
+  // HACK: Roboto is heavier than Museo, that's why Roboto 400 is used for medium weights.
   src:
-    url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.woff') format('woff'),
-    url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.ttf') format('truetype');
+    url('https://static.sumup.com/fonts/cyrillic/Roboto_400-webfont.woff') format('woff'),
+    url('https://static.sumup.com/fonts/cyrillic/Roboto_400-webfont.ttf') format('truetype');
 }
 
 @font-face {
