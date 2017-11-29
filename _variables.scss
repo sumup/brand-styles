@@ -120,9 +120,11 @@ $breakpoints: (
 );
 
 // Grid
-$gutter: 36px;
+$columns: 12 !default;
+$gutter: 36px !default;
+$direction: ltr !default;
 $neat-grid: (
-  columns: 12,
+  columns: $columns,
   gutter: $gutter,
-  direction: ltr
+  direction: $direction
 );
