@@ -60,6 +60,22 @@ fieldset {
     border-color: $color-brand;
     outline: none; // remove weird glow on some OS'es
   }
+
+  &.input--outline {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $color-light;
+    }
+
+    &:focus,
+    &:hover {
+      background: rgba($color-brand, 0.1);
+      border-color: white;
+    }
+  }
 }
 
 .input.input--disabled,
