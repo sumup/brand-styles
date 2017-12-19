@@ -44,6 +44,10 @@ body[data-locale='bg-BG'] {
 html {
   box-sizing: border-box;
   font-size: $font-size-base;
+
+  [type='button'] {
+    appearance: none;
+  }
 }
 
 body {
