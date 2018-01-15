@@ -25,6 +25,8 @@
   will-change: transform;
 
   [data-locale='es-CL'] & {
+    @include button-shadow-cl;
+
     background: $gradient-orange;
   }
 
@@ -36,6 +38,10 @@
     outline: none;
     text-decoration: none;
     transform: translateY(3px);
+
+    [data-locale='es-CL'] & {
+      @include button-shadow-raised-cl;
+    }
   }
 
   &:active {
@@ -50,6 +56,8 @@
     transition: all 0.05s ease-in;
 
     [data-locale='es-CL'] & {
+      @include button-shadow-pressed-cl;
+
       background: linear-gradient(
         to bottom,
         $color-chile-lighter,
@@ -127,7 +135,7 @@
   &--text {
     background: none !important;
     border: 0;
-    box-shadow: none;
+    box-shadow: none !important;
     color: $color-dark;
     cursor: pointer;
     font-size: $font-size-l;

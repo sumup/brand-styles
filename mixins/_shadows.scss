@@ -12,6 +12,20 @@ $color-shadow: #002866;
   box-shadow: 0 3px 3px 0 rgba($color-shadow, 0.4);
 }
 
+$color-shadow-cl: #3e201d;
+
+@mixin button-shadow-cl() {
+  box-shadow: 0 10px 18px 0 rgba($color-shadow-cl, 0.35);
+}
+
+@mixin button-shadow-raised-cl() {
+  box-shadow: 0 8px 12px 0 rgba($color-shadow-cl, 0.35);
+}
+
+@mixin button-shadow-pressed-cl() {
+  box-shadow: 0 3px 3px 0 rgba($color-shadow-cl, 0.35);
+}
+
 @mixin drop-shadow() {
   $color-drop-shadow-light: #617695;
   $color-drop-shadow-dark: #00143c;
