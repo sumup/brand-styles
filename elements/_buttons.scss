@@ -125,7 +125,7 @@
   }
 
   &--text {
-    background: none;
+    background: none !important;
     border: 0;
     box-shadow: none;
     color: $color-dark;
