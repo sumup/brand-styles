@@ -3,6 +3,10 @@ $color-brand: #38f !default;
 $color-brand-lighter: #3af !default;
 $color-brand-darker: #3362ff !default;
 
+$color-chile: #ff8300;
+$color-chile-darker: #f60;
+$color-chile-lighter: #ffa03c;
+
 // TODO: Deprecated, remove references.
 $color-highlight: $color-brand !default;
 $color-highlight-lighter: $color-brand-lighter !default;
@@ -27,6 +31,7 @@ $color-warning-darker: #d08613 !default;
 
 // Gradients
 $gradient-blue: linear-gradient(to bottom, $color-brand, $color-brand-darker);
+$gradient-orange: linear-gradient(to bottom, $color-chile, $color-chile-darker);
 $gradient-white: linear-gradient(to bottom, $color-white, $color-light);
 $gradient-lightblue: linear-gradient(to left, #c3cfe2, #e7f0fd);
 $gradient-lightgrey: linear-gradient(to left, #cfd9df, #e2ebf0);

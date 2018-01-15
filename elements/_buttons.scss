@@ -24,6 +24,10 @@
   white-space: nowrap;
   will-change: transform;
 
+  [data-locale='es-CL'] & {
+    background: $gradient-orange;
+  }
+
   &:hover,
   &:focus {
     @include button-shadow-raised;
@@ -44,6 +48,14 @@
     );
     transform: translateY(6px);
     transition: all 0.05s ease-in;
+
+    [data-locale='es-CL'] & {
+      background: linear-gradient(
+        to bottom,
+        $color-chile-lighter,
+        $color-chile-darker
+      );
+    }
   }
 
   &[disabled],
@@ -67,9 +79,17 @@
     color: $color-brand;
     position: relative;
 
+    [data-locale='es-CL'] & {
+      color: $color-chile;
+    }
+
     &:hover,
     &:focus {
       background: rgba($color-brand, 0.1);
+
+      [data-locale='es-CL'] & {
+        background: rgba($color-chile, 0.1);
+      }
     }
 
     &:active {
@@ -83,6 +103,10 @@
       border-radius: $border-radius;
       content: '';
       display: block;
+
+      [data-locale='es-CL'] & {
+        border: 3px solid $color-chile;
+      }
     }
   }
 
