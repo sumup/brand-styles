@@ -1,61 +1,61 @@
 // Colors
-$color-highlight: #52CCA7 !default;
-$color-highlight-lighter: #95E6CD !default;
-$color-highlight-darker: #41A386 !default;
-$color-brand: #5C8BCC !default;
-$color-brand-lighter: #8EB6ED !default;
-$color-brand-darker: #416494 !default;
+$color-brand: #3388ff !default;
+$color-brand-lighter: #7fb5ff !default;
+$color-brand-darker: #2567d8 !default;
+$color-highlight: $color-brand !default;
+$color-highlight-lighter: $color-brand-lighter !default;
+$color-highlight-darker: $color-brand-darker !default;
 
 // Greys
-$color-dark: #323E4D !default;
-$color-medium: #CED2D9 !default;
-$color-light: #F0F2F5 !default;
+$color-dark: #212933 !default;
+$color-medium: #9da7b1 !default;
+$color-light: #d8dde1 !default;
 $color-off: #FAFBFC !default;
 $color-white: #FFF !default;
 
 // Greys - Version 2.0
-$color-darker-v2: #1d384c !default;
-$color-medium-v2: #a7aeba !default;
-$color-light-v2: #eff1f3 !default;
+$color-darker-v2: $color-dark !default;
+$color-medium-v2: $color-medium !default;
+$color-light-v2: $color-light !default;
 
 // Success, error, warning
-$color-success: #52CCA7 !default;
-$color-success-darker: #338069 !default;
-$color-success-lighter: #95E6CD !default;
-$color-error: #CC5252 !default;
-$color-error-darker: #803332 !default;
-$color-warning: #FACC37 !default;
-$color-warning-darker: #B38F1B !default;
+$color-success: #62de76 !default;
+$color-success-darker: #49b85b !default;
+$color-success-lighter: #97e2a3 !default;
+$color-error: #ff7559 !default;
+$color-error-darker: #d55a41 !default;
+$color-warning: #ffc859 !default;
+$color-warning-darker: #d4a546 !default;
 
 // Spacings
-$spacing-xxs: 3px !default;
-$spacing-xs: 6px !default;
+$spacing-xxs: 4px !default;
+$spacing-xs: 8px !default;
 $spacing-s: 12px !default;
-$spacing-m: 18px !default;
+$spacing-m: 16px !default;
 $spacing-l: 24px !default;
-$spacing-xl: 30px !default;
-$spacing-xxl: 36px !default;
+$spacing-xl: 32px !default;
+$spacing-xxl: 40px !default;
 
 // Shapes
 $border-radius-s: 1px !default;
-$border-radius-m: 3px !default;
+$border-radius-m: 4px !default;
 $border-radius-l: 5px !default;
 $border-radius: $border-radius-m !default;
 
 // Typography
 $font-size-xxxxxl: 44px !default;
-$font-size-xxxxl: 40px !default;
-$font-size-xxxl: 32px !default;
+$font-size-xxxxl: 42px !default;
+$font-size-xxxl: 36px !default;
 $font-size-xxl: 24px !default;
-$font-size-xl: 18px !default;
-$font-size-l: 16px !default;
-$font-size-m: 14px !default;
-$font-size-s: 12px !default;
+$font-size-xl: 19px !default;
+$font-size-l: 17px !default;
+$font-size-m: 15px !default;
+$font-size-s: 13px !default;
 $font-size-xs: 10px !default;
 
 $line-height-xxl: 54px !default;
 $line-height-xl: 48px !default;
-$line-height-l: 30px !default;
+$line-height-l: 32px !default;
 $line-height-m: 24px !default;
 $line-height-s: 18px !default;
 
@@ -63,11 +63,12 @@ $font-weight-light: 100 !default;
 $font-weight-regular: 300 !default;
 $font-weight-medium: 500 !default;
 
-$font-family: museo, Helvetica, Arial, sans-serif !default;
-$font-family-pl: museo_pl, Helvetica, Arial, sans-serif !default;
+$font-family: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
+$font-family-pl: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
+$font-family-display: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
+$font-family-display-pl: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
+
 $font-family-cyr: roboto, Helvetica, Arial, sans-serif !default;
-$font-family-display: museoRounded, Helvetica, Arial, sans-serif !default;
-$font-family-display-pl: museoRounded_pl, Helvetica, Arial, sans-serif !default;
 $font-family-display-cyr: roboto, Helvetica, Arial, sans-serif !default;
 
 // Breakpoints
