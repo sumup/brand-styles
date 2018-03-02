@@ -1,10 +1,61 @@
-// Colors
-$color-brand: #3388ff !default;
-$color-brand-lighter: #7fb5ff !default;
-$color-brand-darker: #2567d8 !default;
-$color-highlight: $color-brand !default;
-$color-highlight-lighter: $color-brand-lighter !default;
-$color-highlight-darker: $color-brand-darker !default;
+/**
+ * Circuit UI colors - START
+ */
+
+// Neutrals
+
+$color-n100: #FAFBFC !default;
+$color-n300: #D8DDE1 !default;
+$color-n500: #9DA7B1 !default;
+$color-n700: #5C656F !default;
+$color-n900: #212933 !default;
+
+// Blues
+$color-b100: #DAEAFF !default;
+$color-b300: #7FB5FF !default;
+$color-b500: #3388FF !default;
+$color-b700: #2567D8 !default;
+$color-b900: #1641AC !default;
+
+// Greens
+$color-g100: #C6E5CB !default;
+$color-g300: #97E2A3 !default;
+$color-g500: #62DE76 !default;
+$color-g700: #49B85B !default;
+$color-g900: #2F903E !default;
+
+// Yellows
+$color-y100: #F2E5CB !default;
+$color-y300: #F7DA9F !default;
+$color-y500: #FFC859 !default;
+$color-y700: #D4A546 !default;
+$color-y900: #AB8433 !default;
+
+// Reds
+$color-r100: #FFE6E1 !default;
+$color-r300: #FFAF9F !default;
+$color-r500: #FF7559 !default;
+$color-r700: #D55A41 !default;
+$color-r900: #A73D28 !default;
+
+// Primary
+$color-p100: $color-b100;
+$color-p300: $color-b300;
+$color-p500: $color-b500;
+$color-p700: $color-b700;
+$color-p900: $color-b900;
+
+/**
+ * Circuit UI colors - END
+ */
+
+ // Colors
+ $color-brand: $color-p500;
+ $color-brand-lighter: $color-p300;
+ $color-brand-darker: $color-p700;
+ $color-highlight: $color-p500;
+ $color-highlight-lighter: $color-p300;
+ $color-highlight-darker: $color-p700;
 
 // Greys
 $color-dark: #212933 !default;
@@ -59,9 +110,9 @@ $line-height-l: 32px !default;
 $line-height-m: 24px !default;
 $line-height-s: 18px !default;
 
-$font-weight-light: 100 !default;
-$font-weight-regular: 300 !default;
-$font-weight-medium: 500 !default;
+$font-weight-light: 400 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 700 !default;
 
 $font-family: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
 $font-family-pl: aktiv-grotesk, Helvetica, Arial, sans-serif !default;
