@@ -63,20 +63,21 @@
 }
 
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
-  $box-shadow: #DCEAFA;
-  background: #FFFFFF;
-  border: 1px solid $color-light;
-  border-radius: $border-radius;
-  box-shadow: 0 1px 0 0 opacify($color-light, .2);
-  display: block;
+  background-color: #FFF;
+  border-radius: $border-radius-m;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: $mobile-top $mobile-sides;
-  margin-bottom: $spacing-s;
+  box-shadow: 0 0 0 1px transparentize($color-shadow, 0.94),
+    0 0 1px 0 transparentize($color-shadow, 0.94),
+    0 2px 2px 0 transparentize($color-shadow, 0.94);
+  width: 100%;
 
-  @include fancy-shadow($box-shadow);
 
   @include media($big-screens) {
+    min-width: 400px;
     padding: $tablet-top $tablet-sides;
-    box-shadow: none;
   }
 }
 
