@@ -1,31 +1,42 @@
 .btn {
   transition: color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1);
-  display: inline-block;
-  border: 1px solid;
-  border-radius: $border-radius;
+  background-color: $color-p500;
+  border-color: $color-p700;
+  border-radius: $border-radius-m;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06);
+  color: #fff;
   cursor: pointer;
-  font-size: $font-size-l;
-  font-weight: 500;
-  padding: 11px $spacing-xl;
-  position: relative;
-  white-space: nowrap;
-  text-align: center;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  padding: $spacing-xs $spacing-s;
+  width: auto;
+  height: auto;
   text-decoration: none;
-  overflow: hidden;
-  vertical-align: middle;
-  text-overflow: ellipsis;
-  line-height: $line-height-s;
 
-  &:hover,
-  &:active,
+  &:active {
+    background-color: $color-p700;
+    border-color: $color-p900;
+    box-shadow: inset 0 4px 8px 0 rgba(12, 15, 20, 0.3);
+  }
+
   &:focus {
-    text-decoration: none;
-    outline: none;
+    border-color: $color-p700;
+    border-width: 1px;
+    box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+      inset 0 0 0 2px $color-p700;
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: $color-p700;
   }
 
   &:hover,
   &:active {
-    color: $color-brand-darker;
+    border-color: $color-p900;
   }
 
   &[disabled], &.btn--disabled {
@@ -47,40 +58,51 @@
   // TODO: remove the highlight modifier as we're
   //       going to stick with cta as terminology.
   &#{&}--cta, &#{&}--highlight {
-    background-color: $color-highlight;
-    border-color: $color-highlight;
-    color: white;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $color-highlight-darker;
-      border-color: $color-highlight-darker;
-
-      &[disabled], &.btn--disabled {
-        background-color: $color-highlight;
-        border-color: $color-highlight;
-      }
-    }
   }
 
   // TODO: remove the outline modifier as we're
   //       going to stick with secondary as terminology.
   &#{&}--secondary, &#{&}--outline {
     background-color: transparent;
-    border-color: $color-highlight;
-    color: $color-highlight;
+    border-color: $color-n900;
+    border-width: 0;
+    box-shadow: none;
+    color: $color-n700;
 
-    &:hover,
-    &:active,
+    &:active {
+      background-color: transparent;
+      border-color: $color-n900;
+      border-width: 0;
+      box-shadow: none;
+    }
+
     &:focus {
-      border-color: $color-highlight-darker;
-      color: $color-highlight-darker;
+      box-shadow: inset 0 0 0 2px $color-n900;
+    }
 
-      &[disabled], &.btn--disabled {
-        border-color: $color-highlight;
-        color: $color-highlight;
-      }
+    &:hover {
+      background-color: transparent;
+      border-width: 0;
+      border-color: $color-n900;
+    }
+
+    &:active,
+    &:hover,
+    &:hover:focus,
+    &:active:focus {
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: $color-n900;
+    }
+
+    &:active:focus,
+    &:hover:focus {
+      border-color: $color-n900;
+      border-width: 2px;
+      box-shadow: none;
     }
   }
 
