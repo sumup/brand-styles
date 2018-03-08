@@ -12,10 +12,10 @@ fieldset {
 }
 
 .label {
-  font-size: $font-size-s;
-  line-height: $line-height-s;
-  font-weight: $font-weight-medium;
-  margin-bottom: $spacing-xs;
+  @include text-kilo;
+
+  margin-bottom: $spacing-xxs;
+  display: inline-block;
 
   &#{&}--disabled {
     opacity: .4;
