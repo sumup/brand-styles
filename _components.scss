@@ -65,15 +65,13 @@
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
   background-color: #FFF;
   border-radius: $border-radius-m;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   padding: $mobile-top $mobile-sides;
   box-shadow: 0 0 0 1px transparentize($color-shadow, 0.94),
     0 0 1px 0 transparentize($color-shadow, 0.94),
     0 2px 2px 0 transparentize($color-shadow, 0.94);
+  margin-bottom: $spacing-s;
   width: 100%;
-
 
   @include media($big-screens) {
     min-width: 400px;
