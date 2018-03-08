@@ -36,30 +36,28 @@ fieldset {
 
 .input,
 .textarea {
+  @include text-mega;
+
   background-color: $color-white;
   border-width: 1px;
   border-style: solid;
-  border-color: $color-light;
-  border-radius: $border-radius;
-  box-shadow: inset 0 1px 2px 0 rgba(102, 113, 123, 0.21);
-  color: $color-dark;
-  padding: $spacing-xxs $spacing-s;
-  font-size: $font-size-m;
-  line-height: $line-height-m;
+  border-color: $color-n300;
+  border-radius: $border-radius-m;
+  box-shadow: inset 0 1px 2px 0 rgba(102, 113, 123, 0.12);
+  color: $color-n900;
+  padding: $spacing-xs $spacing-s;
+  margin-bottom: $spacing-m;
+  display: block;
   width: 100%;
-  margin-bottom: $spacing-l;
 
-  @include media($big-screens) {
-    font-size: 16px;
-  }
-
-  &:focus, &:hover {
-    border: 1px solid $color-brand;
+  &:focus,
+  &:active {
+    border: 1px solid $color-p500;
     outline: none;
   }
 
   &::placeholder {
-    color: $color-medium;
+    color: $color-n500;
   }
 }
 
@@ -83,7 +81,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .input.input--optional,
 .textarea.textarea--optional {
-  border-style: dashed;
+    background-color: $color-n100;
+    border-style: dashed;
+    box-shadow: none;
 }
 
 .input {

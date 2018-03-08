@@ -50,3 +50,58 @@
   font-size: $font-size-xs;
   line-height: $line-height-s;
 }
+
+/**
+ * Circuit UI typography pairings
+ */
+
+@mixin text-kilo {
+  font-size: $font-size-s;
+  line-height: $line-height-m;
+}
+
+@mixin text-mega {
+  font-size: $font-size-m;
+  line-height: $line-height-l;
+}
+
+@mixin text-giga {
+  font-size: $font-size-l;
+  line-height: $line-height-l;
+}
+
+// @mixin heading-kilo {
+  // font-size: '17px',
+  // line-height: $line-height-l
+// }
+
+// @mixin heading-mega {
+  // font-size: '19px',
+  // line-height: $line-height-l
+// }
+
+// @mixin heading-giga {
+  // font-size: '22px',
+  // line-height: $line-height-l
+// }
+
+// @mixin heading-tera {
+  // font-size: $line-height-l,
+  // line-height: '32px'
+// }
+
+// @mixin heading-peta {
+  // font-size: '28px',
+  // line-height: '32px'
+// }
+
+// @mixin heading-exa {
+  // font-size: '36px',
+  // line-height: '44px'
+// }
+
+// @mixin heading-zetta {
+  // font-size: '42px',
+  // line-height: '48px'
+// }
+
