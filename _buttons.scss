@@ -48,11 +48,15 @@
 
   &--loading {
     transition: padding .2s ease-in-out;
-    padding-right: $spacing-xxl !important;
+    padding-right: #{18px + $spacing-s + $spacing-xs} !important;
+    position: relative;
 
     .spinner {
       display: inline-block;
       margin-left: $spacing-xs;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
