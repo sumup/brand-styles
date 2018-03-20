@@ -135,19 +135,24 @@
   //       only used by the transaction filters on
   //       mobile.
   &#{&}--grey {
-    background-color: $color-light;
-    border-color: $color-light;
-    color: $color-dark;
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-n700;
 
-    &:hover,
+    &:hover {
+      color: $color-n900;
+      border-color: transparent;
+    }
+
     &:active,
     &:focus {
-      background-color: darken($color-light, 5%);
-      border-color: darken($color-light, 5%);
+      border-color: $color-n900;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-n900;
+      color: $color-n900;
 
       &[disabled], &.btn--disabled {
-        background-color: $color-light;
-        border-color: $color-light;
+        @include disabled;
       }
     }
   }
