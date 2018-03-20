@@ -113,11 +113,11 @@ h2, .h2 {
   @include type-xxl;
 
   @include media($medium-screens) {
-    @include type-xxxxl;
+    @include type-xxxl;
   }
 
   @include media($huge-screens) {
-    @include type-xxxxxl;
+    @include type-xxxxl;
   }
 }
 
