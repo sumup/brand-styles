@@ -65,45 +65,24 @@
   //       going to stick with secondary as terminology.
   &#{&}--secondary, &#{&}--outline {
     background-color: transparent;
-    border-color: $color-n900;
-    border-width: 0;
-    box-shadow: none;
+    border-color: transparent;
     color: $color-n700;
 
-    &:active {
-      background-color: transparent;
-      border-color: $color-n900;
-      border-width: 0;
-      box-shadow: none;
-    }
-
-    &:focus {
-      box-shadow: inset 0 0 0 2px $color-n900;
-    }
-
     &:hover {
-      background-color: transparent;
-      border-width: 0;
-      border-color: $color-n900;
-    }
-
-    &:active,
-    &:hover,
-    &:hover:focus,
-    &:active:focus {
-    }
-
-    &:active,
-    &:hover,
-    &:focus {
       color: $color-n900;
+      border-color: transparent;
     }
 
-    &:active:focus,
-    &:hover:focus {
+    &:active,
+    &:focus {
       border-color: $color-n900;
-      border-width: 2px;
-      box-shadow: none;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-n900;
+      color: $color-n900;
+
+      &[disabled], &.btn--disabled {
+        @include disabled;
+      }
     }
   }
 
