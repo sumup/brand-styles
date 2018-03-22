@@ -1,5 +1,4 @@
 .btn {
-  transition: color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1);
   background-color: $color-p500;
   border-color: $color-p700;
   border-radius: $border-radius-m;
@@ -8,13 +7,18 @@
   box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06);
   color: #fff;
   cursor: pointer;
-  font-weight: $font-weight-medium;
   font-size: $font-size-m;
-  line-height: $line-height-l;
-  padding: $spacing-xs $spacing-s;
-  width: auto;
+  font-weight: $font-weight-medium;
   height: auto;
+  line-height: $line-height-l;
+  overflow: hidden;
+  padding: $spacing-xs $spacing-s;
   text-decoration: none;
+  text-overflow: ellipsis;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  width: auto;
 
   &:active {
     background-color: $color-p700;
@@ -40,16 +44,17 @@
     border-color: $color-p900;
   }
 
-  &[disabled], &.btn--disabled {
-    opacity: .4;
+  &[disabled],
+  &.btn--disabled {
     cursor: default;
+    opacity: 0.4;
     pointer-events: none;
   }
 
   &--loading {
-    transition: padding .2s ease-in-out;
     padding-right: #{18px + $spacing-s + $spacing-xs} !important;
     position: relative;
+    transition: padding 0.2s ease-in-out;
 
     .spinner {
       display: inline-block;
@@ -62,19 +67,21 @@
 
   // TODO: remove the highlight modifier as we're
   //       going to stick with cta as terminology.
-  &#{&}--cta, &#{&}--highlight {
+  &#{&}--cta,
+  &#{&}--highlight {
   }
 
   // TODO: remove the outline modifier as we're
   //       going to stick with secondary as terminology.
-  &#{&}--secondary, &#{&}--outline {
+  &#{&}--secondary,
+  &#{&}--outline {
     background-color: transparent;
     border-color: transparent;
     color: $color-n700;
 
     &:hover {
-      color: $color-n900;
       border-color: transparent;
+      color: $color-n900;
     }
 
     &:active,
@@ -84,7 +91,8 @@
         inset 0 0 0 2px $color-n900;
       color: $color-n900;
 
-      &[disabled], &.btn--disabled {
+      &[disabled],
+      &.btn--disabled {
         @include disabled;
       }
     }
@@ -92,25 +100,27 @@
 
   // TODO: remove the outline-dark modifier as we're going
   //       to strick with secondary as terminology.
-  &#{&}--secondary-dark, &#{&}--outline-dark {
+  &#{&}--secondary-dark,
+  &#{&}--outline-dark {
     background-color: transparent;
     border: 1px solid $color-dark;
     color: $color-dark;
 
     &:hover {
-      color: white;
       background-color: $color-dark;
+      color: white;
     }
   }
 
-  &#{&}--secondary-white, &#{&}--outline-white {
+  &#{&}--secondary-white,
+  &#{&}--outline-white {
     background-color: transparent;
-    border: 1px solid #FFF;
-    color: #FFF;
+    border: 1px solid #fff;
+    color: #fff;
 
     &:hover {
+      background-color: #fff;
       color: $color-error;
-      background-color: #FFF;
     }
   }
 
@@ -123,8 +133,8 @@
     color: $color-n700;
 
     &:hover {
-      color: $color-n900;
       border-color: transparent;
+      color: $color-n900;
     }
 
     &:active,
@@ -134,7 +144,8 @@
         inset 0 0 0 2px $color-n900;
       color: $color-n900;
 
-      &[disabled], &.btn--disabled {
+      &[disabled],
+      &.btn--disabled {
         @include disabled;
       }
     }
@@ -171,9 +182,9 @@
   }
 
   &#{&}--s {
-    padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
     line-height: $line-height-s;
+    padding: $spacing-xs $spacing-m;
 
     &.btn--loading .spinner {
       right: 9px;
@@ -203,15 +214,17 @@
   &#{&}--highlight {
     color: $color-highlight;
 
-    &[disabled], &.btn--disabled {
-      color: lighten($color-highlight, .2);
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-highlight, 0.2);
     }
   }
 
   &#{&}--brand {
     color: $color-brand;
 
-    &[disabled], &.btn--disabled {
+    &[disabled],
+    &.btn--disabled {
       color: lighten($color-brand, 20%);
     }
   }
@@ -219,19 +232,23 @@
   &#{&}--dark {
     color: $color-dark;
 
-    &[disabled], &.btn--disabled {
+    &[disabled],
+    &.btn--disabled {
       color: lighten($color-dark, 20%);
     }
   }
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: transparent;
     border: none;
   }
 
-  &:focus { outline: none; box-shadow: none; }
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
 }
-
 
 /**
  * Loading spinner
@@ -240,57 +257,73 @@
 
 .spinner {
   @include size(18px);
-  transition: all .3s .2s ease-in-out;
   background: url('/images/spinner-bright.svg') no-repeat center center;
   display: none;
   position: absolute;
+  transition: all 0.3s 0.2s ease-in-out;
 }
 
 .btns {
   &#{&}--inline {
-    display: inline-flex;
-    justify-content: space-between;
-    flex-direction: column;
     align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
 
-    &> .btn {
+    @include media($medium-screens) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: auto;
+
+      & > .btn {
+        margin-top: $spacing-s;
+        width: auto;
+      }
+
+      & > :not(:last-child) {
+        margin-bottom: 0;
+        margin-right: $spacing-s;
+      }
+    }
+
+    & > .btn {
       width: 100%;
     }
 
-    &>:not(:last-child) {
+    & > :not(:last-child) {
       margin-bottom: $spacing-xs;
     }
 
     &#{&}-text {
       justify-content: flex-start;
     }
-
-    @include media($medium-screens) {
-      flex-direction: row;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      width: auto;
-
-      &> .btn {
-        margin-top: $spacing-s;
-        width: auto;
-      }
-
-      &>:not(:last-child) {
-        margin-bottom: 0;
-        margin-right: $spacing-s;
-      }
-    }
   }
 
   &--connected {
     margin-bottom: $spacing-s;
 
+    @include media($big-screens) {
+      .btn {
+        border-width: 1px 1px 1px 0;
+
+        &:first-child {
+          border-radius: $border-radius 0 0 $border-radius;
+          border-width: 1px;
+        }
+
+        &:last-child {
+          border-radius: 0 $border-radius $border-radius 0;
+          border-width: 1px 1px 1px 0;
+        }
+      }
+    }
+
     .btn {
+      border-color: $color-brand;
       border-radius: 0;
       border-style: solid;
-      border-color: $color-brand;
       border-width: 0 1px;
       box-shadow: none;
 
@@ -309,8 +342,8 @@
         color: $color-brand;
 
         &:hover {
-          color: white;
           background-color: $color-brand;
+          color: white;
         }
       }
 
@@ -334,23 +367,8 @@
     }
 
     .btn.btn--s {
-      padding: 0.7em 1.4em;
       margin: 0;
-    }
-
-    @include media($big-screens) {
-      .btn {
-        border-width: 1px 1px 1px 0;
-
-        &:first-child {
-          border-width: 1px;
-          border-radius: $border-radius 0 0 $border-radius;
-        }
-        &:last-child {
-          border-width: 1px 1px 1px 0;
-          border-radius: 0 $border-radius $border-radius 0;
-        }
-      }
+      padding: 0.7em 1.4em;
     }
   }
 }
