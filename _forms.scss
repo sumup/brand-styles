@@ -142,7 +142,8 @@ input[type=number]::-webkit-outer-spin-button {
       }
 
       @include media($medium-screens) {
-        width: 46%;
+        width: 48%; /* fallback */
+        width: calc(50% - #{$spacing-m / 2})
       }
     }
   }
