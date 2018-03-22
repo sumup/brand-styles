@@ -36,7 +36,7 @@ fieldset {
 
 .input,
 .textarea {
-  @include text-mega;
+  @include text-giga;
 
   background-color: $color-white;
   border-width: 1px;
@@ -58,6 +58,10 @@ fieldset {
 
   &::placeholder {
     color: $color-n500;
+  }
+
+  @include media($big-screens) {
+    @include text-mega;
   }
 }
 
@@ -254,7 +258,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   select {
-    @include text-mega;
+    @include text-giga;
 
     appearance: none;
     background-color: $color-white;
@@ -288,6 +292,10 @@ input[type=number]::-webkit-outer-spin-button {
     &:-moz-focusring {
       color: transparent;
       text-shadow: 0 0 0 #000;
+    }
+
+    @include media($big-screens) {
+      @include text-mega;
     }
   }
 }
