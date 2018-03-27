@@ -321,6 +321,14 @@
     align-items: stretch;
     width: 100%;
 
+    & > :not(:last-child) {
+      margin-bottom: $spacing-xs;
+    }
+
+    &#{&}-text {
+      justify-content: flex-start;
+    }
+
     @include media($medium-screens) {
       flex-direction: row;
       flex-wrap: wrap;
@@ -337,14 +345,6 @@
         margin-bottom: 0;
         margin-right: $spacing-s;
       }
-    }
-
-    & > :not(:last-child) {
-      margin-bottom: $spacing-xs;
-    }
-
-    &#{&}-text {
-      justify-content: flex-start;
     }
   }
 
