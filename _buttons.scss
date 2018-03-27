@@ -317,6 +317,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: stretch;
     width: 100%;
 
     @include media($medium-screens) {
@@ -324,6 +325,7 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       width: auto;
+      align-items: center;
 
       & > .btn {
         margin-top: $spacing-s;
@@ -334,10 +336,6 @@
         margin-bottom: 0;
         margin-right: $spacing-s;
       }
-    }
-
-    & > .btn {
-      width: 100%;
     }
 
     & > :not(:last-child) {
