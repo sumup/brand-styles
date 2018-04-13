@@ -1,40 +1,55 @@
-@import url("https://use.typekit.net/dxb5kvg.css");
+@font-face {
+  font-family: 'aktiv-grotesk';
+  font-weight: 400;
+  src: url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-400.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-400.woff') format('woff'),
+    url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-400.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk';
+  font-weight: 700;
+  src: url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-700.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-700.woff') format('woff'),
+    url('https://static.sumup.com/fonts/latin-greek-cyrillic/aktiv-grotest-700.eot') format('embedded-opentype');
+}
 
 @font-face {
   font-family: 'roboto';
   font-weight: 100;
-  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff') format('woff'),
-  url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.ttf') format('truetype');
+  src: url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff')
+    format('woff'),
+    url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.ttf')
+    format('truetype');
 }
 
 @font-face {
   font-family: 'roboto';
   font-weight: 300;
   src: url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.woff') format('woff'),
-  url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.ttf') format('truetype');
+    url('https://static.sumup.com/fonts/cyrillic/Roboto_300-webfont.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'roboto';
   font-weight: 500;
   src: url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.woff') format('woff'),
-  url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.ttf') format('truetype');
+    url('https://static.sumup.com/fonts/cyrillic/Roboto_500-webfont.ttf') format('truetype');
 }
 
-
 body {
-  font-weight: $font-weight-regular;
-  font-size: $font-size-m;
-  line-height: $line-height-l;
   color: $color-dark;
+  -webkit-font-feature-settings: 'kern';
+  -moz-font-feature-settings: 'kern=1';
+  -moz-font-feature-settings: 'kern' 1;
+  -ms-font-feature-settings: 'kern';
+  -o-font-feature-settings: 'kern';
+  font-feature-settings: 'kern';
+  font-size: $font-size-m;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  -webkit-font-feature-settings: "kern";
-     -moz-font-feature-settings: "kern=1";
-     -moz-font-feature-settings: "kern" 1;
-      -ms-font-feature-settings: "kern";
-       -o-font-feature-settings: "kern";
-          font-feature-settings: "kern";
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-l;
   text-rendering: optimizeLegibility;
 }
 
@@ -45,47 +60,79 @@ body {
 body {
   font-family: $font-family;
 
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
   .btn,
-  em, button, input, optgroup, select, textarea {
+  em,
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: $font-family-display;
   }
 }
 
-body[data-locale="pl-PL"] {
+body[data-locale='pl-PL'] {
   font-family: $font-family-pl;
 
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
   .btn,
-  em, button, input, optgroup, select, textarea {
+  em,
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: $font-family-display-pl;
   }
 }
 
-body[data-locale="bg-BG"], body[data-locale="el-GR"] {
+body[data-locale='bg-BG'],
+body[data-locale='el-GR'] {
   font-family: $font-family-cyr;
 
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
   .btn,
-  em, button, input, optgroup, select, textarea {
+  em,
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: $font-family-display-cyr;
   }
 }
 
 // Headlines
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
   a {
     &:link,
     &:visited,
@@ -101,16 +148,21 @@ h4, .h4 {
   }
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
   color: $color-dark;
 }
 
-h1, .h1,
-h2, .h2 {
-  font-weight: $font-weight-light;
+h1,
+.h1,
+h2,
+.h2 {
   @include type-xxl;
+  font-weight: $font-weight-light;
 
   @include media($medium-screens) {
     @include type-xxxl;
@@ -121,14 +173,17 @@ h2, .h2 {
   }
 }
 
-h3, .h3,
-h4, .h4 {
+h3,
+.h3,
+h4,
+.h4 {
   font-weight: $font-weight-regular;
 }
 
-h4, .h4 {
-  font-weight: $font-weight-light;
+h4,
+.h4 {
   color: $color-brand;
+  font-weight: $font-weight-light;
 }
 
 // Emphasis
