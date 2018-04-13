@@ -15,6 +15,38 @@
 }
 
 @font-face {
+  font-family: 'aktiv-grotesk-hebrew';
+  font-weight: 400;
+  src: url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-400.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-400.woff') format('woff'),
+    url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-400.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk-hebrew';
+  font-weight: 700;
+  src: url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-700.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-700.woff') format('woff'),
+    url('https://static.sumup.com/fonts/hebrew/aktiv-grotest-700.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk-arabic';
+  font-weight: 400;
+  src: url('https://static.sumup.com/fonts/arabic/aktiv-grotest-400.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/arabic/aktiv-grotest-400.woff') format('woff'),
+    url('https://static.sumup.com/fonts/arabic/aktiv-grotest-400.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk-arabic';
+  font-weight: 700;
+  src: url('https://static.sumup.com/fonts/arabic/aktiv-grotest-700.woff2') format('woff2'),
+    url('https://static.sumup.com/fonts/arabic/aktiv-grotest-700.woff') format('woff'),
+    url('https://static.sumup.com/fonts/arabic/aktiv-grotest-700.eot') format('embedded-opentype');
+}
+
+@font-face {
   font-family: 'roboto';
   font-weight: 100;
   src: url('https://static.sumup.com/fonts/cyrillic/Roboto_100-webfont.woff')
