@@ -274,7 +274,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: $spacing-l;
     position: relative;
     width: 100%;
-    z-index: 30;
+    z-index: 20;
     line-height: $line-height-l;
 
     &:focus,
