@@ -1,110 +1,175 @@
 .btn {
-  transition: color .2s cubic-bezier(.4, .0, .2, 1), background-color .2s cubic-bezier(.4, .0, .2, 1);
-  display: inline-block;
-  border: 1px solid;
-  border-radius: $border-radius;
+  background-color: $color-p500;
+  border-color: $color-p700;
+  border-radius: $border-radius-m;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06);
+  color: #fff;
   cursor: pointer;
-  font-size: $font-size-l;
-  font-weight: 500;
-  padding: 11px $spacing-xl;
-  position: relative;
-  white-space: nowrap;
+  display: inline-block;
+  font-size: $font-size-m;
+  font-weight: $font-weight-medium;
+  height: auto;
+  line-height: $line-height-l;
+  overflow: hidden;
+  padding: $spacing-xs $spacing-s;
   text-align: center;
   text-decoration: none;
-  overflow: hidden;
-  vertical-align: middle;
   text-overflow: ellipsis;
-  line-height: $line-height-s;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  width: auto;
 
-  &:hover,
-  &:active,
+  &:active {
+    background-color: $color-p700;
+    border-color: $color-p900;
+    box-shadow: inset 0 4px 8px 0 rgba(12, 15, 20, 0.3);
+  }
+
   &:focus {
-    text-decoration: none;
-    outline: none;
+    border-color: $color-p700;
+    border-width: 1px;
+    box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+      inset 0 0 0 2px $color-p700;
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: $color-p700;
+    color: #fff;
   }
 
   &:hover,
   &:active {
-    color: $color-brand-darker;
+    border-color: $color-p900;
   }
 
-  &[disabled], &.btn--disabled {
-    opacity: .4;
+  &[disabled],
+  &.btn--disabled {
     cursor: default;
+    opacity: 0.4;
     pointer-events: none;
   }
 
   &--loading {
-    transition: padding .2s ease-in-out;
-    padding-right: $spacing-xxl !important;
+    padding-right: #{18px + $spacing-s + $spacing-xs} !important;
+    position: relative;
+    transition: padding 0.2s ease-in-out;
 
     .spinner {
       display: inline-block;
       margin-left: $spacing-xs;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
-  // TODO: remove the highlight modifier as we're
-  //       going to stick with cta as terminology.
-  &#{&}--cta, &#{&}--highlight {
-    background-color: $color-highlight;
-    border-color: $color-highlight;
+  /**
+   * Newly introduced button for cases where we need a grey button, because
+   * a secondary button won't work.
+   */
+  &#{&}--basic {
+    background-color: $color-n100;
+    border-color: $color-n300;
+    color: $color-n700;
+
+    &:active {
+      background-color: $color-n300;
+      border-color: $color-n500;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    &:hover {
+      background-color: $color-n300;
+      border-color: $color-n500;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-n300;
+      border-color: $color-n500;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-n500;
+    }
+  }
+
+  &#{&}--alert {
+    background-color: $color-error;
+    border-color: $color-error;
     color: white;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: $color-highlight-darker;
-      border-color: $color-highlight-darker;
-
-      &[disabled], &.btn--disabled {
-        background-color: $color-highlight;
-        border-color: $color-highlight;
-      }
+      background-color: $color-r500;
+      border-color: $color-r700;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-r700;
     }
+  }
+
+  // TODO: remove the highlight modifier as we're
+  //       going to stick with cta as terminology.
+  &#{&}--cta,
+  &#{&}--highlight {
   }
 
   // TODO: remove the outline modifier as we're
   //       going to stick with secondary as terminology.
-  &#{&}--secondary, &#{&}--outline {
+  &#{&}--secondary,
+  &#{&}--outline {
     background-color: transparent;
-    border-color: $color-highlight;
-    color: $color-highlight;
+    border-color: transparent;
+    color: $color-n700;
 
-    &:hover,
+    &:hover {
+      border-color: transparent;
+      color: $color-n900;
+    }
+
     &:active,
     &:focus {
-      border-color: $color-highlight-darker;
-      color: $color-highlight-darker;
+      border-color: $color-n900;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-n900;
+      color: $color-n900;
 
-      &[disabled], &.btn--disabled {
-        border-color: $color-highlight;
-        color: $color-highlight;
+      &[disabled],
+      &.btn--disabled {
+        @include disabled;
       }
     }
   }
 
   // TODO: remove the outline-dark modifier as we're going
   //       to strick with secondary as terminology.
-  &#{&}--secondary-dark, &#{&}--outline-dark {
+  &#{&}--secondary-dark,
+  &#{&}--outline-dark {
     background-color: transparent;
     border: 1px solid $color-dark;
     color: $color-dark;
 
     &:hover {
-      color: white;
       background-color: $color-dark;
+      color: white;
     }
   }
 
-  &#{&}--secondary-white, &#{&}--outline-white {
+  &#{&}--secondary-white,
+  &#{&}--outline-white {
     background-color: transparent;
-    border: 1px solid #FFF;
-    color: #FFF;
+    border: 1px solid #fff;
+    color: #fff;
 
     &:hover {
+      background-color: #fff;
       color: $color-error;
-      background-color: #FFF;
     }
   }
 
@@ -112,19 +177,25 @@
   //       only used by the transaction filters on
   //       mobile.
   &#{&}--grey {
-    background-color: $color-light;
-    border-color: $color-light;
-    color: $color-dark;
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-n700;
 
-    &:hover,
+    &:hover {
+      border-color: transparent;
+      color: $color-n900;
+    }
+
     &:active,
     &:focus {
-      background-color: darken($color-light, 5%);
-      border-color: darken($color-light, 5%);
+      border-color: $color-n900;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-n900;
+      color: $color-n900;
 
-      &[disabled], &.btn--disabled {
-        background-color: $color-light;
-        border-color: $color-light;
+      &[disabled],
+      &.btn--disabled {
+        @include disabled;
       }
     }
   }
@@ -137,8 +208,10 @@
     &:hover,
     &:active,
     &:focus {
-      background-color: darken($color-warning, 5%);
-      border-color: darken($color-warning, 5%);
+      background-color: $color-y500;
+      border-color: $color-y700;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-y700;
     }
   }
 
@@ -150,15 +223,17 @@
     &:hover,
     &:active,
     &:focus {
-      background-color: $color-error;
-      border-color: $color-error;
+      background-color: $color-r500;
+      border-color: $color-r700;
+      box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 0 2px $color-r700;
     }
   }
 
   &#{&}--s {
-    padding: $spacing-xs $spacing-m;
     font-size: $font-size-m;
     line-height: $line-height-s;
+    padding: $spacing-xs $spacing-m;
 
     &.btn--loading .spinner {
       right: 9px;
@@ -171,11 +246,12 @@
 
 .text-btn {
   background: none;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
-  font-size: $font-size-l;
-  font-weight: 500;
-  line-height: $line-height-s;
+  font-size: $font-size-m;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-l;
   padding: 0;
 
   &[disabled],
@@ -187,15 +263,17 @@
   &#{&}--highlight {
     color: $color-highlight;
 
-    &[disabled], &.btn--disabled {
-      color: lighten($color-highlight, .2);
+    &[disabled],
+    &.btn--disabled {
+      color: lighten($color-highlight, 0.2);
     }
   }
 
   &#{&}--brand {
     color: $color-brand;
 
-    &[disabled], &.btn--disabled {
+    &[disabled],
+    &.btn--disabled {
       color: lighten($color-brand, 20%);
     }
   }
@@ -203,14 +281,23 @@
   &#{&}--dark {
     color: $color-dark;
 
-    &[disabled], &.btn--disabled {
+    &[disabled],
+    &.btn--disabled {
       color: lighten($color-dark, 20%);
     }
   }
 
-  &:focus { outline: none }
-}
+  &:hover,
+  &:active {
+    background-color: transparent;
+    border: none;
+  }
 
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
 
 /**
  * Loading spinner
@@ -219,25 +306,22 @@
 
 .spinner {
   @include size(18px);
-  transition: all .3s .2s ease-in-out;
   background: url('/images/spinner-bright.svg') no-repeat center center;
   display: none;
   position: absolute;
+  transition: all 0.3s 0.2s ease-in-out;
 }
 
 .btns {
   &#{&}--inline {
-    display: inline-flex;
-    justify-content: space-between;
-    flex-direction: column;
     align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
 
-    &> .btn {
-      width: 100%;
-    }
-
-    &>:not(:last-child) {
+    & > :not(:last-child) {
       margin-bottom: $spacing-xs;
     }
 
@@ -247,16 +331,17 @@
 
     @include media($medium-screens) {
       flex-direction: row;
-      justify-content: flex-start;
       flex-wrap: wrap;
+      justify-content: flex-start;
       width: auto;
+      align-items: center;
 
-      &> .btn {
+      & > .btn {
         margin-top: $spacing-s;
         width: auto;
       }
 
-      &>:not(:last-child) {
+      & > :not(:last-child) {
         margin-bottom: 0;
         margin-right: $spacing-s;
       }
@@ -266,11 +351,28 @@
   &--connected {
     margin-bottom: $spacing-s;
 
+    @include media($big-screens) {
+      .btn {
+        border-width: 1px 1px 1px 0;
+
+        &:first-child {
+          border-radius: $border-radius 0 0 $border-radius;
+          border-width: 1px;
+        }
+
+        &:last-child {
+          border-radius: 0 $border-radius $border-radius 0;
+          border-width: 1px 1px 1px 0;
+        }
+      }
+    }
+
     .btn {
+      border-color: $color-brand;
       border-radius: 0;
       border-style: solid;
-      border-color: $color-brand;
       border-width: 0 1px;
+      box-shadow: none;
 
       // TODO: Rename the brand and outline-brand modifiers. Since this
       //       brand button style is only used here, maybe make the default
@@ -287,8 +389,8 @@
         color: $color-brand;
 
         &:hover {
-          color: white;
           background-color: $color-brand;
+          color: white;
         }
       }
 
@@ -312,23 +414,8 @@
     }
 
     .btn.btn--s {
-      padding: 0.7em 1.4em;
       margin: 0;
-    }
-
-    @include media($big-screens) {
-      .btn {
-        border-width: 1px 1px 1px 0;
-
-        &:first-child {
-          border-width: 1px;
-          border-radius: $border-radius 0 0 $border-radius;
-        }
-        &:last-child {
-          border-width: 1px 1px 1px 0;
-          border-radius: 0 $border-radius $border-radius 0;
-        }
-      }
+      padding: 0.7em 1.4em;
     }
   }
 }

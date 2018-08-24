@@ -63,20 +63,18 @@
 }
 
 @mixin card($tablet-top, $tablet-sides, $mobile-top, $mobile-sides) {
-  $box-shadow: #DCEAFA;
-  background: #FFFFFF;
-  border: 1px solid $color-light;
-  border-radius: $border-radius;
-  box-shadow: 0 1px 0 0 opacify($color-light, .2);
+  background-color: #FFF;
+  border-radius: $border-radius-m;
   display: block;
   padding: $mobile-top $mobile-sides;
+  box-shadow: 0 0 0 1px transparentize($color-shadow, 0.94),
+    0 0 1px 0 transparentize($color-shadow, 0.94),
+    0 2px 2px 0 transparentize($color-shadow, 0.94);
   margin-bottom: $spacing-s;
-
-  @include fancy-shadow($box-shadow);
+  width: 100%;
 
   @include media($big-screens) {
     padding: $tablet-top $tablet-sides;
-    box-shadow: none;
   }
 }
 
@@ -130,6 +128,12 @@
   box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12), 0px 7px 10px 0px rgba(0,0,0,0.20);
 }
 
+@mixin double-shadow() {
+  box-shadow: 0 0 0 1px transparentize($color-shadow, 0.98),
+    2px 0 2px 0 transparentize($color-shadow, 0.94),
+    4px 0 4px 0 transparentize($color-shadow, 0.94);
+}
+
 @mixin close-button() {
 }
 
@@ -141,11 +145,12 @@
 
 @mixin sidebar-label {
   color: $color-dark;
+  display: block;
   font-size: $font-size-m;
   font-weight: 500;
   line-height: $line-height-s;
   margin-bottom: $spacing-xxs;
-  margin-top: $spacing-xs;
+  margin-top: $spacing-s;
 
   /* TODO: remove when globals are dead. */
   text-transform: none;
